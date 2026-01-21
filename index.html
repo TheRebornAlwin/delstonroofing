@@ -13,10 +13,10 @@
     <meta property="og:description" content="Trusted roofing contractors serving Cardiff, Newport & Penarth. Honest quotes, clear timelines, no surprises.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://delstonroofing.co.uk">
-    <meta property="og:image" content="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3VLEIzm8PmZO2AGRKghdjs8StQ7L69iefD5Fr">
+    <meta property="og:image" content="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3VLEIzm8PmZO2AGRKghdjs8StQ7L69iefD5Fr">
+    <link rel="icon" type="image/png" href="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i">
 
     <title>Delston Roofing | Cardiff, Newport & Penarth Roofing Experts</title>
 
@@ -36,7 +36,7 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#home" class="nav__logo">
-                <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3VLEIzm8PmZO2AGRKghdjs8StQ7L69iefD5Fr" alt="Delston Roofing Logo" class="nav__logo-img">
+                <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i" alt="Delston Roofing Logo" class="nav__logo-img">
             </a>
 
             <ul class="nav__menu" id="nav-menu">
@@ -71,6 +71,14 @@
         <section class="hero" id="home">
             <div class="hero__background" id="hero-canvas"></div>
             <div class="hero__overlay"></div>
+            <!-- Floating decorative orbs -->
+            <div class="hero__orbs">
+                <div class="orb orb--1"></div>
+                <div class="orb orb--2"></div>
+                <div class="orb orb--3"></div>
+                <div class="orb orb--4"></div>
+                <div class="orb orb--5"></div>
+            </div>
             <div class="hero__content container">
                 <div class="hero__text">
                     <h1 class="hero__title reveal">
@@ -197,6 +205,14 @@
 
         <!-- Services Section -->
         <section class="services" id="services">
+            <!-- Decorative elements -->
+            <div class="section__decoration">
+                <div class="decoration__line decoration__line--1"></div>
+                <div class="decoration__line decoration__line--2"></div>
+                <div class="decoration__dot decoration__dot--1"></div>
+                <div class="decoration__dot decoration__dot--2"></div>
+                <div class="decoration__dot decoration__dot--3"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-label reveal">What We Do</span>
@@ -207,8 +223,53 @@
                 <div class="services__grid">
                     <article class="service-card glass reveal">
                         <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 0V3h6v4m0 0v1a3 3 0 0 0 6 0V7m0 0V3m-9 18v-6a3 3 0 0 1 6 0v6"/>
+                            <!-- Full Roof Replacement - Detailed house with roof layers -->
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="roofGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#3b82f6"/>
+                                        <stop offset="100%" stop-color="#1e40af"/>
+                                    </linearGradient>
+                                    <linearGradient id="houseGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#60a5fa"/>
+                                        <stop offset="100%" stop-color="#3b82f6"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Foundation -->
+                                <rect x="15" y="68" width="50" height="4" rx="1" fill="#1e3a5f" opacity="0.6"/>
+                                <!-- House walls -->
+                                <path d="M20 40 L20 68 L60 68 L60 40" fill="url(#houseGrad1)" opacity="0.3"/>
+                                <path d="M20 40 L20 68 M60 40 L60 68" stroke="#3b82f6" stroke-width="2"/>
+                                <!-- Window left -->
+                                <rect x="25" y="48" width="10" height="12" rx="1" fill="#0c1929" opacity="0.4"/>
+                                <path d="M25 54 L35 54 M30 48 L30 60" stroke="#60a5fa" stroke-width="1"/>
+                                <!-- Window right -->
+                                <rect x="45" y="48" width="10" height="12" rx="1" fill="#0c1929" opacity="0.4"/>
+                                <path d="M45 54 L55 54 M50 48 L50 60" stroke="#60a5fa" stroke-width="1"/>
+                                <!-- Door -->
+                                <rect x="35" y="52" width="10" height="16" rx="1" fill="#1e40af" opacity="0.5"/>
+                                <circle cx="43" cy="60" r="1" fill="#60a5fa"/>
+                                <!-- Main roof structure -->
+                                <path d="M10 42 L40 15 L70 42" fill="url(#roofGrad1)" opacity="0.9"/>
+                                <path d="M10 42 L40 15 L70 42" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Roof tiles row 1 -->
+                                <path d="M18 38 Q25 34 32 38" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.7"/>
+                                <path d="M32 38 Q39 34 46 38" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.7"/>
+                                <path d="M46 38 Q53 34 60 38" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.7"/>
+                                <!-- Roof tiles row 2 -->
+                                <path d="M24 32 Q31 28 38 32" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.6"/>
+                                <path d="M38 32 Q45 28 52 32" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.6"/>
+                                <!-- Roof tiles row 3 -->
+                                <path d="M30 26 Q37 22 44 26" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.5"/>
+                                <!-- Chimney -->
+                                <rect x="52" y="18" width="8" height="16" fill="#1e40af"/>
+                                <rect x="50" y="15" width="12" height="4" rx="1" fill="#3b82f6"/>
+                                <!-- Smoke -->
+                                <circle cx="56" cy="10" r="2" fill="#60a5fa" opacity="0.4"/>
+                                <circle cx="58" cy="6" r="1.5" fill="#60a5fa" opacity="0.3"/>
+                                <!-- Sparkle effects -->
+                                <circle cx="25" cy="25" r="1.5" fill="#fff" opacity="0.8"/>
+                                <circle cx="55" cy="30" r="1" fill="#fff" opacity="0.6"/>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Full Roof Replacements</h3>
@@ -223,8 +284,37 @@
 
                     <article class="service-card glass reveal reveal--delay-1">
                         <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                            <!-- Roof Repairs - Detailed tools and roof tile -->
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#60a5fa"/>
+                                        <stop offset="100%" stop-color="#3b82f6"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Roof tile background -->
+                                <path d="M5 50 L40 25 L75 50 L75 60 L5 60 Z" fill="#1e40af" opacity="0.2"/>
+                                <path d="M5 50 L40 25 L75 50" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                <!-- Tile texture lines -->
+                                <path d="M15 48 Q27 42 40 48 Q53 42 65 48" stroke="#60a5fa" stroke-width="1" fill="none" opacity="0.5"/>
+                                <path d="M25 40 Q40 32 55 40" stroke="#60a5fa" stroke-width="1" fill="none" opacity="0.4"/>
+                                <!-- Damaged tile indicator -->
+                                <path d="M48 42 L52 46 M48 46 L52 42" stroke="#f87171" stroke-width="2" stroke-linecap="round"/>
+                                <!-- Hammer -->
+                                <rect x="15" y="55" width="6" height="22" rx="1" fill="#1e3a5f" transform="rotate(-30 18 66)"/>
+                                <path d="M8 48 L18 38 L28 48 L24 52 L12 52 Z" fill="url(#toolGrad)"/>
+                                <path d="M14 44 L22 44" stroke="#0c1929" stroke-width="1"/>
+                                <!-- Wrench -->
+                                <path d="M55 72 L70 57" stroke="#1e3a5f" stroke-width="5" stroke-linecap="round"/>
+                                <path d="M68 52 C72 48 78 48 78 55 C78 59 75 62 71 58 L65 64 L62 61 L68 55 C64 51 64 48 68 52" fill="url(#toolGrad)"/>
+                                <!-- Nail -->
+                                <rect x="38" y="60" width="2" height="12" fill="#60a5fa"/>
+                                <path d="M36 60 L40 56 L44 60 Z" fill="#3b82f6"/>
+                                <!-- Measurement marks -->
+                                <path d="M30 70 L30 74 M35 70 L35 73 M40 70 L40 74 M45 70 L45 73 M50 70 L50 74" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
+                                <!-- Sparkle -->
+                                <circle cx="72" cy="48" r="2" fill="#fff" opacity="0.8"/>
+                                <path d="M72 44 L72 46 M72 50 L72 52 M68 48 L70 48 M74 48 L76 48" stroke="#fff" stroke-width="1" opacity="0.6"/>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Roof Repairs</h3>
@@ -239,9 +329,55 @@
 
                     <article class="service-card glass reveal reveal--delay-2">
                         <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                <path d="M3 9h18"/>
+                            <!-- Flat Roofing - Modern building with flat roof detail -->
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="flatRoofGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#1e40af"/>
+                                        <stop offset="50%" stop-color="#3b82f6"/>
+                                        <stop offset="100%" stop-color="#1e40af"/>
+                                    </linearGradient>
+                                    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+                                        <stop offset="100%" stop-color="#1e40af" stop-opacity="0.2"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Building base -->
+                                <rect x="10" y="30" width="60" height="42" fill="url(#buildingGrad)"/>
+                                <rect x="10" y="30" width="60" height="42" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                <!-- Flat roof surface -->
+                                <rect x="5" y="24" width="70" height="8" rx="1" fill="url(#flatRoofGrad)"/>
+                                <rect x="5" y="24" width="70" height="8" rx="1" stroke="#1e40af" stroke-width="1.5" fill="none"/>
+                                <!-- Roof membrane texture -->
+                                <path d="M10 27 L70 27" stroke="#60a5fa" stroke-width="0.5" opacity="0.5"/>
+                                <path d="M10 29 L70 29" stroke="#60a5fa" stroke-width="0.5" opacity="0.5"/>
+                                <!-- HVAC unit on roof -->
+                                <rect x="50" y="15" width="15" height="9" rx="1" fill="#1e40af"/>
+                                <rect x="52" y="17" width="4" height="2" fill="#0c1929"/>
+                                <rect x="58" y="17" width="4" height="2" fill="#0c1929"/>
+                                <circle cx="57" cy="14" r="2" fill="#60a5fa" opacity="0.5"/>
+                                <!-- Skylight -->
+                                <rect x="20" y="18" width="12" height="6" rx="1" fill="#60a5fa" opacity="0.4"/>
+                                <rect x="20" y="18" width="12" height="6" rx="1" stroke="#3b82f6" stroke-width="1" fill="none"/>
+                                <path d="M20 21 L32 21" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+                                <!-- Windows row 1 -->
+                                <rect x="15" y="36" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <rect x="28" y="36" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <rect x="44" y="36" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <rect x="57" y="36" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <!-- Windows row 2 -->
+                                <rect x="15" y="52" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <rect x="28" y="52" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <rect x="44" y="52" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <rect x="57" y="52" width="8" height="10" fill="#0c1929" opacity="0.6"/>
+                                <!-- Window reflections -->
+                                <path d="M16 37 L22 43" stroke="#60a5fa" stroke-width="0.5" opacity="0.4"/>
+                                <path d="M29 37 L35 43" stroke="#60a5fa" stroke-width="0.5" opacity="0.4"/>
+                                <!-- Drainage outlet -->
+                                <circle cx="8" cy="45" r="3" fill="#1e40af"/>
+                                <path d="M8 48 L8 65" stroke="#3b82f6" stroke-width="2"/>
+                                <!-- Water droplet -->
+                                <path d="M8 68 Q6 72 8 74 Q10 72 8 68" fill="#60a5fa" opacity="0.6"/>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Flat Roofing</h3>
@@ -256,8 +392,51 @@
 
                     <article class="service-card glass reveal reveal--delay-3">
                         <div class="service-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2v20M2 12h20M12 2l4 4M12 2l-4 4M12 22l4-4M12 22l-4-4"/>
+                            <!-- Guttering & Fascias - Detailed gutter system -->
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gutterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#60a5fa"/>
+                                        <stop offset="100%" stop-color="#3b82f6"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Roof edge -->
+                                <path d="M5 20 L40 5 L75 20" stroke="#1e40af" stroke-width="3" fill="none"/>
+                                <path d="M5 20 L40 5 L75 20 L75 25 L5 25 Z" fill="#1e40af" opacity="0.3"/>
+                                <!-- Fascia board -->
+                                <rect x="5" y="25" width="70" height="6" fill="url(#gutterGrad)"/>
+                                <path d="M5 25 L75 25 L75 31 L5 31 Z" stroke="#3b82f6" stroke-width="1" fill="none"/>
+                                <!-- Wood grain texture on fascia -->
+                                <path d="M10 27 Q20 28 30 27 Q40 26 50 27 Q60 28 70 27" stroke="#1e40af" stroke-width="0.5" opacity="0.5"/>
+                                <!-- Soffit -->
+                                <path d="M5 31 L5 36 L75 36 L75 31" fill="#0c1929" opacity="0.3"/>
+                                <path d="M15 33 L15 35 M25 33 L25 35 M35 33 L35 35 M45 33 L45 35 M55 33 L55 35 M65 33 L65 35" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
+                                <!-- Gutter channel -->
+                                <path d="M3 31 Q3 38 8 38 L72 38 Q77 38 77 31" fill="url(#gutterGrad)"/>
+                                <path d="M3 31 Q3 38 8 38 L72 38 Q77 38 77 31" stroke="#1e40af" stroke-width="1.5" fill="none"/>
+                                <!-- Gutter brackets -->
+                                <path d="M15 31 L15 38" stroke="#1e40af" stroke-width="2"/>
+                                <path d="M40 31 L40 38" stroke="#1e40af" stroke-width="2"/>
+                                <path d="M65 31 L65 38" stroke="#1e40af" stroke-width="2"/>
+                                <!-- Downpipe -->
+                                <rect x="68" y="38" width="6" height="35" rx="1" fill="url(#gutterGrad)"/>
+                                <rect x="68" y="38" width="6" height="35" rx="1" stroke="#1e40af" stroke-width="1" fill="none"/>
+                                <!-- Downpipe joints -->
+                                <rect x="67" y="48" width="8" height="3" rx="0.5" fill="#3b82f6"/>
+                                <rect x="67" y="60" width="8" height="3" rx="0.5" fill="#3b82f6"/>
+                                <!-- Water in gutter -->
+                                <ellipse cx="40" cy="36" rx="25" ry="2" fill="#60a5fa" opacity="0.4"/>
+                                <!-- Water flowing -->
+                                <path d="M71 45 Q73 50 71 55 Q69 60 71 65" stroke="#60a5fa" stroke-width="1.5" opacity="0.6" fill="none"/>
+                                <!-- Raindrops -->
+                                <path d="M20 12 L20 18" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+                                <path d="M35 8 L35 14" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
+                                <path d="M50 10 L50 16" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+                                <path d="M60 14 L60 19" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
+                                <!-- Splash at bottom -->
+                                <circle cx="71" cy="75" r="3" fill="#60a5fa" opacity="0.3"/>
+                                <path d="M66 74 Q68 70 71 75" stroke="#60a5fa" stroke-width="1" opacity="0.4" fill="none"/>
+                                <path d="M76 74 Q74 70 71 75" stroke="#60a5fa" stroke-width="1" opacity="0.4" fill="none"/>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Guttering & Fascias</h3>
@@ -272,8 +451,52 @@
 
                     <article class="service-card glass reveal reveal--delay-4">
                         <div class="service-card__icon service-card__icon--urgent">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <!-- Emergency Repairs - House with storm and alert -->
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="alertGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#60a5fa"/>
+                                        <stop offset="100%" stop-color="#3b82f6"/>
+                                    </linearGradient>
+                                    <linearGradient id="stormGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1e40af"/>
+                                        <stop offset="100%" stop-color="#0c1929"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Storm clouds -->
+                                <ellipse cx="20" cy="15" rx="12" ry="8" fill="url(#stormGrad)" opacity="0.5"/>
+                                <ellipse cx="35" cy="12" rx="15" ry="10" fill="url(#stormGrad)" opacity="0.6"/>
+                                <ellipse cx="55" cy="14" rx="14" ry="9" fill="url(#stormGrad)" opacity="0.5"/>
+                                <!-- Lightning bolt -->
+                                <path d="M50 18 L44 32 L50 32 L42 48 L52 35 L46 35 L54 18 Z" fill="#60a5fa"/>
+                                <path d="M50 18 L44 32 L50 32 L42 48" stroke="#fff" stroke-width="1" opacity="0.5" fill="none"/>
+                                <!-- Rain -->
+                                <path d="M15 22 L12 32" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+                                <path d="M25 20 L22 30" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
+                                <path d="M65 22 L62 32" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
+                                <path d="M72 25 L69 35" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
+                                <!-- House -->
+                                <path d="M20 50 L20 72 L60 72 L60 50" fill="#1e40af" opacity="0.2"/>
+                                <path d="M20 50 L20 72 L60 72 L60 50" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+                                <!-- Roof with damage -->
+                                <path d="M15 52 L40 32 L65 52" fill="url(#alertGrad)" opacity="0.3"/>
+                                <path d="M15 52 L40 32 L65 52" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                <!-- Damaged section of roof -->
+                                <path d="M48 40 L52 36 L58 44" stroke="#f87171" stroke-width="2" stroke-dasharray="2 2"/>
+                                <path d="M50 42 L54 38" stroke="#f87171" stroke-width="2"/>
+                                <!-- Window -->
+                                <rect x="28" y="55" width="10" height="10" fill="#0c1929" opacity="0.4"/>
+                                <path d="M28 60 L38 60 M33 55 L33 65" stroke="#60a5fa" stroke-width="0.5"/>
+                                <!-- Door -->
+                                <rect x="44" y="58" width="8" height="14" rx="1" fill="#1e40af" opacity="0.5"/>
+                                <!-- Alert symbol -->
+                                <circle cx="68" cy="58" r="10" fill="url(#alertGrad)"/>
+                                <circle cx="68" cy="58" r="10" stroke="#1e40af" stroke-width="2" fill="none"/>
+                                <path d="M68 52 L68 60" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="68" cy="64" r="1.5" fill="#fff"/>
+                                <!-- Pulsing rings -->
+                                <circle cx="68" cy="58" r="13" stroke="#60a5fa" stroke-width="1" fill="none" opacity="0.4"/>
+                                <circle cx="68" cy="58" r="16" stroke="#60a5fa" stroke-width="0.5" fill="none" opacity="0.2"/>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Emergency Repairs</h3>
@@ -288,9 +511,49 @@
 
                     <article class="service-card glass reveal reveal--delay-5">
                         <div class="service-card__icon service-card__icon--free">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M9 12l2 2 4-4"/>
+                            <!-- Free Inspections - Clipboard with magnifying glass -->
+                            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="clipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#60a5fa"/>
+                                        <stop offset="100%" stop-color="#3b82f6"/>
+                                    </linearGradient>
+                                    <linearGradient id="checkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#34d399"/>
+                                        <stop offset="100%" stop-color="#10b981"/>
+                                    </linearGradient>
+                                </defs>
+                                <!-- Clipboard back -->
+                                <rect x="12" y="12" width="40" height="55" rx="3" fill="url(#clipGrad)" opacity="0.2"/>
+                                <rect x="12" y="12" width="40" height="55" rx="3" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                <!-- Clipboard clip -->
+                                <rect x="24" y="8" width="16" height="10" rx="2" fill="url(#clipGrad)"/>
+                                <rect x="28" y="6" width="8" height="6" rx="1" fill="#1e40af"/>
+                                <!-- Checklist lines -->
+                                <rect x="18" y="24" width="6" height="6" rx="1" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+                                <path d="M19 27 L21 29 L24 25" stroke="url(#checkGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="28" y="25" width="18" height="3" rx="1" fill="#3b82f6" opacity="0.4"/>
+                                <rect x="18" y="36" width="6" height="6" rx="1" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+                                <path d="M19 39 L21 41 L24 37" stroke="url(#checkGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="28" y="37" width="18" height="3" rx="1" fill="#3b82f6" opacity="0.4"/>
+                                <rect x="18" y="48" width="6" height="6" rx="1" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+                                <path d="M19 51 L21 53 L24 49" stroke="url(#checkGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="28" y="49" width="18" height="3" rx="1" fill="#3b82f6" opacity="0.4"/>
+                                <!-- Magnifying glass -->
+                                <circle cx="58" cy="50" r="14" fill="#0c1929" opacity="0.1"/>
+                                <circle cx="58" cy="50" r="14" stroke="url(#clipGrad)" stroke-width="3" fill="none"/>
+                                <circle cx="58" cy="50" r="10" stroke="#60a5fa" stroke-width="1" fill="none" opacity="0.5"/>
+                                <!-- Handle -->
+                                <path d="M68 60 L76 68" stroke="url(#clipGrad)" stroke-width="5" stroke-linecap="round"/>
+                                <path d="M68 60 L76 68" stroke="#1e40af" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Lens reflection -->
+                                <path d="M52 44 Q54 42 58 42" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                                <!-- House inside magnifier -->
+                                <path d="M52 52 L58 46 L64 52 L64 56 L52 56 Z" fill="#3b82f6" opacity="0.5"/>
+                                <path d="M52 52 L58 46 L64 52" stroke="#60a5fa" stroke-width="1.5" fill="none"/>
+                                <!-- FREE badge -->
+                                <circle cx="18" cy="62" r="8" fill="url(#checkGrad)"/>
+                                <text x="18" y="65" text-anchor="middle" fill="#fff" font-size="6" font-weight="bold">FREE</text>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Free Inspections</h3>
@@ -323,9 +586,35 @@
                         <div class="process__step-number">1</div>
                         <div class="process__step-content glass">
                             <div class="process__step-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 16v-4M12 8h.01"/>
+                                <!-- Free Inspection - Binoculars examining roof -->
+                                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="procGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#3b82f6"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Roof outline being inspected -->
+                                    <path d="M8 45 L32 28 L56 45" stroke="#60a5fa" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M12 45 L12 55 L52 55 L52 45" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.3"/>
+                                    <!-- Binoculars -->
+                                    <ellipse cx="22" cy="22" rx="10" ry="12" fill="url(#procGrad1)" opacity="0.9"/>
+                                    <ellipse cx="42" cy="22" rx="10" ry="12" fill="url(#procGrad1)" opacity="0.9"/>
+                                    <rect x="30" y="18" width="4" height="8" rx="1" fill="#1e40af"/>
+                                    <!-- Lens details -->
+                                    <ellipse cx="22" cy="22" rx="7" ry="9" fill="#0c1929" opacity="0.4"/>
+                                    <ellipse cx="42" cy="22" rx="7" ry="9" fill="#0c1929" opacity="0.4"/>
+                                    <!-- Lens reflection -->
+                                    <ellipse cx="19" cy="18" rx="2" ry="3" fill="#fff" opacity="0.4"/>
+                                    <ellipse cx="39" cy="18" rx="2" ry="3" fill="#fff" opacity="0.4"/>
+                                    <!-- Eyepieces -->
+                                    <ellipse cx="22" cy="10" rx="5" ry="3" fill="#1e40af"/>
+                                    <ellipse cx="42" cy="10" rx="5" ry="3" fill="#1e40af"/>
+                                    <!-- Focus lines -->
+                                    <path d="M22 34 L22 38 M22 40 L22 42" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+                                    <path d="M42 34 L42 38 M42 40 L42 42" stroke="#60a5fa" stroke-width="1.5" opacity="0.6"/>
+                                    <!-- Sparkle -->
+                                    <circle cx="50" cy="15" r="2" fill="#fff" opacity="0.7"/>
                                 </svg>
                             </div>
                             <h3 class="process__step-title">Free Inspection</h3>
@@ -337,9 +626,34 @@
                         <div class="process__step-number">2</div>
                         <div class="process__step-content glass">
                             <div class="process__step-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                                <!-- Clear Quote - Document with price tag -->
+                                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="procGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#3b82f6"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Document -->
+                                    <path d="M12 8 L12 56 L44 56 L44 18 L34 8 Z" fill="url(#procGrad2)" opacity="0.2"/>
+                                    <path d="M12 8 L12 56 L44 56 L44 18 L34 8 Z" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                    <!-- Folded corner -->
+                                    <path d="M34 8 L34 18 L44 18" fill="#3b82f6" opacity="0.3"/>
+                                    <path d="M34 8 L34 18 L44 18" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+                                    <!-- Document lines -->
+                                    <rect x="18" y="24" width="20" height="2" rx="1" fill="#3b82f6" opacity="0.5"/>
+                                    <rect x="18" y="30" width="16" height="2" rx="1" fill="#3b82f6" opacity="0.4"/>
+                                    <rect x="18" y="36" width="18" height="2" rx="1" fill="#3b82f6" opacity="0.4"/>
+                                    <!-- Price section -->
+                                    <rect x="18" y="44" width="12" height="6" rx="1" fill="#1e40af" opacity="0.3"/>
+                                    <!-- Pound sign -->
+                                    <text x="24" y="49" text-anchor="middle" fill="#60a5fa" font-size="6" font-weight="bold">£</text>
+                                    <!-- Price tag -->
+                                    <path d="M48 28 L58 28 L62 34 L58 40 L48 40 L48 28" fill="url(#procGrad2)"/>
+                                    <circle cx="51" cy="34" r="2" fill="#fff" opacity="0.8"/>
+                                    <!-- Check mark on document -->
+                                    <circle cx="38" cy="47" r="5" fill="#10b981" opacity="0.9"/>
+                                    <path d="M35 47 L37 49 L41 45" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <h3 class="process__step-title">Clear Quote</h3>
@@ -351,11 +665,42 @@
                         <div class="process__step-number">3</div>
                         <div class="process__step-content glass">
                             <div class="process__step-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                <!-- Scheduled Start - Calendar with clock -->
+                                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="procGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#3b82f6"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Calendar body -->
+                                    <rect x="8" y="14" width="36" height="38" rx="3" fill="url(#procGrad3)" opacity="0.2"/>
+                                    <rect x="8" y="14" width="36" height="38" rx="3" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                    <!-- Calendar header -->
+                                    <rect x="8" y="14" width="36" height="10" rx="3" fill="url(#procGrad3)" opacity="0.6"/>
+                                    <!-- Calendar rings -->
+                                    <rect x="16" y="10" width="3" height="8" rx="1" fill="#1e40af"/>
+                                    <rect x="33" y="10" width="3" height="8" rx="1" fill="#1e40af"/>
+                                    <!-- Calendar grid -->
+                                    <rect x="13" y="28" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <rect x="21" y="28" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <rect x="29" y="28" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <rect x="13" y="36" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <!-- Selected date -->
+                                    <rect x="21" y="36" width="5" height="5" rx="1" fill="#3b82f6"/>
+                                    <rect x="29" y="36" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <rect x="13" y="44" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <rect x="21" y="44" width="5" height="5" rx="1" fill="#3b82f6" opacity="0.2"/>
+                                    <!-- Clock -->
+                                    <circle cx="48" cy="42" r="12" fill="url(#procGrad3)"/>
+                                    <circle cx="48" cy="42" r="12" stroke="#1e40af" stroke-width="2" fill="none"/>
+                                    <circle cx="48" cy="42" r="9" fill="#0c1929" opacity="0.2"/>
+                                    <!-- Clock hands -->
+                                    <path d="M48 42 L48 35" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M48 42 L53 42" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="48" cy="42" r="2" fill="#fff"/>
+                                    <!-- Clock ticks -->
+                                    <path d="M48 32 L48 34 M48 50 L48 52 M38 42 L40 42 M56 42 L58 42" stroke="#60a5fa" stroke-width="1" opacity="0.6"/>
                                 </svg>
                             </div>
                             <h3 class="process__step-title">Scheduled Start</h3>
@@ -367,8 +712,38 @@
                         <div class="process__step-number">4</div>
                         <div class="process__step-content glass">
                             <div class="process__step-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                <!-- Daily Updates - Phone with messages -->
+                                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="procGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#3b82f6"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Phone body -->
+                                    <rect x="18" y="6" width="28" height="52" rx="4" fill="url(#procGrad4)" opacity="0.2"/>
+                                    <rect x="18" y="6" width="28" height="52" rx="4" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                    <!-- Phone screen -->
+                                    <rect x="21" y="12" width="22" height="38" rx="2" fill="#0c1929" opacity="0.3"/>
+                                    <!-- Speaker -->
+                                    <rect x="28" y="8" width="8" height="2" rx="1" fill="#1e40af"/>
+                                    <!-- Home button -->
+                                    <circle cx="32" cy="54" r="3" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+                                    <!-- Message bubbles -->
+                                    <path d="M24 18 L40 18 L40 26 L38 26 L36 29 L34 26 L24 26 Z" fill="url(#procGrad4)" opacity="0.8"/>
+                                    <rect x="26" y="20" width="10" height="2" rx="1" fill="#fff" opacity="0.8"/>
+                                    <rect x="26" y="23" width="6" height="1" rx="0.5" fill="#fff" opacity="0.5"/>
+                                    <!-- Reply bubble -->
+                                    <path d="M40 32 L26 32 L26 38 L28 38 L30 41 L32 38 L40 38 Z" fill="#1e40af" opacity="0.6"/>
+                                    <rect x="28" y="34" width="8" height="2" rx="1" fill="#60a5fa" opacity="0.8"/>
+                                    <!-- Notification dots -->
+                                    <circle cx="44" cy="18" r="3" fill="#10b981"/>
+                                    <text x="44" y="20" text-anchor="middle" fill="#fff" font-size="5" font-weight="bold">3</text>
+                                    <!-- Signal waves -->
+                                    <path d="M8 20 Q6 24 8 28" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.4"/>
+                                    <path d="M12 18 Q8 24 12 30" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.5"/>
+                                    <path d="M56 20 Q58 24 56 28" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.4"/>
+                                    <path d="M52 18 Q56 24 52 30" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.5"/>
                                 </svg>
                             </div>
                             <h3 class="process__step-title">Daily Updates</h3>
@@ -380,9 +755,40 @@
                         <div class="process__step-number">5</div>
                         <div class="process__step-content glass">
                             <div class="process__step-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                    <polyline points="9,22 9,12 15,12 15,22"/>
+                                <!-- Clean Finish - Sparkling house -->
+                                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="procGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#3b82f6"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- House -->
+                                    <path d="M12 32 L32 14 L52 32" fill="url(#procGrad5)" opacity="0.3"/>
+                                    <path d="M12 32 L32 14 L52 32" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <path d="M16 30 L16 52 L48 52 L48 30" fill="url(#procGrad5)" opacity="0.15"/>
+                                    <path d="M16 30 L16 52 L48 52 L48 30" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                    <!-- Door -->
+                                    <rect x="28" y="38" width="8" height="14" rx="1" fill="#1e40af" opacity="0.5"/>
+                                    <circle cx="34" cy="46" r="1" fill="#60a5fa"/>
+                                    <!-- Window -->
+                                    <rect x="20" y="36" width="6" height="6" fill="#0c1929" opacity="0.4"/>
+                                    <path d="M20 39 L26 39 M23 36 L23 42" stroke="#60a5fa" stroke-width="0.5"/>
+                                    <rect x="38" y="36" width="6" height="6" fill="#0c1929" opacity="0.4"/>
+                                    <path d="M38 39 L44 39 M41 36 L41 42" stroke="#60a5fa" stroke-width="0.5"/>
+                                    <!-- Sparkles -->
+                                    <path d="M8 22 L10 22 M9 21 L9 23" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M54 18 L57 18 M55.5 16.5 L55.5 19.5" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M50 28 L52 28 M51 27 L51 29" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                                    <circle cx="14" cy="16" r="2" fill="#fff" opacity="0.8"/>
+                                    <circle cx="58" cy="26" r="1.5" fill="#60a5fa" opacity="0.7"/>
+                                    <circle cx="6" cy="30" r="1" fill="#fff" opacity="0.6"/>
+                                    <!-- Broom -->
+                                    <path d="M54 40 L54 58" stroke="#1e40af" stroke-width="2"/>
+                                    <path d="M50 58 L58 58 L56 64 L52 64 Z" fill="url(#procGrad5)"/>
+                                    <path d="M51 58 L51 62 M53 58 L53 63 M55 58 L55 62 M57 58 L57 61" stroke="#1e40af" stroke-width="1"/>
+                                    <!-- Shine arc -->
+                                    <path d="M20 12 Q32 6 44 12" stroke="#fff" stroke-width="1" fill="none" opacity="0.5"/>
                                 </svg>
                             </div>
                             <h3 class="process__step-title">Clean Finish</h3>
@@ -394,9 +800,33 @@
                         <div class="process__step-number">6</div>
                         <div class="process__step-content glass">
                             <div class="process__step-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                    <path d="M9 12l2 2 4-4"/>
+                                <!-- Guaranteed Work - Shield with certificate -->
+                                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="procGrad6" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#60a5fa"/>
+                                            <stop offset="100%" stop-color="#3b82f6"/>
+                                        </linearGradient>
+                                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#fbbf24"/>
+                                            <stop offset="100%" stop-color="#f59e0b"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- Shield -->
+                                    <path d="M32 6 L52 14 L52 32 C52 46 32 58 32 58 C32 58 12 46 12 32 L12 14 Z" fill="url(#procGrad6)" opacity="0.3"/>
+                                    <path d="M32 6 L52 14 L52 32 C52 46 32 58 32 58 C32 58 12 46 12 32 L12 14 Z" stroke="#3b82f6" stroke-width="2.5" fill="none"/>
+                                    <!-- Inner shield -->
+                                    <path d="M32 12 L46 18 L46 32 C46 42 32 52 32 52 C32 52 18 42 18 32 L18 18 Z" fill="url(#procGrad6)" opacity="0.2"/>
+                                    <!-- Checkmark -->
+                                    <path d="M24 32 L30 38 L42 26" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <!-- Certificate ribbon -->
+                                    <path d="M20 48 L24 58 L28 52" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <path d="M44 48 L40 58 L36 52" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                    <!-- Stars -->
+                                    <path d="M32 16 L33 19 L36 19 L34 21 L35 24 L32 22 L29 24 L30 21 L28 19 L31 19 Z" fill="url(#goldGrad)"/>
+                                    <!-- Shine effects -->
+                                    <path d="M22 20 Q24 16 28 18" stroke="#fff" stroke-width="1" fill="none" opacity="0.5"/>
+                                    <circle cx="46" cy="24" r="1.5" fill="#fff" opacity="0.6"/>
                                 </svg>
                             </div>
                             <h3 class="process__step-title">Guaranteed Work</h3>
@@ -438,8 +868,20 @@
                         <div class="about__values reveal reveal--delay-3">
                             <div class="about__value">
                                 <div class="about__value-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <!-- Honest Pricing - Transparent price tag -->
+                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="valueGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#60a5fa"/>
+                                                <stop offset="100%" stop-color="#3b82f6"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M24 4 L40 4 L44 20 L26 44 L4 22 L24 4" fill="url(#valueGrad1)" opacity="0.2"/>
+                                        <path d="M24 4 L40 4 L44 20 L26 44 L4 22 L24 4" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                        <circle cx="34" cy="14" r="4" fill="#3b82f6" opacity="0.5"/>
+                                        <circle cx="34" cy="14" r="2" fill="#fff"/>
+                                        <text x="20" y="26" fill="#3b82f6" font-size="12" font-weight="bold">£</text>
+                                        <path d="M14 30 L22 30" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
                                     </svg>
                                 </div>
                                 <div class="about__value-text">
@@ -449,9 +891,20 @@
                             </div>
                             <div class="about__value">
                                 <div class="about__value-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    <!-- Quality Workmanship - Award ribbon -->
+                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="valueGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#60a5fa"/>
+                                                <stop offset="100%" stop-color="#3b82f6"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <circle cx="24" cy="18" r="14" fill="url(#valueGrad2)" opacity="0.2"/>
+                                        <circle cx="24" cy="18" r="14" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                        <circle cx="24" cy="18" r="9" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.6"/>
+                                        <path d="M20 18 L23 21 L29 15" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18 30 L18 44 L24 38 L30 44 L30 30" fill="url(#valueGrad2)" opacity="0.5"/>
+                                        <path d="M18 30 L18 44 L24 38 L30 44 L30 30" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
                                     </svg>
                                 </div>
                                 <div class="about__value-text">
@@ -461,9 +914,20 @@
                             </div>
                             <div class="about__value">
                                 <div class="about__value-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                        <polyline points="9 22 9 12 15 12 15 22"/>
+                                    <!-- Respect for Your Home - House with heart -->
+                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="valueGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#60a5fa"/>
+                                                <stop offset="100%" stop-color="#3b82f6"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M6 22 L24 6 L42 22" fill="url(#valueGrad3)" opacity="0.2"/>
+                                        <path d="M6 22 L24 6 L42 22" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                        <path d="M10 20 L10 42 L38 42 L38 20" fill="url(#valueGrad3)" opacity="0.1"/>
+                                        <path d="M10 20 L10 42 L38 42 L38 20" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                                        <path d="M24 22 C24 22 18 18 18 24 C18 28 24 32 24 32 C24 32 30 28 30 24 C30 18 24 22 24 22" fill="#3b82f6" opacity="0.6"/>
+                                        <path d="M24 22 C24 22 18 18 18 24 C18 28 24 32 24 32 C24 32 30 28 30 24 C30 18 24 22 24 22" stroke="#60a5fa" stroke-width="1.5" fill="none"/>
                                     </svg>
                                 </div>
                                 <div class="about__value-text">
@@ -500,6 +964,17 @@
 
         <!-- Reviews Section -->
         <section class="reviews" id="reviews">
+            <!-- Floating testimonial decorations -->
+            <div class="reviews__decoration">
+                <svg class="quote-decoration quote-decoration--left" viewBox="0 0 100 100" fill="none">
+                    <path d="M30 50 C30 30 45 20 45 20 L42 25 C42 25 35 32 35 45 C35 55 42 60 42 60 L30 60 C30 60 30 55 30 50" fill="currentColor" opacity="0.1"/>
+                    <path d="M55 50 C55 30 70 20 70 20 L67 25 C67 25 60 32 60 45 C60 55 67 60 67 60 L55 60 C55 60 55 55 55 50" fill="currentColor" opacity="0.1"/>
+                </svg>
+                <svg class="quote-decoration quote-decoration--right" viewBox="0 0 100 100" fill="none">
+                    <path d="M70 50 C70 70 55 80 55 80 L58 75 C58 75 65 68 65 55 C65 45 58 40 58 40 L70 40 C70 40 70 45 70 50" fill="currentColor" opacity="0.1"/>
+                    <path d="M45 50 C45 70 30 80 30 80 L33 75 C33 75 40 68 40 55 C40 45 33 40 33 40 L45 40 C45 40 45 45 45 50" fill="currentColor" opacity="0.1"/>
+                </svg>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-label reveal">What People Say</span>
@@ -884,7 +1359,7 @@
             <div class="footer__grid">
                 <div class="footer__brand">
                     <a href="#home" class="footer__logo">
-                        <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3VLEIzm8PmZO2AGRKghdjs8StQ7L69iefD5Fr" alt="Delston Roofing Logo" class="footer__logo-img">
+                        <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i" alt="Delston Roofing Logo" class="footer__logo-img">
                     </a>
                     <p class="footer__tagline">Your roof. Done right. First time.</p>
                     <p class="footer__description">Trusted roofing contractors serving Cardiff, Newport & Penarth. Honest quotes, quality work, no surprises.</p>
