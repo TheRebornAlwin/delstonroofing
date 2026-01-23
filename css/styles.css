@@ -1150,8 +1150,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .promise__list svg {
-    width: 22px;
-    height: 22px;
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
     color: #22c55e;
     flex-shrink: 0;
 }
@@ -1246,6 +1248,10 @@ h1, h2, h3, h4, h5, h6 {
 .why-us__icon {
     width: 60px;
     height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1253,11 +1259,15 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: var(--radius-full);
     margin: 0 auto var(--space-5);
     color: var(--white);
+    overflow: hidden;
 }
 
 .why-us__icon svg {
-    width: 28px;
-    height: 28px;
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    flex-shrink: 0;
 }
 
 .why-us__card h3 {
@@ -2041,8 +2051,10 @@ a.contact__detail:hover {
 }
 
 .contact__promise-item svg {
-    width: 24px;
-    height: 24px;
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
     color: var(--primary-500);
     flex-shrink: 0;
 }
