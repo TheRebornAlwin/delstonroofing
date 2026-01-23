@@ -1,0 +1,25 @@
+{
+  "name": "delstonroofing-main",
+  "version": "1.0.0",
+  "description": "A modern, high-converting single-page website for Delston Roofing, serving Cardiff, Newport, and Penarth.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRebornAlwin/delstonroofing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TheRebornAlwin/delstonroofing/issues"
+  },
+  "homepage": "https://github.com/TheRebornAlwin/delstonroofing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "playwright": "^1.57.0"
+  }
+}
