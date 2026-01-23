@@ -18,25 +18,39 @@
 
     <style>
         :root {
+            /* Primary Blues - matching main site */
             --primary-900: #0c1929;
             --primary-800: #1e3a5f;
+            --primary-700: #1e40af;
             --primary-600: #2563eb;
             --primary-500: #3b82f6;
-            --green-500: #22c55e;
-            --green-400: #4ade80;
+            --primary-400: #60a5fa;
+            --primary-300: #93c5fd;
+            --primary-200: #bfdbfe;
+            --primary-100: #dbeafe;
+
+            /* Accent */
+            --accent: #06b6d4;
+            --accent-light: #22d3ee;
+
+            /* Status colors */
             --red-500: #ef4444;
             --red-100: #fee2e2;
+            --green-500: #22c55e;
             --green-100: #dcfce7;
             --orange-500: #f97316;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
+
+            /* Neutrals */
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
             --white: #ffffff;
         }
 
@@ -64,15 +78,24 @@
            ============================================ */
         .form-hero {
             background: linear-gradient(180deg, var(--primary-900) 0%, var(--primary-800) 100%);
-            padding: 1.5rem 1rem 2rem;
+            padding: 2.5rem 1rem 2rem;
             text-align: center;
+        }
+
+        .badges-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
 
         .location-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--green-500);
+            background: var(--primary-500);
             color: var(--white);
             padding: 0.5rem 1rem;
             border-radius: 9999px;
@@ -80,7 +103,6 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1rem;
         }
 
         .location-badge svg {
@@ -89,7 +111,7 @@
         }
 
         .location-badge span {
-            color: var(--primary-900);
+            color: var(--primary-100);
         }
 
         .limited-badge {
@@ -104,7 +126,6 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
         }
 
         .limited-badge::before {
@@ -135,29 +156,33 @@
         .form-hero__title svg {
             width: 32px;
             height: 32px;
-            color: var(--green-400);
+            color: var(--primary-400);
         }
 
         .form-hero__subtitle {
-            color: var(--green-400);
-            font-size: 0.9rem;
+            color: var(--primary-300);
+            font-size: 0.95rem;
             font-weight: 500;
         }
 
         /* ============================================
            MULTI-STEP FORM
            ============================================ */
-        .form-container {
-            background: var(--white);
-            border-radius: 0 0 1.5rem 1.5rem;
-            padding: 1.5rem;
+        .form-wrapper {
             max-width: 600px;
             margin: 0 auto;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 0 1rem 2rem;
+        }
+
+        .form-container {
+            background: var(--white);
+            border-radius: 1.5rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
         }
 
         .progress-bar {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .progress-bar__track {
@@ -165,12 +190,12 @@
             background: var(--gray-200);
             border-radius: 9999px;
             overflow: hidden;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
         .progress-bar__fill {
             height: 100%;
-            background: var(--green-500);
+            background: linear-gradient(90deg, var(--primary-600) 0%, var(--primary-400) 100%);
             border-radius: 9999px;
             transition: width 0.3s ease;
         }
@@ -186,12 +211,12 @@
         }
 
         .progress-bar__step span {
-            color: var(--green-500);
+            color: var(--primary-500);
             font-weight: 600;
         }
 
         .progress-bar__percent {
-            color: var(--green-500);
+            color: var(--primary-500);
             font-weight: 600;
         }
 
@@ -212,9 +237,9 @@
         }
 
         .form-step__question span {
-            color: var(--green-500);
+            color: var(--primary-500);
             text-decoration: underline;
-            text-decoration-color: var(--green-400);
+            text-decoration-color: var(--primary-300);
             text-underline-offset: 4px;
         }
 
@@ -238,13 +263,13 @@
         }
 
         .option-item:hover {
-            background: var(--gray-100);
-            border-color: var(--gray-200);
+            background: var(--primary-50);
+            border-color: var(--primary-200);
         }
 
         .option-item.selected {
-            background: var(--green-100);
-            border-color: var(--green-500);
+            background: var(--primary-100);
+            border-color: var(--primary-500);
         }
 
         .option-item input {
@@ -264,8 +289,8 @@
         }
 
         .option-item.selected .option-item__radio {
-            border-color: var(--green-500);
-            background: var(--green-500);
+            border-color: var(--primary-500);
+            background: var(--primary-500);
         }
 
         .option-item.selected .option-item__radio::after {
@@ -298,7 +323,7 @@
 
         .form-input:focus {
             outline: none;
-            border-color: var(--green-500);
+            border-color: var(--primary-500);
             background: var(--white);
         }
 
@@ -329,7 +354,7 @@
             background: var(--gray-100);
             border: none;
             border-radius: 0.75rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--gray-600);
             cursor: pointer;
@@ -349,7 +374,7 @@
             background: var(--gray-300);
             border: none;
             border-radius: 0.75rem;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--gray-500);
             cursor: pointer;
@@ -363,12 +388,14 @@
         }
 
         .btn-continue.active {
-            background: var(--green-500);
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 100%);
             color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
         }
 
         .btn-continue.active:hover {
-            background: var(--green-400);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
         }
 
         /* Trust badges below form */
@@ -377,15 +404,14 @@
             justify-content: center;
             gap: 1.5rem;
             flex-wrap: wrap;
-            padding: 1rem;
-            margin-top: 1rem;
+            padding: 1.5rem 1rem 0;
         }
 
         .form-trust__item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--green-400);
+            color: var(--primary-400);
             font-size: 0.875rem;
             font-weight: 500;
         }
@@ -400,7 +426,7 @@
            ============================================ */
         .stats-section {
             background: var(--primary-900);
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .stats-grid {
@@ -412,8 +438,8 @@
         }
 
         .stat-box {
-            background: transparent;
-            border: 2px solid var(--green-500);
+            background: rgba(255,255,255,0.03);
+            border: 2px solid var(--primary-500);
             border-radius: 1rem;
             padding: 1.25rem 1rem;
             text-align: center;
@@ -422,14 +448,14 @@
         .stat-box__number {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--green-400);
+            color: var(--primary-400);
             line-height: 1.2;
         }
 
         .stat-box__label {
             font-size: 0.7rem;
             font-weight: 600;
-            color: var(--gray-300);
+            color: var(--gray-400);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-top: 0.25rem;
@@ -437,14 +463,14 @@
 
         .viewers-badge {
             background: var(--white);
-            border: 2px solid var(--green-500);
+            border: 2px solid var(--primary-500);
             border-radius: 0.75rem;
             padding: 1rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.75rem;
-            max-width: 500px;
+            max-width: 450px;
             margin: 0 auto;
         }
 
@@ -458,7 +484,7 @@
         }
 
         .viewers-badge span {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--gray-700);
         }
 
@@ -471,7 +497,7 @@
            ============================================ */
         .secret-section {
             background: var(--white);
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
         }
 
         .secret-section__title {
@@ -487,7 +513,7 @@
             text-align: center;
             max-width: 700px;
             margin: 0 auto 3rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.7;
         }
 
@@ -510,17 +536,23 @@
         }
 
         .comparison-card--good {
-            background: var(--green-100);
-            border: 2px solid #86efac;
+            background: var(--primary-100);
+            border: 2px solid var(--primary-300);
         }
 
         .comparison-card__title {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
+        }
+
+        .comparison-card__title svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
         }
 
         .comparison-card--bad .comparison-card__title {
@@ -528,7 +560,7 @@
         }
 
         .comparison-card--good .comparison-card__title {
-            color: var(--green-500);
+            color: var(--primary-600);
         }
 
         .comparison-card__list {
@@ -542,13 +574,14 @@
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--gray-700);
+            line-height: 1.5;
         }
 
         .comparison-card__item svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
             margin-top: 2px;
         }
@@ -558,7 +591,7 @@
         }
 
         .comparison-card--good .comparison-card__item svg {
-            color: var(--green-500);
+            color: var(--primary-500);
         }
 
         /* ============================================
@@ -566,12 +599,12 @@
            ============================================ */
         .cert-section {
             background: var(--primary-900);
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
         }
 
         .cert-card {
             background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
-            border: 2px solid var(--green-500);
+            border: 2px solid var(--primary-500);
             border-radius: 1.5rem;
             padding: 3rem 2rem;
             text-align: center;
@@ -611,8 +644,8 @@
            REVIEWS SECTION
            ============================================ */
         .reviews-section {
-            background: var(--white);
-            padding: 4rem 1rem;
+            background: var(--gray-50);
+            padding: 5rem 1rem;
         }
 
         .reviews-section__title {
@@ -626,7 +659,7 @@
         .reviews-section__subtitle {
             color: var(--gray-500);
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .reviews-header {
@@ -677,7 +710,7 @@
         .reviews-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 1.25rem;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -687,7 +720,7 @@
             border: 1px solid var(--gray-200);
             border-radius: 1rem;
             padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .review-card__header {
@@ -706,7 +739,7 @@
         .review-card__rating-number {
             font-size: 1rem;
             font-weight: 700;
-            color: var(--green-500);
+            color: var(--primary-500);
         }
 
         .review-card__stars {
@@ -723,7 +756,7 @@
 
         .review-card__date {
             color: var(--gray-400);
-            font-size: 0.875rem;
+            font-size: 0.85rem;
         }
 
         .review-card__text {
@@ -731,12 +764,6 @@
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 1rem;
-        }
-
-        .review-card__more {
-            color: var(--primary-500);
-            font-weight: 500;
-            cursor: pointer;
         }
 
         .review-card__footer {
@@ -756,14 +783,14 @@
         .review-card__avatar {
             width: 32px;
             height: 32px;
-            background: var(--gray-200);
+            background: var(--primary-100);
+            color: var(--primary-600);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.75rem;
             font-weight: 600;
-            color: var(--gray-600);
         }
 
         .review-card__name {
@@ -780,8 +807,8 @@
            CTA SECTION
            ============================================ */
         .cta-section {
-            background: var(--primary-900);
-            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
+            padding: 5rem 1rem;
             text-align: center;
         }
 
@@ -802,19 +829,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--green-500);
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-400) 100%);
             color: var(--white);
             padding: 1rem 2.5rem;
             border-radius: 9999px;
             font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
-            transition: all 0.15s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
         }
 
         .cta-button:hover {
-            background: var(--green-400);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
         }
 
         /* ============================================
@@ -834,6 +862,7 @@
         .simple-footer__link {
             color: var(--gray-400);
             text-decoration: none;
+            margin-left: 1rem;
         }
 
         .simple-footer__link:hover {
@@ -844,6 +873,10 @@
            RESPONSIVE
            ============================================ */
         @media (max-width: 768px) {
+            .form-hero {
+                padding: 2rem 1rem 1.5rem;
+            }
+
             .form-hero__title {
                 font-size: 1.4rem;
             }
@@ -857,8 +890,7 @@
             }
 
             .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.5rem;
+                gap: 0.75rem;
             }
 
             .stat-box {
@@ -866,7 +898,7 @@
             }
 
             .stat-box__number {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .stat-box__label {
@@ -877,7 +909,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .secret-section__title {
+            .secret-section__title,
+            .reviews-section__title,
+            .cta-section__title {
                 font-size: 1.5rem;
             }
 
@@ -898,9 +932,20 @@
             .reviews-header__stars {
                 justify-content: center;
             }
+
+            .secret-section,
+            .reviews-section,
+            .cta-section {
+                padding: 3rem 1rem;
+            }
         }
 
         @media (max-width: 480px) {
+            .badges-row {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
             .form-trust {
                 flex-direction: column;
                 align-items: center;
@@ -911,21 +956,27 @@
                 font-size: 0.875rem;
                 padding: 0.875rem 1rem;
             }
+
+            .comparison-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Form Hero Section -->
     <section class="form-hero">
-        <div class="location-badge">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            EXCLUSIVE TO <span>SOUTH WALES</span> AREA
-        </div>
+        <div class="badges-row">
+            <div class="location-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                EXCLUSIVE TO <span>CARDIFF</span> AREA
+            </div>
 
-        <div class="limited-badge">
-            LIMITED SPOTS AVAILABLE
+            <div class="limited-badge">
+                LIMITED SPOTS AVAILABLE
+            </div>
         </div>
 
         <h1 class="form-hero__title">
@@ -939,173 +990,175 @@
     </section>
 
     <!-- Multi-Step Form -->
-    <div class="form-container">
-        <div class="progress-bar">
-            <div class="progress-bar__track">
-                <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
+    <div class="form-wrapper">
+        <div class="form-container">
+            <div class="progress-bar">
+                <div class="progress-bar__track">
+                    <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
+                </div>
+                <div class="progress-bar__info">
+                    <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
+                    <span class="progress-bar__percent" id="progress-percent">17%</span>
+                </div>
             </div>
-            <div class="progress-bar__info">
-                <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
-                <span class="progress-bar__percent" id="progress-percent">17%</span>
-            </div>
+
+            <form id="estimate-form" action="https://formspree.io/f/xojjkbdd" method="POST">
+                <!-- Step 1: Home Type -->
+                <div class="form-step active" data-step="1">
+                    <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
+                    <div class="option-list">
+                        <label class="option-item">
+                            <input type="radio" name="home_type" value="Detached House" required>
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Detached House</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_type" value="Semi-Detached">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Semi-Detached</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_type" value="Terraced House">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Terraced House</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_type" value="Bungalow">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Bungalow</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_type" value="Commercial">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Commercial Property</span>
+                        </label>
+                    </div>
+                    <div class="form-buttons form-buttons--single">
+                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Home Size -->
+                <div class="form-step" data-step="2">
+                    <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
+                    <div class="option-list">
+                        <label class="option-item">
+                            <input type="radio" name="home_size" value="1-2 bedrooms" required>
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">1-2 bedrooms</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_size" value="3 bedrooms">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">3 bedrooms</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_size" value="4 bedrooms">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">4 bedrooms</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="home_size" value="5+ bedrooms">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">5+ bedrooms</span>
+                        </label>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Timeline -->
+                <div class="form-step" data-step="3">
+                    <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
+                    <div class="option-list">
+                        <label class="option-item">
+                            <input type="radio" name="timeline" value="ASAP - Emergency" required>
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">ASAP - Emergency</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="timeline" value="In the next 30 days">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">In the next 30 days</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="timeline" value="More than a month from now">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">More than a month from now</span>
+                        </label>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Payment -->
+                <div class="form-step" data-step="4">
+                    <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
+                    <div class="option-list">
+                        <label class="option-item">
+                            <input type="radio" name="payment" value="Cash or Bank Transfer" required>
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Cash or Bank Transfer</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="payment" value="Credit/Debit Card">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Credit/Debit Card</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="payment" value="Finance / Monthly payments">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Finance / Monthly payments</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="payment" value="Insurance claim">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Insurance claim</span>
+                        </label>
+                        <label class="option-item">
+                            <input type="radio" name="payment" value="Not sure yet">
+                            <span class="option-item__radio"></span>
+                            <span class="option-item__text">Not sure yet</span>
+                        </label>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Address -->
+                <div class="form-step" data-step="5">
+                    <h2 class="form-step__question">What's your <span>property address</span>?</h2>
+                    <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
+                    <div class="form-row">
+                        <input type="text" class="form-input" name="city" placeholder="City/Town" required>
+                        <input type="text" class="form-input" name="county" placeholder="County">
+                    </div>
+                    <input type="text" class="form-input" name="postcode" placeholder="Postcode" required style="text-transform: uppercase;">
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Contact Info -->
+                <div class="form-step" data-step="6">
+                    <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
+                    <input type="text" class="form-input" name="full_name" placeholder="Full Name" required>
+                    <input type="email" class="form-input" name="email" placeholder="Email Address" required>
+                    <input type="tel" class="form-input" name="phone" placeholder="Phone Number" required>
+                    <div class="form-buttons">
+                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                        <button type="submit" class="btn-continue active">GET MY ESTIMATE &rarr;</button>
+                    </div>
+                </div>
+            </form>
         </div>
-
-        <form id="estimate-form" action="https://formspree.io/f/xojjkbdd" method="POST">
-            <!-- Step 1: Home Type -->
-            <div class="form-step active" data-step="1">
-                <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
-                <div class="option-list">
-                    <label class="option-item">
-                        <input type="radio" name="home_type" value="Detached House" required>
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Detached House</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_type" value="Semi-Detached">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Semi-Detached</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_type" value="Terraced House">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Terraced House</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_type" value="Bungalow">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Bungalow</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_type" value="Commercial">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Commercial Property</span>
-                    </label>
-                </div>
-                <div class="form-buttons form-buttons--single">
-                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Step 2: Home Size -->
-            <div class="form-step" data-step="2">
-                <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
-                <div class="option-list">
-                    <label class="option-item">
-                        <input type="radio" name="home_size" value="1-2 bedrooms" required>
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">1-2 bedrooms</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_size" value="3 bedrooms">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">3 bedrooms</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_size" value="4 bedrooms">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">4 bedrooms</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="home_size" value="5+ bedrooms">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">5+ bedrooms</span>
-                    </label>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Step 3: Timeline -->
-            <div class="form-step" data-step="3">
-                <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
-                <div class="option-list">
-                    <label class="option-item">
-                        <input type="radio" name="timeline" value="ASAP - Emergency" required>
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">ASAP - Emergency</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="timeline" value="In the next 30 days">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">In the next 30 days</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="timeline" value="More than a month from now">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">More than a month from now</span>
-                    </label>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Step 4: Payment -->
-            <div class="form-step" data-step="4">
-                <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
-                <div class="option-list">
-                    <label class="option-item">
-                        <input type="radio" name="payment" value="Cash or Bank Transfer" required>
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Cash or Bank Transfer</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="payment" value="Credit/Debit Card">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Credit/Debit Card</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="payment" value="Finance / Monthly payments">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Finance / Monthly payments</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="payment" value="Insurance claim">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Insurance claim</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="payment" value="Not sure yet">
-                        <span class="option-item__radio"></span>
-                        <span class="option-item__text">Not sure yet</span>
-                    </label>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Step 5: Address -->
-            <div class="form-step" data-step="5">
-                <h2 class="form-step__question">What's your <span>property address</span>?</h2>
-                <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
-                <div class="form-row">
-                    <input type="text" class="form-input" name="city" placeholder="City/Town" required>
-                    <input type="text" class="form-input" name="county" placeholder="County">
-                </div>
-                <input type="text" class="form-input" name="postcode" placeholder="Postcode" required style="text-transform: uppercase;">
-                <div class="form-buttons">
-                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                </div>
-            </div>
-
-            <!-- Step 6: Contact Info -->
-            <div class="form-step" data-step="6">
-                <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
-                <input type="text" class="form-input" name="full_name" placeholder="Full Name" required>
-                <input type="email" class="form-input" name="email" placeholder="Email Address" required>
-                <input type="tel" class="form-input" name="phone" placeholder="Phone Number" required>
-                <div class="form-buttons">
-                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                    <button type="submit" class="btn-continue active">GET MY ESTIMATE &rarr;</button>
-                </div>
-            </div>
-        </form>
 
         <div class="form-trust">
             <span class="form-trust__item">
@@ -1141,7 +1194,7 @@
                 </div>
             </div>
             <div class="viewers-badge">
-                <span><strong id="viewer-count">7</strong> South Wales homeowners viewing this offer right now</span>
+                <span><strong id="viewer-count">7</strong> Cardiff homeowners viewing this offer right now</span>
             </div>
         </div>
     </section>
@@ -1258,7 +1311,7 @@
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <h2 class="reviews-section__title">What South Wales Homeowners Say</h2>
+            <h2 class="reviews-section__title">What Cardiff Homeowners Say</h2>
             <p class="reviews-section__subtitle">Real reviews from real customers</p>
 
             <div class="reviews-header">
@@ -1534,13 +1587,13 @@
                     // Redirect to thank you or show success
                     document.querySelector('.form-container').innerHTML = `
                         <div style="text-align: center; padding: 3rem 1rem;">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="margin-bottom: 1rem;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" style="margin-bottom: 1rem;">
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                                 <polyline points="22 4 12 14.01 9 11.01"/>
                             </svg>
                             <h2 style="font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">Thank You!</h2>
                             <p style="color: #6b7280;">We've received your request. David will call you within 24 hours to discuss your roof.</p>
-                            <a href="/" style="display: inline-block; margin-top: 1.5rem; color: #2563eb; font-weight: 600;">← Back to main site</a>
+                            <a href="/" style="display: inline-block; margin-top: 1.5rem; color: #2563eb; font-weight: 600;">&larr; Back to main site</a>
                         </div>
                     `;
                 } else {
