@@ -114,14 +114,6 @@
                     </div>
                 </div>
             </div>
-            <div class="hero__scroll">
-                <a href="#services" class="hero__scroll-link" aria-label="Scroll down">
-                    <span class="hero__scroll-text">Scroll</span>
-                    <div class="hero__scroll-indicator">
-                        <span class="hero__scroll-dot"></span>
-                    </div>
-                </a>
-            </div>
         </section>
 
         <!-- Services Section -->
@@ -134,7 +126,7 @@
                 </div>
 
                 <div class="services__grid">
-                    <article class="service-card glass reveal">
+                    <article class="service-card reveal">
                         <div class="service-card__icon">
                             <!-- Full Roof Replacement - Detailed house with roof layers -->
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -195,7 +187,7 @@
                         </a>
                     </article>
 
-                    <article class="service-card glass reveal reveal--delay-1">
+                    <article class="service-card reveal reveal--delay-1">
                         <div class="service-card__icon">
                             <!-- Roof Repairs - Detailed tools and roof tile -->
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -240,7 +232,7 @@
                         </a>
                     </article>
 
-                    <article class="service-card glass reveal reveal--delay-2">
+                    <article class="service-card reveal reveal--delay-2">
                         <div class="service-card__icon">
                             <!-- Flat Roofing - Modern building with flat roof detail -->
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -303,53 +295,24 @@
                         </a>
                     </article>
 
-                    <article class="service-card glass reveal reveal--delay-3">
+                    <article class="service-card reveal reveal--delay-3">
                         <div class="service-card__icon">
-                            <!-- Guttering & Fascias - Detailed gutter system -->
+                            <!-- Guttering & Fascias - Clean simple icon -->
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="gutterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="#60a5fa"/>
-                                        <stop offset="100%" stop-color="#3b82f6"/>
-                                    </linearGradient>
-                                </defs>
-                                <!-- Roof edge -->
-                                <path d="M5 20 L40 5 L75 20" stroke="#1e40af" stroke-width="3" fill="none"/>
-                                <path d="M5 20 L40 5 L75 20 L75 25 L5 25 Z" fill="#1e40af" opacity="0.3"/>
-                                <!-- Fascia board -->
-                                <rect x="5" y="25" width="70" height="6" fill="url(#gutterGrad)"/>
-                                <path d="M5 25 L75 25 L75 31 L5 31 Z" stroke="#3b82f6" stroke-width="1" fill="none"/>
-                                <!-- Wood grain texture on fascia -->
-                                <path d="M10 27 Q20 28 30 27 Q40 26 50 27 Q60 28 70 27" stroke="#1e40af" stroke-width="0.5" opacity="0.5"/>
-                                <!-- Soffit -->
-                                <path d="M5 31 L5 36 L75 36 L75 31" fill="#0c1929" opacity="0.3"/>
-                                <path d="M15 33 L15 35 M25 33 L25 35 M35 33 L35 35 M45 33 L45 35 M55 33 L55 35 M65 33 L65 35" stroke="#60a5fa" stroke-width="1" opacity="0.4"/>
-                                <!-- Gutter channel -->
-                                <path d="M3 31 Q3 38 8 38 L72 38 Q77 38 77 31" fill="url(#gutterGrad)"/>
-                                <path d="M3 31 Q3 38 8 38 L72 38 Q77 38 77 31" stroke="#1e40af" stroke-width="1.5" fill="none"/>
-                                <!-- Gutter brackets -->
-                                <path d="M15 31 L15 38" stroke="#1e40af" stroke-width="2"/>
-                                <path d="M40 31 L40 38" stroke="#1e40af" stroke-width="2"/>
-                                <path d="M65 31 L65 38" stroke="#1e40af" stroke-width="2"/>
+                                <!-- House outline -->
+                                <path d="M15 35 L40 15 L65 35" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                                <path d="M20 33 L20 55 L60 55 L60 33" stroke="#3b82f6" stroke-width="2.5" fill="none"/>
+                                <!-- Gutter along roofline -->
+                                <path d="M12 37 L40 18 L68 37" stroke="#1e40af" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                                 <!-- Downpipe -->
-                                <rect x="68" y="38" width="6" height="35" rx="1" fill="url(#gutterGrad)"/>
-                                <rect x="68" y="38" width="6" height="35" rx="1" stroke="#1e40af" stroke-width="1" fill="none"/>
-                                <!-- Downpipe joints -->
-                                <rect x="67" y="48" width="8" height="3" rx="0.5" fill="#3b82f6"/>
-                                <rect x="67" y="60" width="8" height="3" rx="0.5" fill="#3b82f6"/>
-                                <!-- Water in gutter -->
-                                <ellipse cx="40" cy="36" rx="25" ry="2" fill="#60a5fa" opacity="0.4"/>
-                                <!-- Water flowing -->
-                                <path d="M71 45 Q73 50 71 55 Q69 60 71 65" stroke="#60a5fa" stroke-width="1.5" opacity="0.6" fill="none"/>
-                                <!-- Raindrops -->
-                                <path d="M20 12 L20 18" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
-                                <path d="M35 8 L35 14" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
-                                <path d="M50 10 L50 16" stroke="#60a5fa" stroke-width="1.5" opacity="0.5"/>
-                                <path d="M60 14 L60 19" stroke="#60a5fa" stroke-width="1.5" opacity="0.4"/>
-                                <!-- Splash at bottom -->
-                                <circle cx="71" cy="75" r="3" fill="#60a5fa" opacity="0.3"/>
-                                <path d="M66 74 Q68 70 71 75" stroke="#60a5fa" stroke-width="1" opacity="0.4" fill="none"/>
-                                <path d="M76 74 Q74 70 71 75" stroke="#60a5fa" stroke-width="1" opacity="0.4" fill="none"/>
+                                <rect x="62" y="37" width="5" height="28" rx="1" fill="#3b82f6"/>
+                                <rect x="61" y="45" width="7" height="3" rx="1" fill="#1e40af"/>
+                                <rect x="61" y="55" width="7" height="3" rx="1" fill="#1e40af"/>
+                                <!-- Water drops -->
+                                <circle cx="64" cy="70" r="2" fill="#60a5fa"/>
+                                <circle cx="64" cy="75" r="1.5" fill="#60a5fa" opacity="0.6"/>
+                                <!-- Window -->
+                                <rect x="35" y="40" width="10" height="10" rx="1" fill="#60a5fa" opacity="0.3" stroke="#3b82f6" stroke-width="1.5"/>
                             </svg>
                         </div>
                         <h3 class="service-card__title">Guttering & Fascias</h3>
@@ -362,7 +325,7 @@
                         </a>
                     </article>
 
-                    <article class="service-card glass reveal reveal--delay-4">
+                    <article class="service-card reveal reveal--delay-4">
                         <div class="service-card__icon service-card__icon--urgent">
                             <!-- Emergency Repairs - House with storm and alert -->
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -422,7 +385,7 @@
                         </a>
                     </article>
 
-                    <article class="service-card glass reveal reveal--delay-5">
+                    <article class="service-card reveal reveal--delay-5">
                         <div class="service-card__icon service-card__icon--free">
                             <!-- Free Inspections - Clipboard with magnifying glass -->
                             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -478,6 +441,24 @@
                             </svg>
                         </a>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Highlight -->
+        <section class="testimonial-highlight">
+            <div class="container">
+                <div class="testimonial-highlight__content">
+                    <div class="testimonial-highlight__quote">
+                        <svg class="testimonial-highlight__icon" viewBox="0 0 24 24" fill="currentColor" opacity="0.3">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                        </svg>
+                        <blockquote>"They quoted £4,200. I paid £4,200. No 'oh we found this, that'll be extra.' Finally, a roofer you can trust."</blockquote>
+                        <cite>— James P., Newport</cite>
+                    </div>
+                    <div class="testimonial-highlight__image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Completed roof project">
+                    </div>
                 </div>
             </div>
         </section>
@@ -873,6 +854,29 @@
             </div>
         </section>
 
+        <!-- Quick Testimonial Strip -->
+        <section class="testimonial-strip">
+            <div class="container">
+                <div class="testimonial-strip__content">
+                    <div class="testimonial-strip__item">
+                        <div class="testimonial-strip__stars">★★★★★</div>
+                        <p>"Honest from the start. No hidden fees."</p>
+                        <span>— Sarah W., Penarth</span>
+                    </div>
+                    <div class="testimonial-strip__item">
+                        <div class="testimonial-strip__stars">★★★★★</div>
+                        <p>"Fixed a leak two others couldn't find."</p>
+                        <span>— Rachel D., Cardiff</span>
+                    </div>
+                    <div class="testimonial-strip__item">
+                        <div class="testimonial-strip__stars">★★★★★</div>
+                        <p>"Turned up 8am sharp every single day."</p>
+                        <span>— Tom H., Penarth</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Work Gallery Section -->
         <section class="gallery" id="gallery">
             <div class="container">
@@ -892,6 +896,13 @@
                     <div class="gallery__item">
                         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="New roof installation">
                     </div>
+                    <div class="gallery__item gallery__item--testimonial">
+                        <div class="gallery__testimonial">
+                            <div class="gallery__testimonial-stars">★★★★★</div>
+                            <p>"Whole roof done in under a week. Turned up 8am sharp every day!"</p>
+                            <span>— Tom H., Penarth</span>
+                        </div>
+                    </div>
                     <div class="gallery__item">
                         <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Roof repair work">
                     </div>
@@ -907,7 +918,7 @@
                 </div>
 
                 <div class="gallery__cta reveal">
-                    <p style="color: var(--gray-500); margin-bottom: var(--space-4);">These are placeholder images. Replace with your actual project photos!</p>
+                    <p class="gallery__note">Placeholder images - replace with your actual project photos!</p>
                     <a href="#contact" class="btn btn--primary">
                         Get Your Free Quote
                         <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -920,26 +931,15 @@
 
         <!-- Reviews Section -->
         <section class="reviews" id="reviews">
-            <!-- Floating testimonial decorations -->
-            <div class="reviews__decoration">
-                <svg class="quote-decoration quote-decoration--left" viewBox="0 0 100 100" fill="none">
-                    <path d="M30 50 C30 30 45 20 45 20 L42 25 C42 25 35 32 35 45 C35 55 42 60 42 60 L30 60 C30 60 30 55 30 50" fill="currentColor" opacity="0.1"/>
-                    <path d="M55 50 C55 30 70 20 70 20 L67 25 C67 25 60 32 60 45 C60 55 67 60 67 60 L55 60 C55 60 55 55 55 50" fill="currentColor" opacity="0.1"/>
-                </svg>
-                <svg class="quote-decoration quote-decoration--right" viewBox="0 0 100 100" fill="none">
-                    <path d="M70 50 C70 70 55 80 55 80 L58 75 C58 75 65 68 65 55 C65 45 58 40 58 40 L70 40 C70 40 70 45 70 50" fill="currentColor" opacity="0.1"/>
-                    <path d="M45 50 C45 70 30 80 30 80 L33 75 C33 75 40 68 40 55 C40 45 33 40 33 40 L45 40 C45 40 45 45 45 50" fill="currentColor" opacity="0.1"/>
-                </svg>
-            </div>
             <div class="container">
                 <div class="section-header">
-                    <span class="section-label reveal">What People Say</span>
-                    <h2 class="section-title reveal reveal--delay-1">Customer Reviews</h2>
-                    <p class="section-subtitle reveal reveal--delay-2">Don't just take our word for it</p>
+                    <span class="section-label reveal">Real Reviews</span>
+                    <h2 class="section-title reveal reveal--delay-1">What Our Customers Say</h2>
+                    <p class="section-subtitle reveal reveal--delay-2">Hear from homeowners across South Wales</p>
                 </div>
 
                 <div class="reviews__stats reveal">
-                    <div class="reviews__stat glass">
+                    <div class="reviews__stat">
                         <div class="reviews__stat-stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -948,20 +948,20 @@
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                         </div>
                         <span class="reviews__stat-rating">5.0</span>
-                        <span class="reviews__stat-label">Average Rating</span>
+                        <span class="reviews__stat-label">Google Rating</span>
                     </div>
-                    <div class="reviews__stat glass">
+                    <div class="reviews__stat">
                         <span class="reviews__stat-number">100+</span>
-                        <span class="reviews__stat-label">Happy Customers</span>
+                        <span class="reviews__stat-label">Roofs Completed</span>
                     </div>
-                    <div class="reviews__stat glass">
-                        <span class="reviews__stat-number">100%</span>
-                        <span class="reviews__stat-label">Would Recommend</span>
+                    <div class="reviews__stat">
+                        <span class="reviews__stat-number">15+</span>
+                        <span class="reviews__stat-label">Years Experience</span>
                     </div>
                 </div>
 
                 <div class="reviews__grid">
-                    <article class="review-card glass reveal">
+                    <article class="review-card reveal">
                         <div class="review-card__stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -981,7 +981,7 @@
                         </div>
                     </article>
 
-                    <article class="review-card glass reveal reveal--delay-1">
+                    <article class="review-card reveal reveal--delay-1">
                         <div class="review-card__stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -1001,7 +1001,7 @@
                         </div>
                     </article>
 
-                    <article class="review-card glass reveal reveal--delay-2">
+                    <article class="review-card reveal reveal--delay-2">
                         <div class="review-card__stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -1021,7 +1021,7 @@
                         </div>
                     </article>
 
-                    <article class="review-card glass reveal reveal--delay-3">
+                    <article class="review-card reveal reveal--delay-3">
                         <div class="review-card__stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -1041,7 +1041,7 @@
                         </div>
                     </article>
 
-                    <article class="review-card glass reveal reveal--delay-4">
+                    <article class="review-card reveal reveal--delay-4">
                         <div class="review-card__stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -1061,7 +1061,7 @@
                         </div>
                     </article>
 
-                    <article class="review-card glass reveal reveal--delay-5">
+                    <article class="review-card reveal reveal--delay-5">
                         <div class="review-card__stars">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
