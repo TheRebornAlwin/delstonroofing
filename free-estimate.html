@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get your free roofing estimate in 60 seconds. Family-owned Delston Roofing serves Cardiff, Newport & Penarth with honest quotes and no obligation.">
+    <meta name="robots" content="index, follow">
+
+    <title>Free Estimate | Delston Roofing - Cardiff, Newport & Penarth</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-900: #0c1929;
+            --primary-800: #1e3a5f;
+            --primary-600: #2563eb;
+            --primary-500: #3b82f6;
+            --green-500: #22c55e;
+            --green-400: #4ade80;
+            --red-500: #ef4444;
+            --red-100: #fee2e2;
+            --green-100: #dcfce7;
+            --orange-500: #f97316;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-900);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* ============================================
+           FORM HERO SECTION
+           ============================================ */
+        .form-hero {
+            background: linear-gradient(180deg, var(--primary-900) 0%, var(--primary-800) 100%);
+            padding: 1.5rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--green-500);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .location-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .location-badge span {
+            color: var(--primary-900);
+        }
+
+        .limited-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .limited-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--orange-500);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .form-hero__title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .form-hero__title svg {
+            width: 32px;
+            height: 32px;
+            color: var(--green-400);
+        }
+
+        .form-hero__subtitle {
+            color: var(--green-400);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           MULTI-STEP FORM
+           ============================================ */
+        .form-container {
+            background: var(--white);
+            border-radius: 0 0 1.5rem 1.5rem;
+            padding: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .progress-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-bar__track {
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar__fill {
+            height: 100%;
+            background: var(--green-500);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-bar__info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+        }
+
+        .progress-bar__step {
+            color: var(--gray-500);
+        }
+
+        .progress-bar__step span {
+            color: var(--green-500);
+            font-weight: 600;
+        }
+
+        .progress-bar__percent {
+            color: var(--green-500);
+            font-weight: 600;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-step__question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-step__question span {
+            color: var(--green-500);
+            text-decoration: underline;
+            text-decoration-color: var(--green-400);
+            text-underline-offset: 4px;
+        }
+
+        .option-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--gray-50);
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .option-item:hover {
+            background: var(--gray-100);
+            border-color: var(--gray-200);
+        }
+
+        .option-item.selected {
+            background: var(--green-100);
+            border-color: var(--green-500);
+        }
+
+        .option-item input {
+            display: none;
+        }
+
+        .option-item__radio {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray-300);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.15s ease;
+        }
+
+        .option-item.selected .option-item__radio {
+            border-color: var(--green-500);
+            background: var(--green-500);
+        }
+
+        .option-item.selected .option-item__radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .option-item__text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        /* Input Fields */
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: var(--gray-50);
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--gray-800);
+            transition: all 0.15s ease;
+            margin-bottom: 0.75rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--green-500);
+            background: var(--white);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        /* Buttons */
+        .form-buttons {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .form-buttons--single {
+            grid-template-columns: 1fr;
+        }
+
+        .btn-back {
+            padding: 1rem 1.5rem;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-back:hover {
+            background: var(--gray-200);
+        }
+
+        .btn-continue {
+            padding: 1rem 1.5rem;
+            background: var(--gray-300);
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-continue.active {
+            background: var(--green-500);
+            color: var(--white);
+        }
+
+        .btn-continue.active:hover {
+            background: var(--green-400);
+        }
+
+        /* Trust badges below form */
+        .form-trust {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .form-trust__item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--green-400);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .form-trust__item svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ============================================
+           STATS SECTION
+           ============================================ */
+        .stats-section {
+            background: var(--primary-900);
+            padding: 2rem 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .stat-box {
+            background: transparent;
+            border: 2px solid var(--green-500);
+            border-radius: 1rem;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+
+        .stat-box__number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--green-400);
+            line-height: 1.2;
+        }
+
+        .stat-box__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gray-300);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .viewers-badge {
+            background: var(--white);
+            border: 2px solid var(--green-500);
+            border-radius: 0.75rem;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .viewers-badge::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: var(--green-500);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .viewers-badge span {
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .viewers-badge strong {
+            color: var(--gray-900);
+        }
+
+        /* ============================================
+           DIRTY SECRET SECTION
+           ============================================ */
+        .secret-section {
+            background: var(--white);
+            padding: 4rem 1rem;
+        }
+
+        .secret-section__title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .secret-section__subtitle {
+            color: var(--gray-600);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-card {
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .comparison-card--bad {
+            background: var(--red-100);
+            border: 2px solid #fca5a5;
+        }
+
+        .comparison-card--good {
+            background: var(--green-100);
+            border: 2px solid #86efac;
+        }
+
+        .comparison-card__title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-card--bad .comparison-card__title {
+            color: var(--red-500);
+        }
+
+        .comparison-card--good .comparison-card__title {
+            color: var(--green-500);
+        }
+
+        .comparison-card__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .comparison-card__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .comparison-card__item svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .comparison-card--bad .comparison-card__item svg {
+            color: var(--red-500);
+        }
+
+        .comparison-card--good .comparison-card__item svg {
+            color: var(--green-500);
+        }
+
+        /* ============================================
+           CERTIFICATION SECTION
+           ============================================ */
+        .cert-section {
+            background: var(--primary-900);
+            padding: 3rem 1rem;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
+            border: 2px solid var(--green-500);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cert-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 100%);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-card__title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cert-card__text {
+            color: var(--gray-300);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           REVIEWS SECTION
+           ============================================ */
+        .reviews-section {
+            background: var(--white);
+            padding: 4rem 1rem;
+        }
+
+        .reviews-section__title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviews-section__subtitle {
+            color: var(--gray-500);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .reviews-header__left {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .reviews-header__right {
+            text-align: right;
+        }
+
+        .reviews-header__rating {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        .reviews-header__stars {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            justify-content: flex-end;
+        }
+
+        .reviews-header__stars svg {
+            width: 18px;
+            height: 18px;
+            color: #fbbf24;
+            fill: #fbbf24;
+        }
+
+        .reviews-header__count {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            margin-left: 0.5rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .review-card__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .review-card__rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .review-card__rating-number {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--green-500);
+        }
+
+        .review-card__stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .review-card__stars svg {
+            width: 16px;
+            height: 16px;
+            color: #fbbf24;
+            fill: #fbbf24;
+        }
+
+        .review-card__date {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        .review-card__text {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .review-card__more {
+            color: var(--primary-500);
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .review-card__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        .review-card__author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .review-card__avatar {
+            width: 32px;
+            height: 32px;
+            background: var(--gray-200);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-600);
+        }
+
+        .review-card__name {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .review-card__google {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            background: var(--primary-900);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .cta-section__title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section__text {
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--green-500);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--green-400);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .simple-footer {
+            background: var(--gray-900);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .simple-footer__text {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .simple-footer__link {
+            color: var(--gray-400);
+            text-decoration: none;
+        }
+
+        .simple-footer__link:hover {
+            color: var(--white);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .form-hero__title {
+                font-size: 1.4rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+
+            .stat-box {
+                padding: 1rem 0.5rem;
+            }
+
+            .stat-box__number {
+                font-size: 1.1rem;
+            }
+
+            .stat-box__label {
+                font-size: 0.6rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .secret-section__title {
+                font-size: 1.5rem;
+            }
+
+            .cert-card__title {
+                font-size: 1.4rem;
+            }
+
+            .reviews-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .reviews-header__right {
+                text-align: center;
+            }
+
+            .reviews-header__stars {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-trust {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .viewers-badge {
+                font-size: 0.875rem;
+                padding: 0.875rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Form Hero Section -->
+    <section class="form-hero">
+        <div class="location-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            EXCLUSIVE TO <span>SOUTH WALES</span> AREA
+        </div>
+
+        <div class="limited-badge">
+            LIMITED SPOTS AVAILABLE
+        </div>
+
+        <h1 class="form-hero__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Get Your 60-Second Estimate
+        </h1>
+        <p class="form-hero__subtitle">Free quote &bull; No obligation &bull; Family pricing available</p>
+    </section>
+
+    <!-- Multi-Step Form -->
+    <div class="form-container">
+        <div class="progress-bar">
+            <div class="progress-bar__track">
+                <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
+            </div>
+            <div class="progress-bar__info">
+                <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
+                <span class="progress-bar__percent" id="progress-percent">17%</span>
+            </div>
+        </div>
+
+        <form id="estimate-form" action="https://formspree.io/f/xojjkbdd" method="POST">
+            <!-- Step 1: Home Type -->
+            <div class="form-step active" data-step="1">
+                <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
+                <div class="option-list">
+                    <label class="option-item">
+                        <input type="radio" name="home_type" value="Detached House" required>
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Detached House</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_type" value="Semi-Detached">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Semi-Detached</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_type" value="Terraced House">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Terraced House</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_type" value="Bungalow">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Bungalow</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_type" value="Commercial">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Commercial Property</span>
+                    </label>
+                </div>
+                <div class="form-buttons form-buttons--single">
+                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Home Size -->
+            <div class="form-step" data-step="2">
+                <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
+                <div class="option-list">
+                    <label class="option-item">
+                        <input type="radio" name="home_size" value="1-2 bedrooms" required>
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">1-2 bedrooms</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_size" value="3 bedrooms">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">3 bedrooms</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_size" value="4 bedrooms">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">4 bedrooms</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="home_size" value="5+ bedrooms">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">5+ bedrooms</span>
+                    </label>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Timeline -->
+            <div class="form-step" data-step="3">
+                <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
+                <div class="option-list">
+                    <label class="option-item">
+                        <input type="radio" name="timeline" value="ASAP - Emergency" required>
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">ASAP - Emergency</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="timeline" value="In the next 30 days">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">In the next 30 days</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="timeline" value="More than a month from now">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">More than a month from now</span>
+                    </label>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Payment -->
+            <div class="form-step" data-step="4">
+                <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
+                <div class="option-list">
+                    <label class="option-item">
+                        <input type="radio" name="payment" value="Cash or Bank Transfer" required>
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Cash or Bank Transfer</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="payment" value="Credit/Debit Card">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Credit/Debit Card</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="payment" value="Finance / Monthly payments">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Finance / Monthly payments</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="payment" value="Insurance claim">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Insurance claim</span>
+                    </label>
+                    <label class="option-item">
+                        <input type="radio" name="payment" value="Not sure yet">
+                        <span class="option-item__radio"></span>
+                        <span class="option-item__text">Not sure yet</span>
+                    </label>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Address -->
+            <div class="form-step" data-step="5">
+                <h2 class="form-step__question">What's your <span>property address</span>?</h2>
+                <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
+                <div class="form-row">
+                    <input type="text" class="form-input" name="city" placeholder="City/Town" required>
+                    <input type="text" class="form-input" name="county" placeholder="County">
+                </div>
+                <input type="text" class="form-input" name="postcode" placeholder="Postcode" required style="text-transform: uppercase;">
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Step 6: Contact Info -->
+            <div class="form-step" data-step="6">
+                <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
+                <input type="text" class="form-input" name="full_name" placeholder="Full Name" required>
+                <input type="email" class="form-input" name="email" placeholder="Email Address" required>
+                <input type="tel" class="form-input" name="phone" placeholder="Phone Number" required>
+                <div class="form-buttons">
+                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                    <button type="submit" class="btn-continue active">GET MY ESTIMATE &rarr;</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="form-trust">
+            <span class="form-trust__item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Family-Owned
+            </span>
+            <span class="form-trust__item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                5-Year Guarantee
+            </span>
+            <span class="form-trust__item">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Zero Obligation
+            </span>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-box__number">35+</div>
+                    <div class="stat-box__label">Years Experience</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box__number">500+</div>
+                    <div class="stat-box__label">Roofs Completed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box__number">5 Yr</div>
+                    <div class="stat-box__label">Guarantee</div>
+                </div>
+            </div>
+            <div class="viewers-badge">
+                <span><strong id="viewer-count">7</strong> South Wales homeowners viewing this offer right now</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dirty Little Secret Section -->
+    <section class="secret-section">
+        <div class="container">
+            <h2 class="secret-section__title">The Roofing Industry's Dirty Little Secret</h2>
+            <p class="secret-section__subtitle">Most roofing companies pad their prices with hidden markups and fees. When you call for an estimate, you're often talking to a sales rep&mdash;not the people who actually do the work. At Delston Roofing, we do things differently.</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card comparison-card--bad">
+                    <h3 class="comparison-card__title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        What Other Roofers Do
+                    </h3>
+                    <ul class="comparison-card__list">
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Inflated prices with hidden markups
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            High-pressure sales tactics
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Subcontractors who disappear after the job
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Low-quality materials to cut corners
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                            Warranty that's only as good as the company
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card comparison-card--good">
+                    <h3 class="comparison-card__title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        The Delston Difference
+                    </h3>
+                    <ul class="comparison-card__list">
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Family pricing&mdash;our best rate, guaranteed
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Zero pressure, honest assessments
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            David &amp; his sons on every job&mdash;no strangers
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Premium materials we stand behind
+                        </li>
+                        <li class="comparison-card__item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            5-year guarantee&mdash;we'll still be here
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="cert-section">
+        <div class="container">
+            <div class="cert-card">
+                <span class="cert-badge">35+ YEARS FAMILY EXPERIENCE</span>
+                <h2 class="cert-card__title">Three Generations of Roofing Excellence</h2>
+                <p class="cert-card__text">David started Delston Roofing over 35 years ago and now works alongside his two sons. When you choose us, you're not getting a faceless corporation&mdash;you're getting a family who takes pride in every single roof. We're fully insured, and our 5-year guarantee means we'll be here long after the job is done.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="reviews-section__title">What South Wales Homeowners Say</h2>
+            <p class="reviews-section__subtitle">Real reviews from real customers</p>
+
+            <div class="reviews-header">
+                <span class="reviews-header__left">What our clients say about us</span>
+                <div class="reviews-header__right">
+                    <div class="reviews-header__rating">5.00</div>
+                    <div class="reviews-header__stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <span class="reviews-header__count">| 47 reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__rating">
+                            <span class="review-card__rating-number">5</span>
+                            <div class="review-card__stars">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                        </div>
+                        <span class="review-card__date">Dec 15, 2025</span>
+                    </div>
+                    <p class="review-card__text">David was on-site every single day, which is rare these days. The whole team was professional and kept us informed throughout. The roof looks fantastic and they cleaned up everything perfectly.</p>
+                    <div class="review-card__footer">
+                        <div class="review-card__author">
+                            <span class="review-card__avatar">SW</span>
+                            <span class="review-card__name">Sarah W.</span>
+                        </div>
+                        <svg class="review-card__google" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__rating">
+                            <span class="review-card__rating-number">5</span>
+                            <div class="review-card__stars">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                        </div>
+                        <span class="review-card__date">Nov 28, 2025</span>
+                    </div>
+                    <p class="review-card__text">Quote was fixed and that's exactly what we paid. No surprises, no extra charges. It's refreshing to work with honest tradespeople. Highly recommend Delston to anyone in Cardiff.</p>
+                    <div class="review-card__footer">
+                        <div class="review-card__author">
+                            <span class="review-card__avatar">RD</span>
+                            <span class="review-card__name">Rachel D.</span>
+                        </div>
+                        <svg class="review-card__google" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__rating">
+                            <span class="review-card__rating-number">5</span>
+                            <div class="review-card__stars">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                        </div>
+                        <span class="review-card__date">Nov 10, 2025</span>
+                    </div>
+                    <p class="review-card__text">Still answers my texts 2 years later. That's a true guarantee. Had a small issue after a storm and David came out the next day to check it. Can't ask for better service than that.</p>
+                    <div class="review-card__footer">
+                        <div class="review-card__author">
+                            <span class="review-card__avatar">TH</span>
+                            <span class="review-card__name">Tom H.</span>
+                        </div>
+                        <svg class="review-card__google" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__rating">
+                            <span class="review-card__rating-number">5</span>
+                            <div class="review-card__stars">
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                        </div>
+                        <span class="review-card__date">Oct 22, 2025</span>
+                    </div>
+                    <p class="review-card__text">Lovely family business. You can tell they genuinely care about doing a good job. David explained everything clearly and his sons were polite and hardworking. Our neighbours have already asked for their number!</p>
+                    <div class="review-card__footer">
+                        <div class="review-card__author">
+                            <span class="review-card__avatar">MJ</span>
+                            <span class="review-card__name">Margaret J.</span>
+                        </div>
+                        <svg class="review-card__google" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-section__title">Ready to Get Your Free Estimate?</h2>
+            <p class="cta-section__text">No obligation. No pressure. Just honest pricing from a family who cares.</p>
+            <a href="#" class="cta-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                Get My Free Estimate
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="simple-footer">
+        <p class="simple-footer__text">
+            &copy; 2026 Delston Roofing. Serving Cardiff, Newport & Penarth.
+            <a href="/" class="simple-footer__link">Back to main site</a>
+        </p>
+    </footer>
+
+    <script>
+        // Multi-step form logic
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        function updateProgress() {
+            const percent = Math.round((currentStep / totalSteps) * 100);
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('current-step').textContent = currentStep;
+            document.getElementById('progress-percent').textContent = percent + '%';
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector(`[data-step="${step}"]`).classList.add('active');
+            updateProgress();
+            updateContinueButton();
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function updateContinueButton() {
+            const currentStepEl = document.querySelector(`[data-step="${currentStep}"]`);
+            const continueBtn = currentStepEl.querySelector('.btn-continue');
+            if (!continueBtn) return;
+
+            // For steps with radio buttons
+            const radioInputs = currentStepEl.querySelectorAll('input[type="radio"]');
+            if (radioInputs.length > 0) {
+                const isSelected = Array.from(radioInputs).some(input => input.checked);
+                if (isSelected) {
+                    continueBtn.classList.add('active');
+                } else {
+                    continueBtn.classList.remove('active');
+                }
+            }
+
+            // For steps with text inputs
+            const textInputs = currentStepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+            if (textInputs.length > 0 && radioInputs.length === 0) {
+                const requiredInputs = currentStepEl.querySelectorAll('input[required]');
+                const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+                if (allFilled) {
+                    continueBtn.classList.add('active');
+                } else {
+                    continueBtn.classList.remove('active');
+                }
+            }
+        }
+
+        // Option selection handling
+        document.querySelectorAll('.option-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const input = this.querySelector('input');
+                const name = input.name;
+
+                // Remove selected from siblings
+                document.querySelectorAll(`input[name="${name}"]`).forEach(sibling => {
+                    sibling.closest('.option-item').classList.remove('selected');
+                });
+
+                // Add selected to clicked
+                this.classList.add('selected');
+                input.checked = true;
+
+                updateContinueButton();
+
+                // Auto-advance after short delay for radio selections
+                setTimeout(() => {
+                    if (currentStep < totalSteps) {
+                        nextStep();
+                    }
+                }, 300);
+            });
+        });
+
+        // Text input handling
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('input', updateContinueButton);
+        });
+
+        // Form submission
+        document.getElementById('estimate-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Redirect to thank you or show success
+                    document.querySelector('.form-container').innerHTML = `
+                        <div style="text-align: center; padding: 3rem 1rem;">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" style="margin-bottom: 1rem;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <h2 style="font-size: 1.5rem; color: #111827; margin-bottom: 0.5rem;">Thank You!</h2>
+                            <p style="color: #6b7280;">We've received your request. David will call you within 24 hours to discuss your roof.</p>
+                            <a href="/" style="display: inline-block; margin-top: 1.5rem; color: #2563eb; font-weight: 600;">← Back to main site</a>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                alert('Something went wrong. Please call us directly at 07876 400202');
+            }
+        });
+
+        // Simulate viewer count
+        function updateViewerCount() {
+            const count = Math.floor(Math.random() * 8) + 4; // 4-11 viewers
+            document.getElementById('viewer-count').textContent = count;
+        }
+        setInterval(updateViewerCount, 30000); // Update every 30 seconds
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
