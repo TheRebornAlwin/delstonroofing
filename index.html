@@ -69,45 +69,29 @@
     <main id="main-content">
         <!-- Hero Section -->
         <section class="hero" id="home">
-            <div class="hero__background" id="hero-canvas"></div>
-            <div class="hero__overlay"></div>
-            <!-- Floating decorative orbs -->
-            <div class="hero__orbs">
-                <div class="orb orb--1"></div>
-                <div class="orb orb--2"></div>
-                <div class="orb orb--3"></div>
-                <div class="orb orb--4"></div>
-                <div class="orb orb--5"></div>
-            </div>
+            <div class="hero__background"></div>
             <div class="hero__content container">
                 <div class="hero__text">
-                    <h1 class="hero__title reveal">
-                        Your Roof.<br>
-                        <span class="hero__title-accent">Done Right.</span><br>
-                        First Time.
+                    <h1 class="hero__title">
+                        Cardiff's Trusted Roofing<br>
+                        <span class="hero__title-accent">& Repair Experts</span>
                     </h1>
-                    <p class="hero__subtitle reveal reveal--delay-1">
+                    <p class="hero__subtitle">
                         Honest quotes. Clear timelines. No surprises.<br>
                         Serving Cardiff, Newport & Penarth.
                     </p>
-                    <div class="hero__cta reveal reveal--delay-2">
+                    <div class="hero__cta">
                         <a href="#contact" class="btn btn--large btn--primary">
-                            Get Your Free Quote
+                            Claim Your FREE Estimate
                             <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
                         </a>
-                        <a href="tel:+447876400202" class="btn btn--large btn--outline">
-                            <svg class="btn__icon btn__icon--left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            Call Us Now
-                        </a>
                     </div>
-                    <div class="hero__trust reveal reveal--delay-3">
+                    <div class="hero__trust">
                         <div class="hero__trust-item">
                             <svg class="hero__trust-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                             </svg>
                             <span>Family-Run Business</span>
                         </div>
@@ -131,7 +115,7 @@
                 </div>
             </div>
             <div class="hero__scroll">
-                <a href="#problem" class="hero__scroll-link" aria-label="Scroll down">
+                <a href="#services" class="hero__scroll-link" aria-label="Scroll down">
                     <span class="hero__scroll-text">Scroll</span>
                     <div class="hero__scroll-indicator">
                         <span class="hero__scroll-dot"></span>
@@ -140,79 +124,8 @@
             </div>
         </section>
 
-        <!-- Problem/Empathy Section -->
-        <section class="problem" id="problem">
-            <div class="container">
-                <div class="problem__content">
-                    <h2 class="problem__title reveal">
-                        Worried about picking the <span class="text-accent">wrong roofer?</span>
-                    </h2>
-                    <p class="problem__text reveal reveal--delay-1">
-                        We get it. You've probably heard the horror stories&mdash;hidden costs, cowboys who vanish mid-job, quotes that triple overnight.
-                    </p>
-                    <p class="problem__emphasis reveal reveal--delay-2">
-                        That's not how we work.
-                    </p>
-                </div>
-
-                <div class="problem__cards">
-                    <div class="problem__card glass reveal reveal--delay-1">
-                        <div class="problem__card-icon problem__card-icon--no">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M15 9l-6 6M9 9l6 6"/>
-                            </svg>
-                        </div>
-                        <h3 class="problem__card-title">No Hidden Costs</h3>
-                        <p class="problem__card-text">What we quote is what you pay. Full stop.</p>
-                    </div>
-
-                    <div class="problem__card glass reveal reveal--delay-2">
-                        <div class="problem__card-icon problem__card-icon--no">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M15 9l-6 6M9 9l6 6"/>
-                            </svg>
-                        </div>
-                        <h3 class="problem__card-title">No Endless Delays</h3>
-                        <p class="problem__card-text">We show up when we say we will.</p>
-                    </div>
-
-                    <div class="problem__card glass reveal reveal--delay-3">
-                        <div class="problem__card-icon problem__card-icon--no">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M15 9l-6 6M9 9l6 6"/>
-                            </svg>
-                        </div>
-                        <h3 class="problem__card-title">No Vanishing Act</h3>
-                        <p class="problem__card-text">We're here until the job is done&mdash;and after.</p>
-                    </div>
-
-                    <div class="problem__card glass reveal reveal--delay-4">
-                        <div class="problem__card-icon problem__card-icon--no">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M15 9l-6 6M9 9l6 6"/>
-                            </svg>
-                        </div>
-                        <h3 class="problem__card-title">No Pressure Tactics</h3>
-                        <p class="problem__card-text">Take your time. We're not going anywhere.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Services Section -->
         <section class="services" id="services">
-            <!-- Decorative elements -->
-            <div class="section__decoration">
-                <div class="decoration__line decoration__line--1"></div>
-                <div class="decoration__line decoration__line--2"></div>
-                <div class="decoration__dot decoration__dot--1"></div>
-                <div class="decoration__dot decoration__dot--2"></div>
-                <div class="decoration__dot decoration__dot--3"></div>
-            </div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-label reveal">What We Do</span>
@@ -571,16 +484,14 @@
 
         <!-- Process Section - Key Differentiator -->
         <section class="process" id="process">
-            <div class="process__background" id="neon-canvas"></div>
             <div class="container">
-                <div class="section-header section-header--light">
+                <div class="section-header">
                     <span class="section-label reveal">How We Work</span>
                     <h2 class="section-title reveal reveal--delay-1">Our Process</h2>
                     <p class="section-subtitle reveal reveal--delay-2">Clear steps. No surprises. You're always in control.</p>
                 </div>
 
                 <div class="process__timeline">
-                    <div class="process__line"></div>
 
                     <div class="process__step reveal">
                         <div class="process__step-number">1</div>
@@ -958,6 +869,51 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label reveal">Our Work</span>
+                    <h2 class="section-title reveal reveal--delay-1">Recent Projects</h2>
+                    <p class="section-subtitle reveal reveal--delay-2">Quality roofing you can see for yourself</p>
+                </div>
+
+                <div class="gallery__grid reveal">
+                    <div class="gallery__item gallery__item--large">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Completed roof project - beautiful home exterior">
+                    </div>
+                    <div class="gallery__item">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Roof replacement project">
+                    </div>
+                    <div class="gallery__item">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="New roof installation">
+                    </div>
+                    <div class="gallery__item">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Roof repair work">
+                    </div>
+                    <div class="gallery__item">
+                        <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=600&q=80" alt="Quality roofing materials">
+                    </div>
+                    <div class="gallery__item">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="Professional roofing service">
+                    </div>
+                    <div class="gallery__item">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80" alt="Completed roofing job">
+                    </div>
+                </div>
+
+                <div class="gallery__cta reveal">
+                    <p style="color: var(--gray-500); margin-bottom: var(--space-4);">These are placeholder images. Replace with your actual project photos!</p>
+                    <a href="#contact" class="btn btn--primary">
+                        Get Your Free Quote
+                        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1425,8 +1381,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="js/three-bg.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 </body>
