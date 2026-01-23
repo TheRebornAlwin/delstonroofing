@@ -21,19 +21,18 @@
         return;
     }
 
-    // Intersection Observer for reveal animations
+    // Intersection Observer for reveal animations - triggers early for instant feel
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optionally stop observing after reveal
-                // observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Stop observing once revealed
             }
         });
     }, {
         root: null,
-        rootMargin: '0px 0px -50px 0px',
-        threshold: 0.1
+        rootMargin: '50px 0px 50px 0px', // Trigger earlier
+        threshold: 0.01 // Very low threshold for instant trigger
     });
 
     // Observe all reveal elements
@@ -42,9 +41,9 @@
     });
 
     // ============================================
-    // COUNTER ANIMATIONS
+    // COUNTER ANIMATIONS - FAST
     // ============================================
-    function animateCounter(element, target, duration = 2000) {
+    function animateCounter(element, target, duration = 600) {
         let start = 0;
         const increment = target / (duration / 16);
 
@@ -74,24 +73,24 @@
                     el.dataset.animated = 'true';
 
                     if (text.includes('%')) {
-                        animateCounter(el, numericValue, 1500);
+                        animateCounter(el, numericValue, 500);
                         el.textContent = '0%';
                         setTimeout(() => {
                             el.textContent = numericValue + '%';
-                        }, 1500);
+                        }, 500);
                     } else if (text.includes('+')) {
                         el.textContent = '0+';
-                        animateCounter(el, numericValue, 1500);
+                        animateCounter(el, numericValue, 500);
                         setTimeout(() => {
                             el.textContent = numericValue + '+';
-                        }, 1500);
+                        }, 500);
                     }
                 }
                 observer.unobserve(el);
             }
         });
     }, {
-        threshold: 0.5
+        threshold: 0.2
     });
 
     statNumbers.forEach(el => counterObserver.observe(el));
@@ -287,42 +286,6 @@
         type();
     }
 
-    // ============================================
-    // CURSOR GLOW EFFECT (SUBTLE)
-    // ============================================
-    if (!prefersReducedMotion && window.innerWidth > 1024) {
-        const cursor = document.createElement('div');
-        cursor.className = 'cursor-glow';
-        cursor.style.cssText = `
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        `;
-        document.body.appendChild(cursor);
-
-        let cursorVisible = false;
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-
-            if (!cursorVisible) {
-                cursor.style.opacity = '1';
-                cursorVisible = true;
-            }
-        });
-
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-            cursorVisible = false;
-        });
-    }
+    // Cursor glow effect removed for better performance
 
 })();
