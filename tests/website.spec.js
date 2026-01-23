@@ -18,15 +18,15 @@ test.describe('Delston Roofing Website', () => {
                 const icon = icons.nth(i);
                 const box = await icon.boundingBox();
 
-                // SVGs should be around 28x28px, not oversized
-                expect(box.width).toBeLessThanOrEqual(35);
-                expect(box.height).toBeLessThanOrEqual(35);
-                expect(box.width).toBeGreaterThanOrEqual(20);
-                expect(box.height).toBeGreaterThanOrEqual(20);
+                // SVGs should be around 36x36px (larger premium design)
+                expect(box.width).toBeLessThanOrEqual(42);
+                expect(box.height).toBeLessThanOrEqual(42);
+                expect(box.width).toBeGreaterThanOrEqual(30);
+                expect(box.height).toBeGreaterThanOrEqual(30);
             }
         });
 
-        test('Why-Us icon containers should be 60x60px', async ({ page }) => {
+        test('Why-Us icon containers should be 80x80px', async ({ page }) => {
             const containers = page.locator('.why-us__icon');
             const count = await containers.count();
 
@@ -36,9 +36,9 @@ test.describe('Delston Roofing Website', () => {
                 const container = containers.nth(i);
                 const box = await container.boundingBox();
 
-                // Containers should be 60x60px
-                expect(box.width).toBeCloseTo(60, 5);
-                expect(box.height).toBeCloseTo(60, 5);
+                // Containers should be 80x80px (larger premium design)
+                expect(box.width).toBeCloseTo(80, 5);
+                expect(box.height).toBeCloseTo(80, 5);
             }
         });
 
