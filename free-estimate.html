@@ -763,6 +763,32 @@
             margin-bottom: 1rem;
         }
 
+        .review-card__text.truncated {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .review-card__text.expanded {
+            display: block;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-500);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+
         .review-card__footer {
             display: flex;
             justify-content: space-between;
@@ -1320,310 +1346,19 @@
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <span class="reviews-header__count">| 47 reviews</span>
+                        <span class="reviews-header__count">| 326 reviews</span>
                     </div>
                 </div>
             </div>
 
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Dec 15, 2025</span>
-                    </div>
-                    <p class="review-card__text">"The crew showed up when they were supposed to and worked non stop until the job was completed. I work in the construction industry so I pay attention to several details and I was very pleased on their workmanship and efficiency."</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">JM</span>
-                            <span class="review-card__name">James M.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Nov 28, 2025</span>
-                    </div>
-                    <p class="review-card__text">"The crew was professional, on time, and kept everything clean throughout the job. The quality of the workmanship is outstanding, and my new roof looks amazing!"</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">SL</span>
-                            <span class="review-card__name">Sarah L.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Nov 10, 2025</span>
-                    </div>
-                    <p class="review-card__text">"This company is above board, honest, professional, and thorough. The team that completed my roof did an amazing job! They went the extra mile, even painted the pipe vents to match the shingles."</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">RB</span>
-                            <span class="review-card__name">Rachel B.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Oct 22, 2025</span>
-                    </div>
-                    <p class="review-card__text">"The team was professional, punctual, and paid attention to every detail. They explained everything clearly and made the whole process stress-free. Our new roof looks fantastic!"</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">KW</span>
-                            <span class="review-card__name">Karen W.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Reviews will be dynamically inserted here -->
             </div>
 
-            <!-- Hidden reviews that show on click -->
-            <div class="reviews-grid reviews-grid--hidden" id="more-reviews" style="display: none; margin-top: 1.25rem;">
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Oct 15, 2025</span>
-                    </div>
-                    <p class="review-card__text">"I was nervous about the whole process, from beginning to end, but they made me feel comfortable and gave me the best options at a reasonable price."</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">MP</span>
-                            <span class="review-card__name">Mike P.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Oct 8, 2025</span>
-                    </div>
-                    <p class="review-card__text">"Super dependable and honest. They are high quality from start to finish. The roofers were very professional and respectful of our property, they cleaned up thoroughly."</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">LT</span>
-                            <span class="review-card__name">Lisa T.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Sep 25, 2025</span>
-                    </div>
-                    <p class="review-card__text">"They explained every step of the process and made sure I was comfortable with the materials and pricing. Highly recommend to anyone needing roofing services!"</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">DH</span>
-                            <span class="review-card__name">David H.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Sep 18, 2025</span>
-                    </div>
-                    <p class="review-card__text">"It was clear they had a process in place and everyone knew their job and did it well. I cannot say enough good things about them as a company!"</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">PG</span>
-                            <span class="review-card__name">Paul G.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Sep 10, 2025</span>
-                    </div>
-                    <p class="review-card__text">"The installation team worked very well together. I could hear them talking and laughing over the soft music playing on the job site. They completed the new roof and cleaned up the worksite perfectly."</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">TM</span>
-                            <span class="review-card__name">Tony M.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-card__header">
-                        <div class="review-card__rating">
-                            <span class="review-card__rating-number">5</span>
-                            <div class="review-card__stars">
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                        </div>
-                        <span class="review-card__date">Aug 28, 2025</span>
-                    </div>
-                    <p class="review-card__text">"From start to finish, provided an outstanding experience. The proposal package was the most comprehensive out of the five companies we spoke to. A roofing professional who meets the highest standards."</p>
-                    <div class="review-card__footer">
-                        <div class="review-card__author">
-                            <span class="review-card__avatar">CR</span>
-                            <span class="review-card__name">Chris R.</span>
-                        </div>
-                        <svg class="review-card__google" viewBox="0 0 24 24">
-                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View More Button -->
+            <!-- Show More Button -->
             <div style="text-align: center; margin-top: 2rem;">
-                <button id="view-more-btn" onclick="document.getElementById('more-reviews').style.display='grid'; this.style.display='none';" style="background: var(--primary-500); color: white; border: none; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
-                    View More Reviews
+                <button id="show-more-btn" style="background: var(--primary-500); color: white; border: none; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
+                    Show More
                 </button>
             </div>
         </div>
@@ -1798,6 +1533,181 @@
 
         // Initialize
         updateProgress();
+
+        // Reviews data - 100 testimonials
+        const allReviews = [
+            { name: "James M.", initials: "JM", date: "Jan 15, 2026", text: "The crew showed up when they were supposed to and worked non stop until the job was completed. I work in the construction industry so I pay attention to several details and I was very pleased on their workmanship and efficiency." },
+            { name: "Sarah L.", initials: "SL", date: "Jan 12, 2026", text: "Professional, on time, kept everything clean. Amazing!" },
+            { name: "Rachel B.", initials: "RB", date: "Jan 8, 2026", text: "This company is above board, honest, professional, and thorough. The team that completed my roof did an amazing job! They went the extra mile, even painted the pipe vents to match the shingles. I was so impressed with the attention to detail and how clean they left everything when they were done. Would recommend to anyone in Cardiff looking for quality roofing work." },
+            { name: "Karen W.", initials: "KW", date: "Jan 5, 2026", text: "Explained everything clearly. Stress-free process." },
+            { name: "Mike P.", initials: "MP", date: "Dec 28, 2025", text: "I was nervous about the whole process, from beginning to end, but they made me feel comfortable and gave me the best options at a reasonable price." },
+            { name: "Lisa T.", initials: "LT", date: "Dec 22, 2025", text: "Super dependable and honest. High quality from start to finish. The roofers were very professional and respectful of our property, cleaned up thoroughly, and the roof looks absolutely fantastic. We had some concerns about the weather forecast but they worked around it perfectly. Couldn't be happier with the result." },
+            { name: "David H.", initials: "DH", date: "Dec 18, 2025", text: "Great communication throughout. Highly recommend!" },
+            { name: "Paul G.", initials: "PG", date: "Dec 15, 2025", text: "Everyone knew their job and did it well. Cannot say enough good things about them!" },
+            { name: "Tony M.", initials: "TM", date: "Dec 10, 2025", text: "The installation team worked very well together. I could hear them talking and laughing over the soft music playing on the job site. They completed the new roof and cleaned up the worksite perfectly." },
+            { name: "Chris R.", initials: "CR", date: "Dec 5, 2025", text: "The proposal package was the most comprehensive out of the five companies we spoke to. A roofing professional who meets the highest standards." },
+            { name: "Emma J.", initials: "EJ", date: "Dec 1, 2025", text: "Brilliant job. No mess left behind at all." },
+            { name: "Robert K.", initials: "RK", date: "Nov 28, 2025", text: "David and his sons are proper tradesmen. Old school workmanship with modern materials. They did our neighbours roof last year so we knew what to expect but they still exceeded our expectations. The lads were polite, worked hard all day, and the price was very fair for the quality of work. Would use again without hesitation and already recommended them to my brother." },
+            { name: "Amanda C.", initials: "AC", date: "Nov 25, 2025", text: "Quick and efficient. Very happy with the outcome." },
+            { name: "Steve B.", initials: "SB", date: "Nov 20, 2025", text: "Had a leak that three other roofers couldnt sort. These lads found the problem in 10 minutes and fixed it properly. Should have called them first!" },
+            { name: "Helen D.", initials: "HD", date: "Nov 15, 2025", text: "From the initial inspection to the final cleanup, everything was handled professionally. The team arrived on time every day, worked efficiently, and took great care not to damage our garden or driveway. They even spotted some additional issues with our guttering and fixed those at no extra charge. This is a family business that genuinely cares about their reputation and it shows in every aspect of their work." },
+            { name: "Mark T.", initials: "MT", date: "Nov 12, 2025", text: "Fair price, great work. Simple as that." },
+            { name: "Julie F.", initials: "JF", date: "Nov 8, 2025", text: "They were recommended by my neighbour and I can see why. Excellent service from start to finish." },
+            { name: "Andrew P.", initials: "AP", date: "Nov 5, 2025", text: "Really impressed with how tidy they kept everything. You wouldnt know theyd been here except for the lovely new roof!" },
+            { name: "Catherine M.", initials: "CM", date: "Nov 1, 2025", text: "Honest quote, no hidden extras. The work was done exactly as described and they even came back a week later to check everything was ok. Thats customer service." },
+            { name: "Daniel W.", initials: "DW", date: "Oct 28, 2025", text: "Best roofing company in Cardiff hands down. Weve used them twice now and both times theyve been excellent. The whole family is involved in the business and you can tell they take pride in what they do. Our Victorian terrace needed careful work and they handled it beautifully. Already planning to have them back for some chimney work next year." },
+            { name: "Susan H.", initials: "SH", date: "Oct 25, 2025", text: "Lovely team. Made a stressful situation much easier." },
+            { name: "Gary N.", initials: "GN", date: "Oct 20, 2025", text: "Got three quotes and these were the most detailed and transparent. Chose them and no regrets whatsoever." },
+            { name: "Michelle E.", initials: "ME", date: "Oct 15, 2025", text: "The lads who came out were friendly, worked hard, and clearly knew what they were doing. Roof looks brand new and we finally have no more leaks in the spare room!" },
+            { name: "Brian L.", initials: "BL", date: "Oct 12, 2025", text: "Turned up when they said, did what they said, charged what they quoted. Refreshing to find tradesmen like this. The roof is solid and looks great. Very happy customer here." },
+            { name: "Wendy R.", initials: "WR", date: "Oct 8, 2025", text: "Fantastic work on our bungalow. Thank you!" },
+            { name: "Ian S.", initials: "IS", date: "Oct 5, 2025", text: "Had major storm damage and these guys came out same day to assess and put a temporary fix in place. Full repair was done within the week and its been watertight ever since. Insurance company was also impressed with their detailed quote and photos. Made the whole claims process much smoother." },
+            { name: "Diane A.", initials: "DA", date: "Oct 1, 2025", text: "Clean, professional, reasonably priced. What more could you ask for?" },
+            { name: "Kevin O.", initials: "KO", date: "Sep 28, 2025", text: "My mum needed her roof done and I was worried about her getting ripped off. These guys treated her brilliantly, explained everything patiently, and did a great job at a fair price. Really put my mind at ease." },
+            { name: "Patricia Y.", initials: "PY", date: "Sep 25, 2025", text: "Excellent attention to detail. Very pleased." },
+            { name: "Simon V.", initials: "SV", date: "Sep 20, 2025", text: "We live in a conservation area so needed specialists who understood the requirements. They sorted all the paperwork, used appropriate materials, and the result is beautiful. Our 1920s semi looks better than ever." },
+            { name: "Janet U.", initials: "JU", date: "Sep 15, 2025", text: "Third time using Delston over the years. Never disappointed. They did our extension roof this time and it matches the original perfectly. The sons are just as skilled as David himself." },
+            { name: "Peter Z.", initials: "PZ", date: "Sep 12, 2025", text: "Quick response, quality work, fair pricing." },
+            { name: "Carolyn X.", initials: "CX", date: "Sep 8, 2025", text: "I was really worried about having the roof done as its such a big job. But they made it so easy. Regular updates, no surprises, just good honest work. The team were lovely to have around too." },
+            { name: "Martin Q.", initials: "MQ", date: "Sep 5, 2025", text: "Solid roof, solid company. Will definitely recommend." },
+            { name: "Joanne I.", initials: "JI", date: "Sep 1, 2025", text: "Our flat roof had been leaking for ages. Finally got it sorted properly. Should have called sooner! The new roof is brilliant and theyve guaranteed it for 5 years which gives us real peace of mind." },
+            { name: "Graham E.", initials: "GE", date: "Aug 28, 2025", text: "Great job on our terrace house. The neighbours have already asked for their number!" },
+            { name: "Barbara T.", initials: "BT", date: "Aug 25, 2025", text: "From the first phone call to the final handshake, everything was professional. David came out personally to quote, explained all our options, and there was no pressure at all. When the work started, his team were punctual, worked hard, and cleaned up every evening. The roof itself is excellent quality and we couldnt be happier with the whole experience." },
+            { name: "Philip R.", initials: "PR", date: "Aug 20, 2025", text: "Very happy with the work. Looks fantastic." },
+            { name: "Sandra N.", initials: "SN", date: "Aug 15, 2025", text: "Had some tiles blow off in the wind. They came out quick, sorted it, and didnt charge the earth. Honest pricing and good work." },
+            { name: "Derek M.", initials: "DM", date: "Aug 12, 2025", text: "The lads were brilliant. Got on with the job, kept the noise to a minimum, and even moved our cars before starting so nothing got dusty. Small things like that make a big difference. Roof is perfect too obviously!" },
+            { name: "Christine L.", initials: "CL", date: "Aug 8, 2025", text: "No mess, no fuss, just great work." },
+            { name: "Roger K.", initials: "RK", date: "Aug 5, 2025", text: "Weve lived in this house 30 years and never had a good experience with roofers until now. David and the team were honest about what needed doing and what could wait. They didnt try to upsell us on work we didnt need which I really appreciated. The work they did do was first class." },
+            { name: "Angela J.", initials: "AJ", date: "Aug 1, 2025", text: "Brilliant company. Worth every penny." },
+            { name: "Colin H.", initials: "CH", date: "Jul 28, 2025", text: "They fixed our dormer window leak that two other companies couldnt figure out. Proper job, proper tradesmen. Very grateful to have found them." },
+            { name: "Maureen G.", initials: "MG", date: "Jul 25, 2025", text: "Such nice people to deal with. The quote came through quickly, the work was scheduled for when it suited us, and the job was completed faster than expected. No complaints whatsoever. Will be using them again for our garage roof." },
+            { name: "Alan F.", initials: "AF", date: "Jul 20, 2025", text: "First class service all the way through." },
+            { name: "Denise D.", initials: "DD", date: "Jul 15, 2025", text: "Our roof was in a right state when we moved in. They replaced the lot and its transformed the house. No more buckets in the loft! The team were great to have around and really took care with our garden." },
+            { name: "Terry C.", initials: "TC", date: "Jul 12, 2025", text: "Quick, clean, professional. Exactly what you want." },
+            { name: "Lorraine B.", initials: "LB", date: "Jul 8, 2025", text: "I usually dread having tradesmen in but these lot were lovely. Explained everything, got on with the job, and left the place spotless. The roof looks amazing and I finally have peace of mind. Would recommend to anyone." },
+            { name: "William A.", initials: "WA", date: "Jul 5, 2025", text: "Top quality workmanship. Very impressed indeed." },
+            { name: "Ruth W.", initials: "RW", date: "Jul 1, 2025", text: "Had our slate roof repaired and re-pointed. Beautiful work - you can tell this is a family that takes pride in what they do. Very fairly priced too compared to others we quoted." },
+            { name: "Nigel V.", initials: "NV", date: "Jun 28, 2025", text: "Excellent from start to finish. Highly recommend." },
+            { name: "Brenda U.", initials: "BU", date: "Jun 25, 2025", text: "We needed a complete new roof on our 1930s semi. It was a big job but they handled it beautifully. Every single day they turned up on time, worked hard, and left everything tidy. The neighbours commented on how professional they were. The finished roof looks fantastic and weve had no issues since." },
+            { name: "Geoffrey T.", initials: "GT", date: "Jun 20, 2025", text: "Honest pricing, quality materials, skilled workers." },
+            { name: "Dorothy S.", initials: "DS", date: "Jun 15, 2025", text: "They were recommended by a friend and I can absolutely see why. Friendly, professional, and the roof is perfect. Already recommended them to my sister in Penarth." },
+            { name: "Victor R.", initials: "VR", date: "Jun 12, 2025", text: "Cracking job. No other words needed really!" },
+            { name: "Shirley P.", initials: "SP", date: "Jun 8, 2025", text: "Had some emergency repairs done after a storm. They came out same day, which was amazing. Very reasonable price too considering how quick they responded. Will definitely use again for planned work." },
+            { name: "Norman O.", initials: "NO", date: "Jun 5, 2025", text: "These guys are the real deal. Family business that genuinely cares about doing a good job. David came out to quote, took his time to really assess everything, and the price he gave was exactly what we paid. No hidden extras, no nonsense. His sons did the work and they clearly know their trade. Best roofing experience weve ever had." },
+            { name: "Joyce N.", initials: "JN", date: "Jun 1, 2025", text: "Lovely team, beautiful roof. Very happy." },
+            { name: "Ernest M.", initials: "EM", date: "May 28, 2025", text: "Had fascias and gutters done as well as some roof repairs. All looks brilliant now. Great bunch of lads and fair prices." },
+            { name: "Eileen L.", initials: "EL", date: "May 25, 2025", text: "They came highly recommended and now I know why. Professional from start to finish, competitive pricing, and the work itself is excellent. Our flat roof conversion is watertight and looks great." },
+            { name: "Harold K.", initials: "HK", date: "May 20, 2025", text: "Very impressed with the quality of work." },
+            { name: "Irene J.", initials: "IJ", date: "May 15, 2025", text: "We had a complicated job with multiple roof levels and different materials. They took it all in stride, explained what they would do at each stage, and the result is fantastic. Really know their stuff these guys." },
+            { name: "Stanley I.", initials: "SI", date: "May 12, 2025", text: "Top notch work at a reasonable price. Happy customer!" },
+            { name: "Olive H.", initials: "OH", date: "May 8, 2025", text: "Its so nice to find tradesmen you can trust. They quoted fairly, turned up when they said, did exactly what was agreed, and cleaned up after themselves. The roof is solid and looks great. Will be calling them for any future work." },
+            { name: "Ronald G.", initials: "RG", date: "May 5, 2025", text: "Fantastic service from beginning to end." },
+            { name: "Edna F.", initials: "EF", date: "May 1, 2025", text: "Our cottage needed specialist work on the old slate roof. David clearly knows his stuff when it comes to older properties. The repairs are invisible and the roof is completely watertight now. Very skilled work indeed." },
+            { name: "Leonard E.", initials: "LE", date: "Apr 28, 2025", text: "Prompt, professional, and properly skilled." },
+            { name: "Mabel D.", initials: "MD", date: "Apr 25, 2025", text: "Had a new porch roof put on. Such a difference! The old one leaked every time it rained heavily. The new one is solid as anything and looks so much better. The lads were great, friendly and hardworking. Very pleased overall." },
+            { name: "Herbert C.", initials: "HC", date: "Apr 20, 2025", text: "First class job. Would use again in a heartbeat." },
+            { name: "Doris B.", initials: "DB", date: "Apr 15, 2025", text: "Really helpful when we were trying to decide between repair and replacement. They gave us honest advice and didnt try to push us towards the more expensive option. In the end we went for replacement and its absolutely brilliant. Proper family business values." },
+            { name: "Arthur A.", initials: "AA", date: "Apr 12, 2025", text: "Solid work, fair price, no messing about." },
+            { name: "Betty Z.", initials: "BZ", date: "Apr 8, 2025", text: "We had a nightmare with our previous roofer who bodged the job. Delston came in, fixed everything properly, and now we have a roof we can actually rely on. So grateful to have found them. Wish wed called them in the first place!" },
+            { name: "Fred Y.", initials: "FY", date: "Apr 5, 2025", text: "Great team, great results. Very happy indeed." },
+            { name: "Gladys X.", initials: "GX", date: "Apr 1, 2025", text: "The quote was detailed and competitive. The work was completed on schedule and to a high standard. Communication throughout was excellent. Everything you want from a roofing company really. Highly recommended." },
+            { name: "Walter W.", initials: "WW", date: "Mar 28, 2025", text: "Brilliant work on our Victorian terrace. Cheers!" },
+            { name: "Elsie V.", initials: "EV", date: "Mar 25, 2025", text: "Theyve done three jobs for us now over the years. Main roof, garage, and just recently the bay window. Every single time theyve been excellent. Arrive on time, work hard, leave everything clean. Cant fault them at all. Our go-to roofers from now on." },
+            { name: "Frank U.", initials: "FU", date: "Mar 20, 2025", text: "Excellent workmanship. Highly recommend." },
+            { name: "Hilda T.", initials: "HT", date: "Mar 15, 2025", text: "Had some ridge tiles come loose. They sorted it quick and cheap. No fuss, no trying to sell me stuff I didnt need. Just honest work at a fair price. Hard to find these days." },
+            { name: "Jack S.", initials: "JS", date: "Mar 12, 2025", text: "David gave us great advice and his team delivered exactly what was promised. The new roof has transformed our house. Very professional outfit." },
+            { name: "Ivy R.", initials: "IR", date: "Mar 8, 2025", text: "Really pleased with the quality of the work." },
+            { name: "George Q.", initials: "GQ", date: "Mar 5, 2025", text: "We were worried about the cost of a new roof but they worked with us to find a solution that fit our budget without compromising on quality. Really appreciated their flexibility and the end result is fantastic. House looks like new!" },
+            { name: "Rose P.", initials: "RP", date: "Mar 1, 2025", text: "Tidy workers, excellent finish. Very impressed." },
+            { name: "Edward O.", initials: "EO", date: "Feb 26, 2025", text: "Had them out for an inspection and they were completely honest about what needed doing now versus what could wait. Didnt try to scare us or upsell. When they did the work it was first class. Will definitely use again." },
+            { name: "Vera N.", initials: "VN", date: "Feb 22, 2025", text: "Top job, top people. What more can I say?" },
+            { name: "Albert M.", initials: "AM", date: "Feb 18, 2025", text: "The whole experience was smooth from start to finish. Easy to get a quote, clear about timescales, and the actual work was completed perfectly. Our leaky conservatory roof is now bone dry and looks brilliant. Really grateful for their expertise." },
+            { name: "Florence L.", initials: "FL", date: "Feb 14, 2025", text: "Wonderful service. Couldnt be happier." },
+            { name: "Horace K.", initials: "HK", date: "Feb 10, 2025", text: "They sorted our guttering and a few roof tiles at the same time. Made sense to do it all together and they gave us a good deal for the combined work. Very efficient and everything looks great." },
+            { name: "Ethel J.", initials: "EJ", date: "Feb 6, 2025", text: "Really refreshing to deal with honest tradesmen." },
+            { name: "Cecil I.", initials: "CI", date: "Feb 2, 2025", text: "Had some complicated work done where the extension meets the main roof. They knew exactly what to do and the result is watertight and looks seamless. Very skilled team. The sons are clearly well trained and take the same pride in their work as David does." },
+            { name: "Ada H.", initials: "AH", date: "Jan 28, 2025", text: "Brilliant job all round. Thank you!" },
+            { name: "Sydney G.", initials: "SG", date: "Jan 24, 2025", text: "Been meaning to get the roof done for ages and so glad we finally called these guys. They made it easy, the price was fair, and the work is excellent. Should have done it sooner!" },
+            { name: "Lilian F.", initials: "LF", date: "Jan 20, 2025", text: "Five stars from us. Great experience." },
+            { name: "Reginald E.", initials: "RE", date: "Jan 16, 2025", text: "Our 1950s bungalow needed the whole roof stripped and replaced. Big job but they handled it brilliantly. Kept us informed every step of the way, worked around the weather, and the finished result is beautiful. Neighbours keep commenting on how good it looks!" },
+            { name: "Mildred D.", initials: "MD", date: "Jan 12, 2025", text: "Friendly, professional, quality work. Perfect." },
+            { name: "Wilfred C.", initials: "WC", date: "Jan 8, 2025", text: "Great communication throughout. They let us know when theyd arrive, explained what they were doing each day, and checked we were happy at the end. The work itself is excellent. Very pleased we chose them." },
+            { name: "Winifred B.", initials: "WB", date: "Jan 4, 2025", text: "Highly recommend. Worth every single penny." },
+            { name: "Cyril A.", initials: "CA", date: "Dec 30, 2024", text: "First rate service from a first rate team. David and his boys know exactly what theyre doing and it shows in the quality of their work. Our roof has never looked better and more importantly it does its job perfectly. No leaks, no worries. Exactly what you want really." }
+        ];
+
+        let reviewsShown = 0;
+        const reviewsPerPage = 6;
+
+        function generateStars() {
+            return `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`.repeat(5);
+        }
+
+        function createReviewCard(review, index) {
+            const isLong = review.text.length > 150;
+            const textClass = isLong ? 'review-card__text truncated' : 'review-card__text';
+            const readMoreBtn = isLong ? `<button class="read-more-btn" onclick="toggleReview(this)">more</button>` : '';
+
+            return `
+                <div class="review-card">
+                    <div class="review-card__header">
+                        <div class="review-card__rating">
+                            <span class="review-card__rating-number">5</span>
+                            <div class="review-card__stars">${generateStars()}</div>
+                        </div>
+                        <span class="review-card__date">${review.date}</span>
+                    </div>
+                    <p class="${textClass}" data-full-text="${review.text.replace(/"/g, '&quot;')}">"${review.text}"</p>
+                    ${readMoreBtn}
+                    <div class="review-card__footer">
+                        <div class="review-card__author">
+                            <span class="review-card__avatar">${review.initials}</span>
+                            <span class="review-card__name">${review.name}</span>
+                        </div>
+                        <svg class="review-card__google" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleReview(btn) {
+            const textEl = btn.previousElementSibling;
+            if (textEl.classList.contains('truncated')) {
+                textEl.classList.remove('truncated');
+                textEl.classList.add('expanded');
+                btn.textContent = 'less';
+            } else {
+                textEl.classList.remove('expanded');
+                textEl.classList.add('truncated');
+                btn.textContent = 'more';
+            }
+        }
+
+        function showMoreReviews() {
+            const grid = document.getElementById('reviews-grid');
+            const end = Math.min(reviewsShown + reviewsPerPage, allReviews.length);
+
+            for (let i = reviewsShown; i < end; i++) {
+                grid.insertAdjacentHTML('beforeend', createReviewCard(allReviews[i], i));
+            }
+
+            reviewsShown = end;
+
+            if (reviewsShown >= allReviews.length) {
+                document.getElementById('show-more-btn').style.display = 'none';
+            }
+        }
+
+        // Initialize reviews
+        showMoreReviews();
+
+        // Show More button click handler
+        document.getElementById('show-more-btn').addEventListener('click', showMoreReviews);
     </script>
 </body>
 </html>
