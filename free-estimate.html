@@ -1163,7 +1163,7 @@
                         <input type="text" class="form-input" name="city" placeholder="City/Town" required>
                         <input type="text" class="form-input" name="county" placeholder="County">
                     </div>
-                    <input type="text" class="form-input" name="postcode" placeholder="Postcode" required style="text-transform: uppercase;">
+                    <input type="text" class="form-input" name="postcode" placeholder="Postcode" required>
                     <div class="form-buttons">
                         <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
                         <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
@@ -1452,9 +1452,13 @@
             }
         }
 
-        // Option selection handling
+        // Option selection handling - use event delegation to prevent double-firing
+        let isAdvancing = false;
         document.querySelectorAll('.option-item').forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function(e) {
+                // Prevent double-firing from label+input click
+                if (isAdvancing) return;
+
                 const input = this.querySelector('input');
                 const name = input.name;
 
@@ -1470,10 +1474,12 @@
                 updateContinueButton();
 
                 // Auto-advance after short delay for radio selections
+                isAdvancing = true;
                 setTimeout(() => {
                     if (currentStep < totalSteps) {
                         nextStep();
                     }
+                    isAdvancing = false;
                 }, 300);
             });
         });
