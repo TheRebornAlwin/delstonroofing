@@ -147,7 +147,7 @@
             font-size: 1.75rem;
             font-weight: 800;
             color: var(--white);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0;
         }
 
         .form-hero__title svg {
@@ -782,7 +782,9 @@
             font-weight: 600;
             cursor: pointer;
             padding: 0;
+            margin-top: 0.25rem;
             margin-bottom: 1rem;
+            display: block;
         }
 
         .read-more-btn:hover {
@@ -1171,12 +1173,12 @@
                 <!-- Step 6: Contact Info -->
                 <div class="form-step" data-step="6">
                     <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
-                    <input type="text" class="form-input" name="full_name" placeholder="Full Name" required>
-                    <input type="email" class="form-input" name="email" placeholder="Email Address" required>
-                    <input type="tel" class="form-input" name="phone" placeholder="Phone Number" required>
+                    <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name">
+                    <input type="email" class="form-input" name="email" id="email" placeholder="Email Address">
+                    <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number">
                     <div class="form-buttons">
                         <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                        <button type="submit" class="btn-continue active">GET MY ESTIMATE &rarr;</button>
+                        <button type="button" class="btn-continue" id="submit-btn" onclick="submitForm()">GET MY ESTIMATE &rarr;</button>
                     </div>
                 </div>
             </form>
@@ -1481,17 +1483,16 @@
             input.addEventListener('input', updateContinueButton);
         });
 
-        // Form submission
-        document.getElementById('estimate-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const submitBtn = this.querySelector('button[type="submit"]');
+        // Form submission function
+        function submitForm() {
+            const submitBtn = document.getElementById('submit-btn');
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
 
             // Try to submit to Formspree in background (don't wait for response)
-            const formData = new FormData(this);
-            fetch(this.action, {
+            const form = document.getElementById('estimate-form');
+            const formData = new FormData(form);
+            fetch(form.action, {
                 method: 'POST',
                 body: formData,
                 headers: { 'Accept': 'application/json' }
@@ -1522,7 +1523,7 @@
                     </div>
                 `;
             }, 500);
-        });
+        }
 
         // Simulate viewer count
         function updateViewerCount() {
@@ -1646,7 +1647,7 @@
         function createReviewCard(review, index) {
             const isLong = review.text.length > 150;
             const textClass = isLong ? 'review-card__text truncated' : 'review-card__text';
-            const readMoreBtn = isLong ? `<button class="read-more-btn" onclick="toggleReview(this)">more</button>` : '';
+            const readMoreBtn = isLong ? `<button class="read-more-btn" onclick="toggleReview(this)">More</button>` : '';
 
             return `
                 <div class="review-card">
@@ -1680,11 +1681,11 @@
             if (textEl.classList.contains('truncated')) {
                 textEl.classList.remove('truncated');
                 textEl.classList.add('expanded');
-                btn.textContent = 'less';
+                btn.textContent = 'Less';
             } else {
                 textEl.classList.remove('expanded');
                 textEl.classList.add('truncated');
-                btn.textContent = 'more';
+                btn.textContent = 'More';
             }
         }
 
