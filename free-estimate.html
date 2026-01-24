@@ -1026,7 +1026,6 @@
                 </div>
             </div>
 
-            <!-- BACKUP: Formspree endpoint was: https://formspree.io/f/xojjkbdd -->
             <form id="estimate-form" action="https://submit-form.com/zC19yBjOR" method="POST">
                 <!-- Step 1: Home Type -->
                 <div class="form-step active" data-step="1">
@@ -1214,7 +1213,7 @@
                     <div class="stat-box__label">Roofs Completed</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-box__number">5 Yr</div>
+                    <div class="stat-box__number">10 Year</div>
                     <div class="stat-box__label">Guarantee</div>
                 </div>
             </div>
@@ -1499,10 +1498,14 @@
             // Submit to Formspark in background (don't wait for response)
             const form = document.getElementById('estimate-form');
             const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
             fetch(form.action, {
                 method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
             }).catch(() => {});
 
             // Always show success screen after brief delay
@@ -1516,7 +1519,7 @@
                         </div>
                         <h2 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 2rem;">You're In!</h2>
                         <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 1rem; padding: 2rem; max-width: 400px; margin: 0 auto;">
-                            <h3 style="color: white; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Skip the wait - call now</h3>
+                            <h3 style="color: white; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Skip the Wait - Call Now</h3>
                             <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 1.5rem;">Speak directly to David who can answer all your questions.</p>
                             <a href="tel:+447876400202" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: white; color: #2563eb; padding: 1rem 2rem; border-radius: 9999px; font-size: 1.25rem; font-weight: 700; text-decoration: none; transition: transform 0.2s;">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1526,7 +1529,6 @@
                             </a>
                             <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 1rem;">Mon-Sat 8AM-6PM</p>
                         </div>
-                        <a href="/" style="display: inline-block; margin-top: 2rem; color: #60a5fa; font-weight: 500; text-decoration: none;">Back to main site</a>
                     </div>
                 `;
             }, 500);
