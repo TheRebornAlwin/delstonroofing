@@ -27,7 +27,7 @@
 
     <style>
         :root {
-            /* Primary Blues - matching main site */
+            /* Primary Blues */
             --primary-900: #0c1929;
             --primary-800: #1e3a5f;
             --primary-700: #1e40af;
@@ -37,6 +37,7 @@
             --primary-300: #93c5fd;
             --primary-200: #bfdbfe;
             --primary-100: #dbeafe;
+            --primary-50: #eff6ff;
 
             /* Accent */
             --accent: #06b6d4;
@@ -48,6 +49,9 @@
             --green-500: #22c55e;
             --green-100: #dcfce7;
             --orange-500: #f97316;
+            --yellow-500: #eab308;
+            --yellow-100: #fef9c3;
+            --yellow-200: #fef08a;
 
             /* Neutrals */
             --gray-50: #f8fafc;
@@ -83,48 +87,188 @@
         }
 
         /* ============================================
+           GLOSSY PRICING CARD
+           ============================================ */
+        .pricing-card-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem 1rem;
+            background: var(--primary-900);
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1d4ed8 100%);
+            border-radius: 1rem;
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 4px 6px rgba(0, 0, 0, 0.3),
+                0 10px 20px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            animation: shine 5s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .pricing-card__title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card__price {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card__subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.5rem;
+        }
+
+        /* ============================================
            FORM HERO SECTION
            ============================================ */
         .form-hero {
             background: linear-gradient(180deg, var(--primary-900) 0%, var(--primary-800) 100%);
-            padding: 2.5rem 1rem 4rem;
+            padding: 1rem 1rem 2rem;
             text-align: center;
         }
 
-        .badges-row {
+        .form-hero__title {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
+            gap: 0.75rem;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
         }
 
-        .location-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .form-hero__title svg {
+            width: 32px;
+            height: 32px;
+            color: var(--primary-400);
+        }
+
+        .form-hero__subtitle {
+            color: var(--primary-300);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           GLOSSY FORM CONTAINER
+           ============================================ */
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        .form-container {
+            background: var(--white);
+            border-radius: 1.5rem;
+            padding: 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Glossy form header */
+        .form-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0c1929 100%);
+            padding: 1.25rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+            );
+            animation: shine 5s infinite 2.5s;
+        }
+
+        /* Cardiff tag */
+        .cardiff-tag {
+            position: absolute;
+            top: 0;
+            left: -8px;
             background: var(--primary-500);
             color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
+            padding: 0.4rem 1rem 0.4rem 1.25rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%);
         }
 
-        .location-badge svg {
-            width: 14px;
-            height: 14px;
+        .cardiff-tag svg {
+            width: 12px;
+            height: 12px;
         }
 
+        .form-header__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding-top: 1.5rem;
+        }
 
         .limited-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: var(--white);
             padding: 0.5rem 1.25rem;
             border-radius: 9999px;
@@ -144,49 +288,35 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.9); }
         }
 
-        .form-hero__title {
+        .form-header__title {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            font-size: 1.75rem;
-            font-weight: 800;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--white);
-            margin-bottom: 0;
         }
 
-        .form-hero__title svg {
-            width: 32px;
-            height: 32px;
+        .form-header__title svg {
+            width: 24px;
+            height: 24px;
             color: var(--primary-400);
         }
 
-        .form-hero__subtitle {
-            color: var(--primary-300);
-            font-size: 0.95rem;
-            font-weight: 500;
+        .form-header__subtitle {
+            color: var(--gray-400);
+            font-size: 0.85rem;
         }
 
-        /* ============================================
-           MULTI-STEP FORM
-           ============================================ */
-        .form-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 2.5rem 1rem 2rem;
-        }
-
-        .form-container {
-            background: var(--white);
-            border-radius: 1.5rem;
+        .form-content {
             padding: 2rem 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
         }
 
+        /* Progress bar */
         .progress-bar {
             margin-bottom: 2rem;
         }
@@ -226,6 +356,7 @@
             font-weight: 600;
         }
 
+        /* Form steps */
         .form-step {
             display: none;
         }
@@ -417,7 +548,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--primary-400);
+            color: var(--green-500);
             font-size: 0.875rem;
             font-weight: 500;
         }
@@ -428,43 +559,57 @@
         }
 
         /* ============================================
-           STATS SECTION
+           STATS SECTION - WHY CARDIFF HOMEOWNERS CHOOSE
            ============================================ */
         .stats-section {
-            background: var(--primary-900);
-            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
+            padding: 4rem 1rem;
+        }
+
+        .stats-section__title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .stats-section__subtitle {
+            color: var(--gray-400);
+            text-align: center;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
         }
 
         .stat-box {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border: 2px solid var(--primary-500);
             border-radius: 1rem;
-            padding: 1.25rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
 
         .stat-box__number {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 800;
-            color: var(--primary-400);
+            color: var(--green-500);
             line-height: 1.2;
         }
 
         .stat-box__label {
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 500;
             color: var(--gray-400);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
+            margin-top: 0.5rem;
+            line-height: 1.4;
         }
 
         .viewers-badge {
@@ -496,6 +641,264 @@
 
         .viewers-badge strong {
             color: var(--gray-900);
+        }
+
+        /* ============================================
+           WARNING BANNER
+           ============================================ */
+        .warning-section {
+            background: var(--white);
+            padding: 1.5rem 1rem;
+        }
+
+        .warning-banner {
+            background: linear-gradient(135deg, var(--yellow-100) 0%, var(--yellow-200) 100%);
+            border: 1px solid #d97706;
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .warning-banner__icon {
+            width: 28px;
+            height: 28px;
+            color: #d97706;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .warning-banner__text {
+            color: var(--gray-800);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .warning-banner__text strong {
+            color: #92400e;
+        }
+
+        /* ============================================
+           FAMILY PRICING SECTION
+           ============================================ */
+        .family-pricing-section {
+            background: var(--white);
+            padding: 4rem 1rem;
+        }
+
+        .family-pricing-card {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid var(--primary-200);
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--white) 0%, var(--primary-50) 100%);
+        }
+
+        .family-pricing-badge {
+            display: inline-block;
+            background: var(--primary-500);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .family-pricing-title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .family-pricing-text {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .family-pricing-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .family-pricing-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-800);
+            font-weight: 500;
+        }
+
+        .family-pricing-benefit svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-500);
+        }
+
+        .family-pricing-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            color: var(--white);
+            padding: 1.25rem 2.5rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .family-pricing-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .family-pricing-limited {
+            color: var(--red-500);
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-style: italic;
+            margin-top: 1.5rem;
+        }
+
+        /* ============================================
+           AVAILABILITY CALENDAR SECTION
+           ============================================ */
+        .availability-section {
+            background: var(--gray-50);
+            padding: 3rem 1rem;
+        }
+
+        .availability-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 2px solid var(--primary-200);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .availability-title {
+            text-align: center;
+            color: var(--primary-600);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .availability-title span {
+            color: var(--gray-900);
+        }
+
+        .availability-slots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .availability-slot {
+            width: 42px;
+            height: 42px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .availability-slot--filled {
+            background: var(--primary-500);
+            color: var(--white);
+        }
+
+        .availability-slot--filled svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .availability-slot--open {
+            background: var(--gray-200);
+            color: var(--gray-500);
+        }
+
+        .availability-progress {
+            height: 8px;
+            background: var(--gray-200);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .availability-progress__fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-500) 0%, var(--primary-400) 100%);
+            width: 87%;
+        }
+
+        .availability-remaining {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--gray-700);
+        }
+
+        .availability-remaining strong {
+            color: var(--gray-900);
+            font-size: 1.25rem;
+        }
+
+        /* Response time card */
+        .response-card {
+            max-width: 700px;
+            margin: 1rem auto 0;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .response-card__icon {
+            width: 24px;
+            height: 24px;
+            color: var(--orange-500);
+        }
+
+        .response-card__text {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+
+        .response-card__text strong {
+            color: var(--primary-500);
+        }
+
+        .response-card__subtext {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
         }
 
         /* ============================================
@@ -601,26 +1004,26 @@
         }
 
         /* ============================================
-           CERTIFICATION SECTION
+           GAF CERTIFICATION SECTION
            ============================================ */
         .cert-section {
-            background: var(--primary-900);
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
             padding: 4rem 1rem;
         }
 
         .cert-card {
-            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.5) 0%, rgba(12, 25, 41, 0.8) 100%);
             border: 2px solid var(--primary-500);
             border-radius: 1.5rem;
             padding: 3rem 2rem;
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .cert-badge {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 100%);
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
             color: var(--white);
             padding: 0.5rem 1.5rem;
             border-radius: 9999px;
@@ -632,7 +1035,7 @@
         }
 
         .cert-card__title {
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--white);
             margin-bottom: 1rem;
@@ -642,8 +1045,254 @@
             color: var(--gray-300);
             font-size: 1rem;
             line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ============================================
+           RECENT PROJECTS SECTION
+           ============================================ */
+        .projects-section {
+            background: var(--white);
+            padding: 5rem 1rem;
+        }
+
+        .projects-section__title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .projects-section__subtitle {
+            color: var(--gray-500);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: var(--gray-200);
+        }
+
+        .project-card__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-card__label {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 0.25rem;
+        }
+
+        .project-card__label--after {
+            top: auto;
+            bottom: 0.75rem;
+        }
+
+        .projects-count {
+            text-align: center;
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .projects-cta {
+            text-align: center;
+        }
+
+        .projects-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            color: var(--white);
+            padding: 1.25rem 2.5rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .projects-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        /* ============================================
+           FAQ SECTION
+           ============================================ */
+        .faq-section {
+            background: var(--gray-50);
+            padding: 5rem 1rem;
+        }
+
+        .faq-section__title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-section__subtitle {
+            color: var(--gray-500);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: linear-gradient(90deg, var(--primary-50) 0%, var(--white) 100%);
+            border-color: var(--primary-200);
+        }
+
+        .faq-item.active {
+            background: linear-gradient(90deg, var(--primary-100) 0%, var(--primary-50) 100%);
+            border-color: var(--primary-300);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-800);
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-700);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-500);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer__content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           NO-PRESSURE PROMISE SECTION
+           ============================================ */
+        .promise-section {
+            background: linear-gradient(180deg, var(--primary-50) 0%, var(--white) 100%);
+            border-top: 2px solid var(--primary-200);
+            border-bottom: 2px solid var(--primary-200);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .promise-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary-900);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .promise-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--white);
+        }
+
+        .promise-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .promise-text {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.7;
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        .promise-text strong {
+            color: var(--gray-900);
+        }
+
+        .promise-text a {
+            color: var(--primary-600);
         }
 
         /* ============================================
@@ -855,8 +1504,29 @@
 
         .cta-section__text {
             color: var(--gray-300);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section__limited {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-arrow {
+            color: var(--green-500);
+            font-size: 1.5rem;
+            animation: bounce 1s infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         .cta-button {
@@ -865,11 +1535,12 @@
             gap: 0.75rem;
             background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-400) 100%);
             color: var(--white);
-            padding: 1rem 2.5rem;
-            border-radius: 9999px;
+            padding: 1.25rem 2.5rem;
+            border-radius: 0.75rem;
             font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
+            text-transform: uppercase;
             transition: all 0.2s ease;
             box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
         }
@@ -904,13 +1575,112 @@
         }
 
         /* ============================================
+           SUCCESS SCREEN
+           ============================================ */
+        .success-screen {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .success-callback {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .success-callback .gradient-text {
+            background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .success-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .success-card__title {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .success-card__text {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-phone-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: white;
+            color: #2563eb;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .success-phone-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .success-hours {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (max-width: 768px) {
-            .form-hero {
-                padding: 2rem 1rem 1.5rem;
+        @media (max-width: 900px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
             .form-hero__title {
                 font-size: 1.4rem;
             }
@@ -932,11 +1702,11 @@
             }
 
             .stat-box__number {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
 
             .stat-box__label {
-                font-size: 0.6rem;
+                font-size: 0.65rem;
             }
 
             .form-row {
@@ -945,7 +1715,9 @@
 
             .secret-section__title,
             .reviews-section__title,
-            .cta-section__title {
+            .cta-section__title,
+            .family-pricing-title,
+            .promise-title {
                 font-size: 1.5rem;
             }
 
@@ -969,17 +1741,22 @@
 
             .secret-section,
             .reviews-section,
-            .cta-section {
+            .cta-section,
+            .family-pricing-section {
                 padding: 3rem 1rem;
+            }
+
+            .family-pricing-benefits {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .pricing-card__price {
+                font-size: 2.5rem;
             }
         }
 
         @media (max-width: 480px) {
-            .badges-row {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-
             .form-trust {
                 flex-direction: column;
                 align-items: center;
@@ -994,25 +1771,31 @@
             .comparison-card {
                 padding: 1.5rem;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .warning-banner {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Glossy Pricing Card -->
+    <section class="pricing-card-wrapper">
+        <div class="pricing-card">
+            <div class="pricing-card__title">New Roof Starting At</div>
+            <div class="pricing-card__price">$5,999</div>
+            <div class="pricing-card__subtitle">+ Family Pricing</div>
+        </div>
+    </section>
+
     <!-- Form Hero Section -->
     <section class="form-hero">
-        <div class="badges-row">
-            <div class="location-badge">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                EXCLUSIVE TO CARDIFF AREA
-            </div>
-
-            <div class="limited-badge">
-                LIMITED SPOTS AVAILABLE
-            </div>
-        </div>
-
         <h1 class="form-hero__title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"/>
@@ -1020,177 +1803,196 @@
             </svg>
             Get Your 60-Second Estimate
         </h1>
+        <p class="form-hero__subtitle">Free quote - No obligation - Family pricing available</p>
     </section>
 
     <!-- Multi-Step Form -->
     <div class="form-wrapper">
         <div class="form-container">
-            <div class="progress-bar">
-                <div class="progress-bar__track">
-                    <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
+            <!-- Glossy Form Header -->
+            <div class="form-header">
+                <div class="cardiff-tag">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    EXCLUSIVE TO CARDIFF AREA
                 </div>
-                <div class="progress-bar__info">
-                    <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
-                    <span class="progress-bar__percent" id="progress-percent">17%</span>
+                <div class="form-header__content">
+                    <div class="limited-badge">Only 2 spots left in January</div>
+                    <div class="form-header__title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Get Your 60-Second Estimate
+                    </div>
+                    <div class="form-header__subtitle">Free quote - No obligation - Family pricing available</div>
                 </div>
             </div>
 
-            <form id="estimate-form" action="https://submit-form.com/zC19yBjOR" method="POST">
-                <!-- Step 1: Home Type -->
-                <div class="form-step active" data-step="1">
-                    <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
-                    <div class="option-list">
-                        <label class="option-item">
-                            <input type="radio" name="home_type" value="Detached House" required>
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Detached House</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_type" value="Semi-Detached">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Semi-Detached</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_type" value="Terraced House">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Terraced House</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_type" value="Bungalow">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Bungalow</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_type" value="Commercial">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Commercial Property</span>
-                        </label>
+            <div class="form-content">
+                <div class="progress-bar">
+                    <div class="progress-bar__track">
+                        <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
                     </div>
-                    <div class="form-buttons form-buttons--single">
-                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                    <div class="progress-bar__info">
+                        <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
+                        <span class="progress-bar__percent" id="progress-percent">17%</span>
                     </div>
                 </div>
 
-                <!-- Step 2: Home Size -->
-                <div class="form-step" data-step="2">
-                    <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
-                    <div class="option-list">
-                        <label class="option-item">
-                            <input type="radio" name="home_size" value="1-2 bedrooms" required>
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">1-2 bedrooms</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_size" value="3 bedrooms">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">3 bedrooms</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_size" value="4 bedrooms">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">4 bedrooms</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="home_size" value="5+ bedrooms">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">5+ bedrooms</span>
-                        </label>
+                <form id="estimate-form" action="https://submit-form.com/zC19yBjOR" method="POST">
+                    <!-- Step 1: Home Type -->
+                    <div class="form-step active" data-step="1">
+                        <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
+                        <div class="option-list">
+                            <label class="option-item">
+                                <input type="radio" name="home_type" value="Single-Family Home" required>
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Single-Family Home</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="home_type" value="Townhouse or Duplex">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Townhouse or Duplex</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="home_type" value="Manufactured or Mobile">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Manufactured or Mobile</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="home_type" value="Commercial">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Commercial</span>
+                            </label>
+                        </div>
+                        <div class="form-buttons form-buttons--single">
+                            <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                        </div>
                     </div>
-                    <div class="form-buttons">
-                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                    </div>
-                </div>
 
-                <!-- Step 3: Timeline -->
-                <div class="form-step" data-step="3">
-                    <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
-                    <div class="option-list">
-                        <label class="option-item">
-                            <input type="radio" name="timeline" value="ASAP - Emergency" required>
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">ASAP - Emergency</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="timeline" value="In the next 30 days">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">In the next 30 days</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="timeline" value="More than a month from now">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">More than a month from now</span>
-                        </label>
+                    <!-- Step 2: Home Size -->
+                    <div class="form-step" data-step="2">
+                        <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
+                        <div class="option-list">
+                            <label class="option-item">
+                                <input type="radio" name="home_size" value="1-2 bedrooms" required>
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">1-2 bedrooms</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="home_size" value="3 bedrooms">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">3 bedrooms</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="home_size" value="4 bedrooms">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">4 bedrooms</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="home_size" value="5+ bedrooms">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">5+ bedrooms</span>
+                            </label>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                            <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                        </div>
                     </div>
-                    <div class="form-buttons">
-                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                    </div>
-                </div>
 
-                <!-- Step 4: Payment -->
-                <div class="form-step" data-step="4">
-                    <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
-                    <div class="option-list">
-                        <label class="option-item">
-                            <input type="radio" name="payment" value="Cash or Bank Transfer" required>
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Cash or Bank Transfer</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="payment" value="Credit/Debit Card">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Credit/Debit Card</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="payment" value="Finance / Monthly payments">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Finance / Monthly payments</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="payment" value="Insurance claim">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Insurance claim</span>
-                        </label>
-                        <label class="option-item">
-                            <input type="radio" name="payment" value="Not sure yet">
-                            <span class="option-item__radio"></span>
-                            <span class="option-item__text">Not sure yet</span>
-                        </label>
+                    <!-- Step 3: Timeline -->
+                    <div class="form-step" data-step="3">
+                        <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
+                        <div class="option-list">
+                            <label class="option-item">
+                                <input type="radio" name="timeline" value="ASAP - Emergency" required>
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">ASAP - Emergency</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="timeline" value="In the next 30 days">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">In the next 30 days</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="timeline" value="More than a month from now">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">More than a month from now</span>
+                            </label>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                            <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                        </div>
                     </div>
-                    <div class="form-buttons">
-                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                    </div>
-                </div>
 
-                <!-- Step 5: Address -->
-                <div class="form-step" data-step="5">
-                    <h2 class="form-step__question">What's your <span>property address</span>?</h2>
-                    <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
-                    <div class="form-row">
-                        <input type="text" class="form-input" name="city" placeholder="City/Town" required>
-                        <input type="text" class="form-input" name="county" placeholder="County">
+                    <!-- Step 4: Payment -->
+                    <div class="form-step" data-step="4">
+                        <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
+                        <div class="option-list">
+                            <label class="option-item">
+                                <input type="radio" name="payment" value="Cash or Bank Transfer" required>
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Cash or Bank Transfer</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="payment" value="Credit/Debit Card">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Credit/Debit Card</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="payment" value="Finance / Monthly payments">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Finance / Monthly payments</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="payment" value="Insurance claim">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Insurance claim</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="payment" value="Not sure yet">
+                                <span class="option-item__radio"></span>
+                                <span class="option-item__text">Not sure yet</span>
+                            </label>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                            <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                        </div>
                     </div>
-                    <input type="text" class="form-input" name="postcode" placeholder="Postcode" required>
-                    <div class="form-buttons">
-                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                        <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                    </div>
-                </div>
 
-                <!-- Step 6: Contact Info -->
-                <div class="form-step" data-step="6">
-                    <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
-                    <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name">
-                    <input type="email" class="form-input" name="email" id="email" placeholder="Email Address">
-                    <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number">
-                    <div class="form-buttons">
-                        <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                        <button type="button" class="btn-continue" id="submit-btn" onclick="submitForm()">GET MY ESTIMATE &rarr;</button>
+                    <!-- Step 5: Address -->
+                    <div class="form-step" data-step="5">
+                        <h2 class="form-step__question">What's your <span>property address</span>?</h2>
+                        <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
+                        <div class="form-row">
+                            <input type="text" class="form-input" name="city" placeholder="City/Town" required>
+                            <input type="text" class="form-input" name="county" placeholder="County">
+                        </div>
+                        <input type="text" class="form-input" name="postcode" placeholder="Postcode" required>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                            <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+
+                    <!-- Step 6: Contact Info -->
+                    <div class="form-step" data-step="6">
+                        <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
+                        <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name">
+                        <input type="email" class="form-input" name="email" id="email" placeholder="Email Address">
+                        <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number">
+                        <div class="form-buttons">
+                            <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                            <button type="button" class="btn-continue" id="submit-btn" onclick="submitForm()">GET MY ESTIMATE &rarr;</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div class="form-trust">
@@ -1209,25 +2011,111 @@
         </div>
     </div>
 
-    <!-- Stats Section -->
+    <!-- Why Cardiff Homeowners Choose Delston Section -->
     <section class="stats-section">
         <div class="container">
+            <h2 class="stats-section__title">Why Cardiff Homeowners Choose Delston Roofing</h2>
+            <p class="stats-section__subtitle">GAF Certified Contractor - 3 Generations of Excellence - Family-Owned & Operated</p>
             <div class="stats-grid">
                 <div class="stat-box">
-                    <div class="stat-box__number">35+</div>
-                    <div class="stat-box__label">Years Experience</div>
-                </div>
-                <div class="stat-box">
                     <div class="stat-box__number">500+</div>
-                    <div class="stat-box__label">Roofs Completed</div>
+                    <div class="stat-box__label">Cardiff Roofs Installed with Pride</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-box__number">10 Year</div>
-                    <div class="stat-box__label">Guarantee</div>
+                    <div class="stat-box__number">Top 1%</div>
+                    <div class="stat-box__label">GAF Certified Contractor</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box__number">10 Years</div>
+                    <div class="stat-box__label">Full Warranty on Materials AND Labor</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box__number">1-2 Days</div>
+                    <div class="stat-box__label">Fast, Professional Installation</div>
                 </div>
             </div>
             <div class="viewers-badge">
-                <span><strong id="viewer-count">7</strong> Cardiff homeowners viewing this offer right now</span>
+                <span><strong id="viewer-count">12</strong> Cardiff homeowners viewing this offer right now</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warning Banner -->
+    <section class="warning-section">
+        <div class="warning-banner">
+            <svg class="warning-banner__icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+            </svg>
+            <p class="warning-banner__text">
+                <strong>Winter roof check time:</strong> Cold weather and ice can expose hidden damage. Get a free inspection before small leaks become big problems.
+            </p>
+        </div>
+    </section>
+
+    <!-- Family Pricing Section -->
+    <section class="family-pricing-section">
+        <div class="family-pricing-card">
+            <div class="family-pricing-badge">Family Pricing</div>
+            <h2 class="family-pricing-title">Pay What Our Family Pays</h2>
+            <p class="family-pricing-text">
+                For a limited time, we're offering our family pricing to Cardiff homeowners.
+                This is our absolute best rate - no negotiation needed, no games.
+            </p>
+            <div class="family-pricing-benefits">
+                <div class="family-pricing-benefit">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Our lowest price guaranteed
+                </div>
+                <div class="family-pricing-benefit">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Same premium materials
+                </div>
+                <div class="family-pricing-benefit">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Full 10-year warranty
+                </div>
+            </div>
+            <a href="#" class="family-pricing-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                Claim Family Pricing Now
+            </a>
+            <p class="family-pricing-limited">Only 2 spots left in January - Offer ends when schedule fills</p>
+        </div>
+    </section>
+
+    <!-- Availability Calendar Section -->
+    <section class="availability-section">
+        <div class="availability-card">
+            <h3 class="availability-title">Family Pricing Availability: <span>January 2026</span></h3>
+            <div class="availability-slots">
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                <div class="availability-slot availability-slot--open">14</div>
+                <div class="availability-slot availability-slot--open">15</div>
+            </div>
+            <div class="availability-progress">
+                <div class="availability-progress__fill"></div>
+            </div>
+            <p class="availability-remaining">Only <strong>2</strong> spots remaining at family pricing</p>
+        </div>
+
+        <div class="response-card">
+            <svg class="response-card__icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            <div>
+                <p class="response-card__text">Average response time: <strong>Under 15 minutes</strong></p>
+                <p class="response-card__subtext">Same-week inspections available - Free estimates</p>
             </div>
         </div>
     </section>
@@ -1298,7 +2186,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            Our best rate, guaranteed
+                            Family pricing - our best rate, guaranteed
                         </li>
                         <li class="comparison-card__item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1310,19 +2198,19 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            David &amp; his sons on every job, no strangers
+                            Our own crews - we never subcontract
                         </li>
                         <li class="comparison-card__item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            Premium materials we stand behind
+                            Premium GAF materials only
                         </li>
                         <li class="comparison-card__item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            10-year guarantee, we'll still be here
+                            10-year warranty backed by GAF, not just us
                         </li>
                     </ul>
                 </div>
@@ -1330,14 +2218,201 @@
         </div>
     </section>
 
-    <!-- Certification Section -->
+    <!-- The Delston Difference Card -->
+    <section style="background: var(--white); padding: 3rem 1rem;">
+        <div style="max-width: 450px; margin: 0 auto; background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%); border: 2px solid var(--primary-400); border-radius: 1rem; padding: 2rem;">
+            <h3 style="display: flex; align-items: center; gap: 0.5rem; font-size: 1.25rem; font-weight: 700; color: var(--primary-600); margin-bottom: 1.5rem;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                The Delston Difference
+            </h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                <li style="display: flex; align-items: flex-start; gap: 0.75rem; color: var(--gray-700); font-size: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-500)" style="flex-shrink: 0; margin-top: 2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Family pricing - our best rate, guaranteed
+                </li>
+                <li style="display: flex; align-items: flex-start; gap: 0.75rem; color: var(--gray-700); font-size: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-500)" style="flex-shrink: 0; margin-top: 2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Zero pressure, honest assessments
+                </li>
+                <li style="display: flex; align-items: flex-start; gap: 0.75rem; color: var(--gray-700); font-size: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-500)" style="flex-shrink: 0; margin-top: 2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Our own crews - we never subcontract
+                </li>
+                <li style="display: flex; align-items: flex-start; gap: 0.75rem; color: var(--gray-700); font-size: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-500)" style="flex-shrink: 0; margin-top: 2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Premium GAF materials only
+                </li>
+                <li style="display: flex; align-items: flex-start; gap: 0.75rem; color: var(--gray-700); font-size: 0.95rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--primary-500)" style="flex-shrink: 0; margin-top: 2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    10-year warranty backed by GAF, not just us
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- GAF Certification Section -->
     <section class="cert-section">
         <div class="container">
             <div class="cert-card">
-                <span class="cert-badge">35+ YEARS FAMILY EXPERIENCE</span>
-                <h2 class="cert-card__title">Three Generations of Roofing Excellence</h2>
-                <p class="cert-card__text">David started Delston Roofing over 35 years ago and now works alongside his two sons. When you choose us, you're not getting a faceless corporation - you're getting a family who takes pride in every single roof. We're fully insured, and our 10-year guarantee means we'll be here long after the job is done.</p>
+                <span class="cert-badge">3 Generations of Family Experience</span>
+                <h2 class="cert-card__title">Top 1% of Roofing Contractors Nationwide</h2>
+                <p class="cert-card__text">David started Delston Roofing and now works alongside his two sons - three generations of roofing excellence. Only 1% of roofing contractors qualify for GAF's highest certification, which we've earned through excellence in craftsmanship and customer service. Our certification means your 10-year warranty is backed by a billion-dollar company - not just us.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- Recent Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="projects-section__title">Recent Cardiff Projects</h2>
+            <p class="projects-section__subtitle">Real roofs, real results - see our craftsmanship for yourself</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--gray-300), var(--gray-400)); display: flex; align-items: center; justify-content: center; color: var(--gray-600); font-size: 0.8rem;">Before/After</div>
+                    <span class="project-card__label">Before</span>
+                    <span class="project-card__label project-card__label--after">After</span>
+                </div>
+                <div class="project-card">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--gray-300), var(--gray-400)); display: flex; align-items: center; justify-content: center; color: var(--gray-600); font-size: 0.8rem;">Before/After</div>
+                    <span class="project-card__label">Before</span>
+                    <span class="project-card__label project-card__label--after">After</span>
+                </div>
+                <div class="project-card">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--gray-300), var(--gray-400)); display: flex; align-items: center; justify-content: center; color: var(--gray-600); font-size: 0.8rem;">Before/After</div>
+                    <span class="project-card__label">Before</span>
+                    <span class="project-card__label project-card__label--after">After</span>
+                </div>
+                <div class="project-card">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--gray-300), var(--gray-400)); display: flex; align-items: center; justify-content: center; color: var(--gray-600); font-size: 0.8rem;">Before/After</div>
+                    <span class="project-card__label">Before</span>
+                    <span class="project-card__label project-card__label--after">After</span>
+                </div>
+            </div>
+
+            <p class="projects-count">500+ satisfied Cardiff homeowners - Swipe to see more &rarr;</p>
+
+            <div class="projects-cta">
+                <a href="#" class="projects-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                    Get Your Free Estimate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-section__title">Your Questions Answered</h2>
+            <p class="faq-section__subtitle">We've helped over 500 Cardiff homeowners with their roofing needs. Here are answers to the questions we hear most often.</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is starting at $5,999 for a complete roof?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">Yes! Our starting price includes a complete tear-off, new underlayment, premium GAF shingles, and all materials and labor. The final price depends on your roof's size and complexity, but we guarantee no hidden fees or surprise charges.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is family pricing?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">Family pricing means you pay the same rate we'd charge our own relatives. No markups for sales commissions, no inflated estimates - just our honest, best price for quality roofing work.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How long does installation take?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">Most residential roofs are completed in 1-2 days. We work efficiently without sacrificing quality, and we always leave your property clean and tidy when we're done.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What's covered in the 10-year warranty?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">Our 10-year warranty covers both materials and labor. As a GAF certified contractor, your warranty is backed by GAF - a billion-dollar company - not just us. If anything goes wrong, we'll fix it at no cost to you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you help with insurance claims?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">Absolutely. We have extensive experience working with insurance companies and can help document damage, provide detailed estimates, and work directly with your adjuster to make the claims process as smooth as possible.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is financing available?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">Yes, we offer flexible financing options to fit your budget. Many customers qualify for low monthly payments that make a new roof more affordable than you might think.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What if I'm not ready to commit today?
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer__content">No problem at all. We never use high-pressure sales tactics. Get your free estimate, take your time to think it over, and reach out when you're ready. We'll still be here, and your quote will be valid for 30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- No-Pressure Promise Section -->
+    <section class="promise-section">
+        <div class="container">
+            <div class="promise-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <h2 class="promise-title">Our No-Pressure Promise</h2>
+            <p class="promise-text">
+                <strong>Get a free roof inspection with honest assessment and detailed estimate - zero obligation.</strong> We believe in earning your business through quality work, fair pricing, and treating you like <a href="#">family</a> - not high-pressure sales tactics. If your roof doesn't need replacing, we'll tell you.
+            </p>
         </div>
     </section>
 
@@ -1378,10 +2453,12 @@
     <!-- Final CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta-section__title">Ready to Get Your Free Estimate?</h2>
-            <p class="cta-section__text">No obligation. No pressure. Just honest pricing from a family who cares.</p>
+            <h2 class="cta-section__title">Ready to Protect Your Cardiff Home?</h2>
+            <p class="cta-section__text">Join over 500 satisfied homeowners throughout Cardiff, Newport, Penarth, and all of Greater Cardiff who trust Delston Roofing for premium roofing.</p>
+            <p class="cta-section__limited">Family pricing means our best rate - limited time only!</p>
+            <div class="cta-arrow">&uarr;</div>
             <a href="#" class="cta-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-                Get My Free Estimate
+                Start My 60-Second Estimate
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -1393,7 +2470,7 @@
     <footer class="simple-footer">
         <p class="simple-footer__text">
             &copy; 2026 Delston Roofing. Serving Cardiff, Newport & Penarth.
-            <a href="/" class="simple-footer__link">Back to main site</a>
+            <a href="/homepage" class="simple-footer__link">Back to main site</a>
         </p>
     </footer>
 
@@ -1461,28 +2538,24 @@
             }
         }
 
-        // Option selection handling - use event delegation to prevent double-firing
+        // Option selection handling
         let isAdvancing = false;
         document.querySelectorAll('.option-item').forEach(item => {
             item.addEventListener('click', function(e) {
-                // Prevent double-firing from label+input click
                 if (isAdvancing) return;
 
                 const input = this.querySelector('input');
                 const name = input.name;
 
-                // Remove selected from siblings
                 document.querySelectorAll(`input[name="${name}"]`).forEach(sibling => {
                     sibling.closest('.option-item').classList.remove('selected');
                 });
 
-                // Add selected to clicked
                 this.classList.add('selected');
                 input.checked = true;
 
                 updateContinueButton();
 
-                // Auto-advance after short delay for radio selections
                 isAdvancing = true;
                 setTimeout(() => {
                     if (currentStep < totalSteps) {
@@ -1504,7 +2577,6 @@
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
 
-            // Submit to Formspark in background (don't wait for response)
             const form = document.getElementById('estimate-form');
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
@@ -1517,142 +2589,72 @@
                 body: JSON.stringify(data)
             }).catch(() => {});
 
-            // Always show success screen after brief delay
             setTimeout(() => {
                 document.querySelector('.form-wrapper').innerHTML = `
-                    <div style="text-align: center; padding: 2rem 1rem;">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                    <div class="success-screen">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
                         </div>
-                        <h2 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 2rem;">You're In!</h2>
-                        <div style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 1rem; padding: 2rem; max-width: 400px; margin: 0 auto;">
-                            <h3 style="color: white; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem;">Skip the Wait - Call Now</h3>
-                            <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 1.5rem;">Speak directly to David who can answer all your questions.</p>
-                            <a href="tel:+447876400202" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: white; color: #2563eb; padding: 1rem 2rem; border-radius: 9999px; font-size: 1.25rem; font-weight: 700; text-decoration: none; transition: transform 0.2s;">
+                        <h2 class="success-title">You're In!</h2>
+                        <p class="success-callback">David will give you a call in roughly <span class="gradient-text">15 minutes</span></p>
+                        <div class="success-card">
+                            <h3 class="success-card__title">Skip the Wait - Call Now</h3>
+                            <p class="success-card__text">Speak directly to David who can answer all your questions.</p>
+                            <a href="tel:+447876400202" class="success-phone-btn">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
                                 07876 400202
                             </a>
-                            <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 1rem;">Mon-Sat 8AM-6PM</p>
+                            <p class="success-hours">Mon-Sat 8AM-6PM</p>
                         </div>
                     </div>
                 `;
             }, 500);
         }
 
-        // Simulate viewer count
+        // Viewer count - always between 10-15
         function updateViewerCount() {
-            const count = Math.floor(Math.random() * 8) + 4; // 4-11 viewers
+            const count = Math.floor(Math.random() * 6) + 10; // 10-15 viewers
             document.getElementById('viewer-count').textContent = count;
         }
-        setInterval(updateViewerCount, 30000); // Update every 30 seconds
+        setInterval(updateViewerCount, 30000);
 
         // Initialize
         updateProgress();
 
-        // Reviews data - 100 testimonials
+        // FAQ toggle function
+        function toggleFaq(btn) {
+            const faqItem = btn.closest('.faq-item');
+            const wasActive = faqItem.classList.contains('active');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked one if it wasn't already open
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Reviews data
         const allReviews = [
             { name: "James M.", initials: "JM", date: "Jan 15, 2026", text: "The crew showed up when they were supposed to and worked non stop until the job was completed. I work in the construction industry so I pay attention to several details and I was very pleased on their workmanship and efficiency." },
             { name: "Sarah L.", initials: "SL", date: "Jan 12, 2026", text: "Professional, on time, kept everything clean. Amazing!" },
-            { name: "Rachel B.", initials: "RB", date: "Jan 8, 2026", text: "This company is above board, honest, professional, and thorough. The team that completed my roof did an amazing job! They went the extra mile, even painted the pipe vents to match the shingles. I was so impressed with the attention to detail and how clean they left everything when they were done. Would recommend to anyone in Cardiff looking for quality roofing work." },
+            { name: "Rachel B.", initials: "RB", date: "Jan 8, 2026", text: "This company is above board, honest, professional, and thorough. The team that completed my roof did an amazing job! They went the extra mile, even painted the pipe vents to match the shingles. I was so impressed with the attention to detail and how clean they left everything when they were done." },
             { name: "Karen W.", initials: "KW", date: "Jan 5, 2026", text: "Explained everything clearly. Stress-free process." },
             { name: "Mike P.", initials: "MP", date: "Dec 28, 2025", text: "I was nervous about the whole process, from beginning to end, but they made me feel comfortable and gave me the best options at a reasonable price." },
-            { name: "Lisa T.", initials: "LT", date: "Dec 22, 2025", text: "Super dependable and honest. High quality from start to finish. The roofers were very professional and respectful of our property, cleaned up thoroughly, and the roof looks absolutely fantastic. We had some concerns about the weather forecast but they worked around it perfectly. Couldn't be happier with the result." },
+            { name: "Lisa T.", initials: "LT", date: "Dec 22, 2025", text: "Super dependable and honest. High quality from start to finish. The roofers were very professional and respectful of our property, cleaned up thoroughly, and the roof looks absolutely fantastic." },
             { name: "David H.", initials: "DH", date: "Dec 18, 2025", text: "Great communication throughout. Highly recommend!" },
             { name: "Paul G.", initials: "PG", date: "Dec 15, 2025", text: "Everyone knew their job and did it well. Cannot say enough good things about them!" },
-            { name: "Tony M.", initials: "TM", date: "Dec 10, 2025", text: "The installation team worked very well together. I could hear them talking and laughing over the soft music playing on the job site. They completed the new roof and cleaned up the worksite perfectly." },
+            { name: "Tony M.", initials: "TM", date: "Dec 10, 2025", text: "The installation team worked very well together. They completed the new roof and cleaned up the worksite perfectly." },
             { name: "Chris R.", initials: "CR", date: "Dec 5, 2025", text: "The proposal package was the most comprehensive out of the five companies we spoke to. A roofing professional who meets the highest standards." },
             { name: "Emma J.", initials: "EJ", date: "Dec 1, 2025", text: "Brilliant job. No mess left behind at all." },
-            { name: "Robert K.", initials: "RK", date: "Nov 28, 2025", text: "David and his sons are proper tradesmen. Old school workmanship with modern materials. They did our neighbours roof last year so we knew what to expect but they still exceeded our expectations. The lads were polite, worked hard all day, and the price was very fair for the quality of work. Would use again without hesitation and already recommended them to my brother." },
-            { name: "Amanda C.", initials: "AC", date: "Nov 25, 2025", text: "Quick and efficient. Very happy with the outcome." },
-            { name: "Steve B.", initials: "SB", date: "Nov 20, 2025", text: "Had a leak that three other roofers couldnt sort. These lads found the problem in 10 minutes and fixed it properly. Should have called them first!" },
-            { name: "Helen D.", initials: "HD", date: "Nov 15, 2025", text: "From the initial inspection to the final cleanup, everything was handled professionally. The team arrived on time every day, worked efficiently, and took great care not to damage our garden or driveway. They even spotted some additional issues with our guttering and fixed those at no extra charge. This is a family business that genuinely cares about their reputation and it shows in every aspect of their work." },
-            { name: "Mark T.", initials: "MT", date: "Nov 12, 2025", text: "Fair price, great work. Simple as that." },
-            { name: "Julie F.", initials: "JF", date: "Nov 8, 2025", text: "They were recommended by my neighbour and I can see why. Excellent service from start to finish." },
-            { name: "Andrew P.", initials: "AP", date: "Nov 5, 2025", text: "Really impressed with how tidy they kept everything. You wouldnt know theyd been here except for the lovely new roof!" },
-            { name: "Catherine M.", initials: "CM", date: "Nov 1, 2025", text: "Honest quote, no hidden extras. The work was done exactly as described and they even came back a week later to check everything was ok. Thats customer service." },
-            { name: "Daniel W.", initials: "DW", date: "Oct 28, 2025", text: "Best roofing company in Cardiff hands down. Weve used them twice now and both times theyve been excellent. The whole family is involved in the business and you can tell they take pride in what they do. Our Victorian terrace needed careful work and they handled it beautifully. Already planning to have them back for some chimney work next year." },
-            { name: "Susan H.", initials: "SH", date: "Oct 25, 2025", text: "Lovely team. Made a stressful situation much easier." },
-            { name: "Gary N.", initials: "GN", date: "Oct 20, 2025", text: "Got three quotes and these were the most detailed and transparent. Chose them and no regrets whatsoever." },
-            { name: "Michelle E.", initials: "ME", date: "Oct 15, 2025", text: "The lads who came out were friendly, worked hard, and clearly knew what they were doing. Roof looks brand new and we finally have no more leaks in the spare room!" },
-            { name: "Brian L.", initials: "BL", date: "Oct 12, 2025", text: "Turned up when they said, did what they said, charged what they quoted. Refreshing to find tradesmen like this. The roof is solid and looks great. Very happy customer here." },
-            { name: "Wendy R.", initials: "WR", date: "Oct 8, 2025", text: "Fantastic work on our bungalow. Thank you!" },
-            { name: "Ian S.", initials: "IS", date: "Oct 5, 2025", text: "Had major storm damage and these guys came out same day to assess and put a temporary fix in place. Full repair was done within the week and its been watertight ever since. Insurance company was also impressed with their detailed quote and photos. Made the whole claims process much smoother." },
-            { name: "Diane A.", initials: "DA", date: "Oct 1, 2025", text: "Clean, professional, reasonably priced. What more could you ask for?" },
-            { name: "Kevin O.", initials: "KO", date: "Sep 28, 2025", text: "My mum needed her roof done and I was worried about her getting ripped off. These guys treated her brilliantly, explained everything patiently, and did a great job at a fair price. Really put my mind at ease." },
-            { name: "Patricia Y.", initials: "PY", date: "Sep 25, 2025", text: "Excellent attention to detail. Very pleased." },
-            { name: "Simon V.", initials: "SV", date: "Sep 20, 2025", text: "We live in a conservation area so needed specialists who understood the requirements. They sorted all the paperwork, used appropriate materials, and the result is beautiful. Our 1920s semi looks better than ever." },
-            { name: "Janet U.", initials: "JU", date: "Sep 15, 2025", text: "Third time using Delston over the years. Never disappointed. They did our extension roof this time and it matches the original perfectly. The sons are just as skilled as David himself." },
-            { name: "Peter Z.", initials: "PZ", date: "Sep 12, 2025", text: "Quick response, quality work, fair pricing." },
-            { name: "Carolyn X.", initials: "CX", date: "Sep 8, 2025", text: "I was really worried about having the roof done as its such a big job. But they made it so easy. Regular updates, no surprises, just good honest work. The team were lovely to have around too." },
-            { name: "Martin Q.", initials: "MQ", date: "Sep 5, 2025", text: "Solid roof, solid company. Will definitely recommend." },
-            { name: "Joanne I.", initials: "JI", date: "Sep 1, 2025", text: "Our flat roof had been leaking for ages. Finally got it sorted properly. Should have called sooner! The new roof is brilliant and theyve guaranteed it for 5 years which gives us real peace of mind." },
-            { name: "Graham E.", initials: "GE", date: "Aug 28, 2025", text: "Great job on our terrace house. The neighbours have already asked for their number!" },
-            { name: "Barbara T.", initials: "BT", date: "Aug 25, 2025", text: "From the first phone call to the final handshake, everything was professional. David came out personally to quote, explained all our options, and there was no pressure at all. When the work started, his team were punctual, worked hard, and cleaned up every evening. The roof itself is excellent quality and we couldnt be happier with the whole experience." },
-            { name: "Philip R.", initials: "PR", date: "Aug 20, 2025", text: "Very happy with the work. Looks fantastic." },
-            { name: "Sandra N.", initials: "SN", date: "Aug 15, 2025", text: "Had some tiles blow off in the wind. They came out quick, sorted it, and didnt charge the earth. Honest pricing and good work." },
-            { name: "Derek M.", initials: "DM", date: "Aug 12, 2025", text: "The lads were brilliant. Got on with the job, kept the noise to a minimum, and even moved our cars before starting so nothing got dusty. Small things like that make a big difference. Roof is perfect too obviously!" },
-            { name: "Christine L.", initials: "CL", date: "Aug 8, 2025", text: "No mess, no fuss, just great work." },
-            { name: "Roger K.", initials: "RK", date: "Aug 5, 2025", text: "Weve lived in this house 30 years and never had a good experience with roofers until now. David and the team were honest about what needed doing and what could wait. They didnt try to upsell us on work we didnt need which I really appreciated. The work they did do was first class." },
-            { name: "Angela J.", initials: "AJ", date: "Aug 1, 2025", text: "Brilliant company. Worth every penny." },
-            { name: "Colin H.", initials: "CH", date: "Jul 28, 2025", text: "They fixed our dormer window leak that two other companies couldnt figure out. Proper job, proper tradesmen. Very grateful to have found them." },
-            { name: "Maureen G.", initials: "MG", date: "Jul 25, 2025", text: "Such nice people to deal with. The quote came through quickly, the work was scheduled for when it suited us, and the job was completed faster than expected. No complaints whatsoever. Will be using them again for our garage roof." },
-            { name: "Alan F.", initials: "AF", date: "Jul 20, 2025", text: "First class service all the way through." },
-            { name: "Denise D.", initials: "DD", date: "Jul 15, 2025", text: "Our roof was in a right state when we moved in. They replaced the lot and its transformed the house. No more buckets in the loft! The team were great to have around and really took care with our garden." },
-            { name: "Terry C.", initials: "TC", date: "Jul 12, 2025", text: "Quick, clean, professional. Exactly what you want." },
-            { name: "Lorraine B.", initials: "LB", date: "Jul 8, 2025", text: "I usually dread having tradesmen in but these lot were lovely. Explained everything, got on with the job, and left the place spotless. The roof looks amazing and I finally have peace of mind. Would recommend to anyone." },
-            { name: "William A.", initials: "WA", date: "Jul 5, 2025", text: "Top quality workmanship. Very impressed indeed." },
-            { name: "Ruth W.", initials: "RW", date: "Jul 1, 2025", text: "Had our slate roof repaired and re-pointed. Beautiful work - you can tell this is a family that takes pride in what they do. Very fairly priced too compared to others we quoted." },
-            { name: "Nigel V.", initials: "NV", date: "Jun 28, 2025", text: "Excellent from start to finish. Highly recommend." },
-            { name: "Brenda U.", initials: "BU", date: "Jun 25, 2025", text: "We needed a complete new roof on our 1930s semi. It was a big job but they handled it beautifully. Every single day they turned up on time, worked hard, and left everything tidy. The neighbours commented on how professional they were. The finished roof looks fantastic and weve had no issues since." },
-            { name: "Geoffrey T.", initials: "GT", date: "Jun 20, 2025", text: "Honest pricing, quality materials, skilled workers." },
-            { name: "Dorothy S.", initials: "DS", date: "Jun 15, 2025", text: "They were recommended by a friend and I can absolutely see why. Friendly, professional, and the roof is perfect. Already recommended them to my sister in Penarth." },
-            { name: "Victor R.", initials: "VR", date: "Jun 12, 2025", text: "Cracking job. No other words needed really!" },
-            { name: "Shirley P.", initials: "SP", date: "Jun 8, 2025", text: "Had some emergency repairs done after a storm. They came out same day, which was amazing. Very reasonable price too considering how quick they responded. Will definitely use again for planned work." },
-            { name: "Norman O.", initials: "NO", date: "Jun 5, 2025", text: "These guys are the real deal. Family business that genuinely cares about doing a good job. David came out to quote, took his time to really assess everything, and the price he gave was exactly what we paid. No hidden extras, no nonsense. His sons did the work and they clearly know their trade. Best roofing experience weve ever had." },
-            { name: "Joyce N.", initials: "JN", date: "Jun 1, 2025", text: "Lovely team, beautiful roof. Very happy." },
-            { name: "Ernest M.", initials: "EM", date: "May 28, 2025", text: "Had fascias and gutters done as well as some roof repairs. All looks brilliant now. Great bunch of lads and fair prices." },
-            { name: "Eileen L.", initials: "EL", date: "May 25, 2025", text: "They came highly recommended and now I know why. Professional from start to finish, competitive pricing, and the work itself is excellent. Our flat roof conversion is watertight and looks great." },
-            { name: "Harold K.", initials: "HK", date: "May 20, 2025", text: "Very impressed with the quality of work." },
-            { name: "Irene J.", initials: "IJ", date: "May 15, 2025", text: "We had a complicated job with multiple roof levels and different materials. They took it all in stride, explained what they would do at each stage, and the result is fantastic. Really know their stuff these guys." },
-            { name: "Stanley I.", initials: "SI", date: "May 12, 2025", text: "Top notch work at a reasonable price. Happy customer!" },
-            { name: "Olive H.", initials: "OH", date: "May 8, 2025", text: "Its so nice to find tradesmen you can trust. They quoted fairly, turned up when they said, did exactly what was agreed, and cleaned up after themselves. The roof is solid and looks great. Will be calling them for any future work." },
-            { name: "Ronald G.", initials: "RG", date: "May 5, 2025", text: "Fantastic service from beginning to end." },
-            { name: "Edna F.", initials: "EF", date: "May 1, 2025", text: "Our cottage needed specialist work on the old slate roof. David clearly knows his stuff when it comes to older properties. The repairs are invisible and the roof is completely watertight now. Very skilled work indeed." },
-            { name: "Leonard E.", initials: "LE", date: "Apr 28, 2025", text: "Prompt, professional, and properly skilled." },
-            { name: "Mabel D.", initials: "MD", date: "Apr 25, 2025", text: "Had a new porch roof put on. Such a difference! The old one leaked every time it rained heavily. The new one is solid as anything and looks so much better. The lads were great, friendly and hardworking. Very pleased overall." },
-            { name: "Herbert C.", initials: "HC", date: "Apr 20, 2025", text: "First class job. Would use again in a heartbeat." },
-            { name: "Doris B.", initials: "DB", date: "Apr 15, 2025", text: "Really helpful when we were trying to decide between repair and replacement. They gave us honest advice and didnt try to push us towards the more expensive option. In the end we went for replacement and its absolutely brilliant. Proper family business values." },
-            { name: "Arthur A.", initials: "AA", date: "Apr 12, 2025", text: "Solid work, fair price, no messing about." },
-            { name: "Betty Z.", initials: "BZ", date: "Apr 8, 2025", text: "We had a nightmare with our previous roofer who bodged the job. Delston came in, fixed everything properly, and now we have a roof we can actually rely on. So grateful to have found them. Wish wed called them in the first place!" },
-            { name: "Fred Y.", initials: "FY", date: "Apr 5, 2025", text: "Great team, great results. Very happy indeed." },
-            { name: "Gladys X.", initials: "GX", date: "Apr 1, 2025", text: "The quote was detailed and competitive. The work was completed on schedule and to a high standard. Communication throughout was excellent. Everything you want from a roofing company really. Highly recommended." },
-            { name: "Walter W.", initials: "WW", date: "Mar 28, 2025", text: "Brilliant work on our Victorian terrace. Cheers!" },
-            { name: "Elsie V.", initials: "EV", date: "Mar 25, 2025", text: "Theyve done three jobs for us now over the years. Main roof, garage, and just recently the bay window. Every single time theyve been excellent. Arrive on time, work hard, leave everything clean. Cant fault them at all. Our go-to roofers from now on." },
-            { name: "Frank U.", initials: "FU", date: "Mar 20, 2025", text: "Excellent workmanship. Highly recommend." },
-            { name: "Hilda T.", initials: "HT", date: "Mar 15, 2025", text: "Had some ridge tiles come loose. They sorted it quick and cheap. No fuss, no trying to sell me stuff I didnt need. Just honest work at a fair price. Hard to find these days." },
-            { name: "Jack S.", initials: "JS", date: "Mar 12, 2025", text: "David gave us great advice and his team delivered exactly what was promised. The new roof has transformed our house. Very professional outfit." },
-            { name: "Ivy R.", initials: "IR", date: "Mar 8, 2025", text: "Really pleased with the quality of the work." },
-            { name: "George Q.", initials: "GQ", date: "Mar 5, 2025", text: "We were worried about the cost of a new roof but they worked with us to find a solution that fit our budget without compromising on quality. Really appreciated their flexibility and the end result is fantastic. House looks like new!" },
-            { name: "Rose P.", initials: "RP", date: "Mar 1, 2025", text: "Tidy workers, excellent finish. Very impressed." },
-            { name: "Edward O.", initials: "EO", date: "Feb 26, 2025", text: "Had them out for an inspection and they were completely honest about what needed doing now versus what could wait. Didnt try to scare us or upsell. When they did the work it was first class. Will definitely use again." },
-            { name: "Vera N.", initials: "VN", date: "Feb 22, 2025", text: "Top job, top people. What more can I say?" },
-            { name: "Albert M.", initials: "AM", date: "Feb 18, 2025", text: "The whole experience was smooth from start to finish. Easy to get a quote, clear about timescales, and the actual work was completed perfectly. Our leaky conservatory roof is now bone dry and looks brilliant. Really grateful for their expertise." },
-            { name: "Florence L.", initials: "FL", date: "Feb 14, 2025", text: "Wonderful service. Couldnt be happier." },
-            { name: "Horace K.", initials: "HK", date: "Feb 10, 2025", text: "They sorted our guttering and a few roof tiles at the same time. Made sense to do it all together and they gave us a good deal for the combined work. Very efficient and everything looks great." },
-            { name: "Ethel J.", initials: "EJ", date: "Feb 6, 2025", text: "Really refreshing to deal with honest tradesmen." },
-            { name: "Cecil I.", initials: "CI", date: "Feb 2, 2025", text: "Had some complicated work done where the extension meets the main roof. They knew exactly what to do and the result is watertight and looks seamless. Very skilled team. The sons are clearly well trained and take the same pride in their work as David does." },
-            { name: "Ada H.", initials: "AH", date: "Jan 28, 2025", text: "Brilliant job all round. Thank you!" },
-            { name: "Sydney G.", initials: "SG", date: "Jan 24, 2025", text: "Been meaning to get the roof done for ages and so glad we finally called these guys. They made it easy, the price was fair, and the work is excellent. Should have done it sooner!" },
-            { name: "Lilian F.", initials: "LF", date: "Jan 20, 2025", text: "Five stars from us. Great experience." },
-            { name: "Reginald E.", initials: "RE", date: "Jan 16, 2025", text: "Our 1950s bungalow needed the whole roof stripped and replaced. Big job but they handled it brilliantly. Kept us informed every step of the way, worked around the weather, and the finished result is beautiful. Neighbours keep commenting on how good it looks!" },
-            { name: "Mildred D.", initials: "MD", date: "Jan 12, 2025", text: "Friendly, professional, quality work. Perfect." },
-            { name: "Wilfred C.", initials: "WC", date: "Jan 8, 2025", text: "Great communication throughout. They let us know when theyd arrive, explained what they were doing each day, and checked we were happy at the end. The work itself is excellent. Very pleased we chose them." },
-            { name: "Winifred B.", initials: "WB", date: "Jan 4, 2025", text: "Highly recommend. Worth every single penny." },
-            { name: "Cyril A.", initials: "CA", date: "Dec 30, 2024", text: "First rate service from a first rate team. David and his boys know exactly what theyre doing and it shows in the quality of their work. Our roof has never looked better and more importantly it does its job perfectly. No leaks, no worries. Exactly what you want really." }
+            { name: "Robert K.", initials: "RK", date: "Nov 28, 2025", text: "David and his sons are proper tradesmen. Old school workmanship with modern materials. Would use again without hesitation and already recommended them to my brother." }
         ];
 
         let reviewsShown = 0;
@@ -1662,7 +2664,7 @@
             return `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`.repeat(5);
         }
 
-        function createReviewCard(review, index) {
+        function createReviewCard(review) {
             const isLong = review.text.length > 150;
             const textClass = isLong ? 'review-card__text truncated' : 'review-card__text';
             const readMoreBtn = isLong ? `<button class="read-more-btn" onclick="toggleReview(this)">More</button>` : '';
@@ -1676,7 +2678,7 @@
                         </div>
                         <span class="review-card__date">${review.date}</span>
                     </div>
-                    <p class="${textClass}" data-full-text="${review.text.replace(/"/g, '&quot;')}">"${review.text}"</p>
+                    <p class="${textClass}">"${review.text}"</p>
                     ${readMoreBtn}
                     <div class="review-card__footer">
                         <div class="review-card__author">
@@ -1712,7 +2714,7 @@
             const end = Math.min(reviewsShown + reviewsPerPage, allReviews.length);
 
             for (let i = reviewsShown; i < end; i++) {
-                grid.insertAdjacentHTML('beforeend', createReviewCard(allReviews[i], i));
+                grid.insertAdjacentHTML('beforeend', createReviewCard(allReviews[i]));
             }
 
             reviewsShown = end;
@@ -1725,7 +2727,6 @@
         // Initialize reviews
         showMoreReviews();
 
-        // Show More button click handler
         document.getElementById('show-more-btn').addEventListener('click', showMoreReviews);
     </script>
 </body>
