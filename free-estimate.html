@@ -91,17 +91,15 @@
            ============================================ */
         .pricing-header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            padding: 1.25rem 1rem;
-            text-align: center;
-            display: flex;
+            padding: 1.25rem 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
-            justify-content: center;
             gap: 1.5rem;
-            flex-wrap: wrap;
         }
 
         .pricing-header__badge {
-            background: #22c55e;
+            background: var(--primary-500);
             color: var(--white);
             padding: 0.6rem 1.25rem;
             border-radius: 0.5rem;
@@ -112,11 +110,15 @@
             white-space: nowrap;
         }
 
+        .pricing-header__center {
+            text-align: center;
+        }
+
         .pricing-header__title {
             font-size: 1.5rem;
             font-weight: 800;
             color: var(--white);
-            margin: 0;
+            margin: 0 0 0.5rem 0;
         }
 
         .pricing-header__subtitle {
@@ -130,16 +132,15 @@
         }
 
         .pricing-header__location {
-            background: #22c55e;
+            background: var(--primary-500);
             color: var(--white);
             padding: 0.35rem 0.75rem;
             border-radius: 0.25rem;
             font-weight: 600;
         }
 
-        .pricing-header__limited {
-            color: #f87171;
-            font-weight: 600;
+        .pricing-header__spacer {
+            width: 120px;
         }
 
         .section-separator {
@@ -581,34 +582,34 @@
         }
 
         .viewers-badge {
-            background: var(--primary-50);
-            border: 2px solid var(--primary-300);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--primary-400);
             border-radius: 0.75rem;
-            padding: 1rem 1.5rem;
+            padding: 0.875rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.75rem;
             max-width: 450px;
-            margin: 0 auto;
+            margin: 1.5rem auto 0;
         }
 
         .viewers-badge::before {
             content: '';
             width: 10px;
             height: 10px;
-            background: var(--primary-500);
+            background: var(--green-500);
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
 
         .viewers-badge span {
-            font-size: 0.95rem;
-            color: var(--gray-700);
+            font-size: 0.9rem;
+            color: var(--gray-300);
         }
 
         .viewers-badge strong {
-            color: var(--gray-900);
+            color: var(--white);
         }
 
         /* ============================================
@@ -821,7 +822,7 @@
         .availability-progress__fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary-500) 0%, var(--primary-400) 100%);
-            width: 87%;
+            width: 80%;
         }
 
         .availability-remaining {
@@ -849,9 +850,20 @@
         }
 
         .response-card__icon {
-            width: 24px;
-            height: 24px;
-            color: var(--orange-500);
+            width: 32px;
+            height: 32px;
+        }
+
+        .response-card__icon .bolt-outer {
+            fill: var(--primary-400);
+        }
+
+        .response-card__icon .bolt-inner {
+            fill: var(--primary-600);
+        }
+
+        .response-card__icon .bolt-highlight {
+            fill: var(--primary-200);
         }
 
         .response-card__text {
@@ -991,7 +1003,7 @@
 
         .cert-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
             color: var(--white);
             padding: 0.5rem 1.5rem;
             border-radius: 9999px;
@@ -1255,7 +1267,7 @@
            NO-PRESSURE PROMISE SECTION
            ============================================ */
         .promise-section {
-            background: var(--gray-50);
+            background: linear-gradient(180deg, var(--primary-50) 0%, var(--primary-100) 50%, var(--primary-50) 100%);
             padding: 4rem 1rem;
         }
 
@@ -1263,10 +1275,11 @@
             max-width: 700px;
             margin: 0 auto;
             background: var(--white);
-            border: 2px solid var(--primary-200);
+            border: 2px solid var(--primary-300);
             border-radius: 1.5rem;
             padding: 3rem 2rem;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
         }
 
         .promise-icon {
@@ -1912,9 +1925,18 @@
 
         @media (max-width: 768px) {
             .pricing-header {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                text-align: center;
                 gap: 0.75rem;
                 padding: 1rem;
+            }
+
+            .pricing-header__badge {
+                justify-self: center;
+            }
+
+            .pricing-header__spacer {
+                display: none;
             }
 
             .pricing-header__title {
@@ -1958,8 +1980,11 @@
     <!-- Family Pricing Header Banner -->
     <section class="pricing-header">
         <div class="pricing-header__badge">JANUARY SPECIAL</div>
-        <h1 class="pricing-header__title">Family Pricing Now Available. Our Best Rate, Period.</h1>
-        <p class="pricing-header__subtitle">Exclusive savings for <span class="pricing-header__location">Cardiff Homeowners</span> <span class="pricing-header__limited">• Limited Time Only</span></p>
+        <div class="pricing-header__center">
+            <h1 class="pricing-header__title">Family Pricing Now Available. Our Best Rate, Period.</h1>
+            <p class="pricing-header__subtitle">Exclusive savings for <span class="pricing-header__location">Cardiff Homeowners</span></p>
+        </div>
+        <div class="pricing-header__spacer"></div>
     </section>
 
     <!-- Blue separator line -->
@@ -2168,6 +2193,10 @@
                 Zero Obligation
             </span>
         </div>
+
+        <div class="viewers-badge">
+            <span><strong id="viewer-count">12</strong> Cardiff homeowners viewing this offer right now</span>
+        </div>
     </div>
 
     <!-- Why Cardiff Homeowners Choose Delston Section -->
@@ -2192,9 +2221,6 @@
                     <div class="stat-box__number">1-2 Days</div>
                     <div class="stat-box__label">Fast, Professional Installation</div>
                 </div>
-            </div>
-            <div class="viewers-badge">
-                <span><strong id="viewer-count">12</strong> Cardiff homeowners viewing this offer right now</span>
             </div>
         </div>
     </section>
@@ -2305,12 +2331,6 @@
                 <h2 class="cert-card__title">Top 1% of Roofing Contractors Nationwide</h2>
                 <p class="cert-card__text">Only the best roofing contractors qualify for NFRC registration. We've earned it through excellence in craftsmanship, customer service, and using only premium materials. Our certification means your warranty is backed by the UK's leading roofing trade body, not just us.</p>
             </div>
-
-            <div class="family-card">
-                <span class="family-card__badge">3 Generations Strong</span>
-                <h2 class="family-card__title">A True Family Business</h2>
-                <p class="family-card__text">It all started when David's father founded Delston Roofing decades ago, building a reputation for honest work and fair prices. He passed the business down to David, who has carried on that legacy. Now David works alongside his two sons, making us three generations of Cardiff roofers who treat every home like our own. When you choose Delston, you're not just getting a contractor. You're getting a family that stakes its name on every job.</p>
-            </div>
         </div>
     </section>
 
@@ -2333,7 +2353,7 @@
             <h2 class="family-pricing-title">Pay What Our Family Pays</h2>
             <p class="family-pricing-text">
                 For a limited time, we're offering our family pricing to Cardiff homeowners.
-                This is our absolute best rate - no negotiation needed, no games.
+                This is our absolute best rate, no negotiation needed.
             </p>
             <div class="family-pricing-benefits">
                 <div class="family-pricing-benefit">
@@ -2369,13 +2389,8 @@
                 <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
                 <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
                 <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <div class="availability-slot availability-slot--filled"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-                <div class="availability-slot availability-slot--open">14</div>
-                <div class="availability-slot availability-slot--open">15</div>
+                <div class="availability-slot availability-slot--open">9</div>
+                <div class="availability-slot availability-slot--open">10</div>
             </div>
             <div class="availability-progress">
                 <div class="availability-progress__fill"></div>
@@ -2384,13 +2399,26 @@
         </div>
 
         <div class="response-card">
-            <svg class="response-card__icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            <svg class="response-card__icon" viewBox="0 0 32 32">
+                <defs>
+                    <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#60a5fa"/>
+                        <stop offset="50%" style="stop-color:#3b82f6"/>
+                        <stop offset="100%" style="stop-color:#2563eb"/>
+                    </linearGradient>
+                </defs>
+                <path fill="url(#boltGradient)" d="M18 2L6 18h8l-2 12 14-16h-8l4-12h-4z"/>
+                <path fill="#93c5fd" opacity="0.6" d="M16 2L14 8h4l-6 8h4l-2 6 8-10h-5l3-6h-4z"/>
             </svg>
             <div>
                 <p class="response-card__text">Average response time: <strong>Under 15 minutes</strong></p>
                 <p class="response-card__subtext">Same-week inspections available - Free estimates</p>
             </div>
+        </div>
+
+        <div class="family-card" style="margin-top: 2rem;">
+            <h2 class="family-card__title">3 Generations of Roofing Excellence</h2>
+            <p class="family-card__text">It all started when David's father founded Delston Roofing decades ago, building a reputation for honest work and fair prices. He passed the business down to David, who has carried on that legacy. Now David works alongside his two sons, making us three generations of Cardiff roofers who treat every home like our own. When you choose Delston, you're not just getting a contractor. You're getting a family that stakes its name on every job.</p>
         </div>
     </section>
 
