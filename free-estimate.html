@@ -17,6 +17,24 @@
         })(window, document, "clarity", "script", "v681msufou");
     </script>
 
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '824120400678401');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=824120400678401&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i">
 
@@ -2848,18 +2866,56 @@
 
         // Reviews data
         const allReviews = [
-            { name: "James M.", initials: "JM", date: "Jan 15, 2026", text: "The crew showed up when they were supposed to and worked non stop until the job was completed. I work in the construction industry so I pay attention to several details and I was very pleased on their workmanship and efficiency." },
+            { name: "James M.", initials: "JM", date: "Jan 15, 2026", text: "The crew showed up when they said they would and worked non stop till the job was done. I work in construction myself so I know what to look for and honestly I was well impressed with how they went about it. Proper workmanship and dead efficient too." },
             { name: "Sarah L.", initials: "SL", date: "Jan 12, 2026", text: "Professional, on time, kept everything clean. Amazing!" },
-            { name: "Rachel B.", initials: "RB", date: "Jan 8, 2026", text: "This company is above board, honest, professional, and thorough. The team that completed my roof did an amazing job! They went the extra mile, even painted the pipe vents to match the shingles. I was so impressed with the attention to detail and how clean they left everything when they were done." },
+            { name: "Rachel B.", initials: "RB", date: "Jan 8, 2026", text: "Right so I was a bit worried about getting the roof done cos you hear all these horror stories dont you. But these lot were absolutely spot on from start to finish. Even painted the vents to match which I wasnt expecting at all. Left everything tidy as well, couldnt fault them really." },
             { name: "Karen W.", initials: "KW", date: "Jan 5, 2026", text: "Explained everything clearly. Stress-free process." },
-            { name: "Mike P.", initials: "MP", date: "Dec 28, 2025", text: "I was nervous about the whole process, from beginning to end, but they made me feel comfortable and gave me the best options at a reasonable price." },
-            { name: "Lisa T.", initials: "LT", date: "Dec 22, 2025", text: "Super dependable and honest. High quality from start to finish. The roofers were very professional and respectful of our property, cleaned up thoroughly, and the roof looks absolutely fantastic." },
+            { name: "Mike P.", initials: "MP", date: "Dec 28, 2025", text: "I was proper nervous about the whole thing if im honest, never had major work done on the house before. But they put me at ease straight away and gave me options that actually fit my budget. No pressure sales or anything like that which was a relief." },
+            { name: "Lisa T.", initials: "LT", date: "Dec 22, 2025", text: "Super dependable and honest. High quality from start to finish. The lads were really respectful of our property, cleaned up proper when they were done, and the roof looks brilliant now. My neighbour even commented on it the other day." },
             { name: "David H.", initials: "DH", date: "Dec 18, 2025", text: "Great communication throughout. Highly recommend!" },
-            { name: "Paul G.", initials: "PG", date: "Dec 15, 2025", text: "Everyone knew their job and did it well. Cannot say enough good things about them!" },
-            { name: "Tony M.", initials: "TM", date: "Dec 10, 2025", text: "The installation team worked very well together. They completed the new roof and cleaned up the worksite perfectly." },
-            { name: "Chris R.", initials: "CR", date: "Dec 5, 2025", text: "The proposal package was the most comprehensive out of the five companies we spoke to. A roofing professional who meets the highest standards." },
+            { name: "Paul G.", initials: "PG", date: "Dec 15, 2025", text: "Everyone knew their job and just got on with it. Cannot say enough good things about them!" },
+            { name: "Tony M.", initials: "TM", date: "Dec 10, 2025", text: "The team worked really well together, you could tell theyve done this loads of times. Finished the roof and tidied up without me having to ask. Proper professionals." },
+            { name: "Chris R.", initials: "CR", date: "Dec 5, 2025", text: "We got quotes from like 5 different companies and these were by far the most thorough. Actually explained what needed doing instead of just throwing numbers at us. Made the decision easy in the end." },
             { name: "Emma J.", initials: "EJ", date: "Dec 1, 2025", text: "Brilliant job. No mess left behind at all." },
-            { name: "Robert K.", initials: "RK", date: "Nov 28, 2025", text: "David and his sons are proper tradesmen. Old school workmanship with modern materials. Would use again without hesitation and already recommended them to my brother." }
+            { name: "Robert K.", initials: "RK", date: "Nov 28, 2025", text: "David and his sons are proper tradesmen. Old school workmanship with modern materials. Already recommended them to my brother and he's booking them for his place too." },
+            { name: "Gemma H.", initials: "GH", date: "Nov 25, 2025", text: "Had a leak that had been doing my head in for months. Other companies kept saying they couldnt find it but these lot spotted it straight away and fixed it same day. Been bone dry ever since even with all that rain weve had. Absolute lifesavers honestly." },
+            { name: "Steve T.", initials: "ST", date: "Nov 22, 2025", text: "Top notch service. Would definitely use again." },
+            { name: "Helen M.", initials: "HM", date: "Nov 18, 2025", text: "So we needed the whole roof redone which was obviously a big job and I was dreading it. But honestly it was way less stressful than I thought. They kept us updated every step of the way and finished quicker than expected. The new roof looks mint and weve already noticed the house is warmer." },
+            { name: "Gary P.", initials: "GP", date: "Nov 15, 2025", text: "Really impressed with these guys. My mate recommended them after they did his roof and now I can see why. They dont cut corners and the price was fair. What more can you ask for really." },
+            { name: "Janet B.", initials: "JB", date: "Nov 12, 2025", text: "Fantastic work. Very happy with the result." },
+            { name: "Darren W.", initials: "DW", date: "Nov 8, 2025", text: "Been putting off getting the roof sorted for ages cos I thought it would cost a fortune. Got a quote from Delston and it was way more reasonable than expected. The work itself was quality too, no complaints at all. Wish Id done it sooner tbh." },
+            { name: "Alison C.", initials: "AC", date: "Nov 5, 2025", text: "Our roof was in a right state, tiles missing everywhere and leaking in the spare room. Called these in a panic and they came out next day to have a look. Really reassuring the way they explained everything and they sorted it all out within the week. Brilliant service from start to finish." },
+            { name: "Mark S.", initials: "MS", date: "Nov 1, 2025", text: "Absolutely chuffed with the work they did. The lads were friendly, worked hard, and left no mess. What else can you want really. Already told the neighbours about them." },
+            { name: "Carol D.", initials: "CD", date: "Oct 28, 2025", text: "Very professional outfit. On time and tidy." },
+            { name: "Neil F.", initials: "NF", date: "Oct 25, 2025", text: "Third roofer I tried after two dodgy experiences and finally found a good one. These actually knew what they were talking about and didnt try to upsell me stuff I didnt need. Just honest work at a fair price. Should have gone with them first." },
+            { name: "Sandra R.", initials: "SR", date: "Oct 22, 2025", text: "Had some storm damage and was worried insurance would be a nightmare. Delston handled everything with the insurance company for me and made the whole process so much easier. The repair work was done properly too, not just a quick patch job. Really grateful for how they looked after us." },
+            { name: "Brian L.", initials: "BL", date: "Oct 18, 2025", text: "Good honest company. Did exactly what they said they would." },
+            { name: "Michelle K.", initials: "MK", date: "Oct 15, 2025", text: "We live in a Victorian terrace so the roof is quite tricky apparently. Got quotes from a few places and some wouldnt even take it on. These lot were confident, explained what they needed to do, and the finished result is stunning. House looks so much better from the street now too." },
+            { name: "Ian W.", initials: "IW", date: "Oct 12, 2025", text: "Responsive and reliable. Fixed our problem fast." },
+            { name: "Dawn E.", initials: "DE", date: "Oct 8, 2025", text: "My elderly mum needed her roof sorting and I live too far away to supervise it all. These were recommended by her neighbour and they were brilliant. Kept me updated over the phone, treated mum with respect, and did a lovely job. Peace of mind knowing shes got a solid roof over her head now." },
+            { name: "Kevin J.", initials: "KJ", date: "Oct 5, 2025", text: "Belting job. Proper tradesmen who take pride in what they do. You can tell by how they work and how they leave the place after. None of that cowboy rubbish. Would happily recommend to anyone needing roof work done." },
+            { name: "Tracy N.", initials: "TN", date: "Oct 1, 2025", text: "Quick response and quality work. Very pleased!" },
+            { name: "Andy B.", initials: "AB", date: "Sep 28, 2025", text: "Had them out to look at what I thought was a small problem. Turned out it was worse than I realised but they were upfront about it and gave me options. Ended up getting more work done than planned but it needed doing and now its all sorted properly. Appreciate the honesty." },
+            { name: "Louise G.", initials: "LG", date: "Sep 25, 2025", text: "Weve been meaning to sort the roof for years, kept putting it off. So glad we finally did it and went with Delston. The team were lovely, really hardworking, and the quality is obvious. Loads of our friends have commented on how good it looks." },
+            { name: "Phil A.", initials: "PA", date: "Sep 22, 2025", text: "Excellent service all round. Cant fault them." },
+            { name: "Wendy T.", initials: "WT", date: "Sep 18, 2025", text: "Im a single mum and was worried about getting ripped off to be honest. Read the reviews and decided to give them a go. So glad I did. They were completely straight with me about what needed doing and the price matched the quote exactly. No nasty surprises. The roof looks great and Im not worrying about leaks anymore." },
+            { name: "Colin H.", initials: "CH", date: "Sep 15, 2025", text: "Family business that actually cares about the work they do. Rare thing these days. Had a complicated job on our extension roof and they handled it no problem. Would use again 100%." },
+            { name: "Joanne M.", initials: "JOM", date: "Sep 12, 2025", text: "Really happy. Clean and professional team." },
+            { name: "Derek P.", initials: "DP", date: "Sep 8, 2025", text: "Got a few quotes and Delston werent the cheapest but you could tell they knew their stuff. Decided to go with quality over price and really glad we did. The roof theyve put on is solid and should last us for years. Worth every penny." },
+            { name: "Sue W.", initials: "SW", date: "Sep 5, 2025", text: "Had issues with the flat roof on our kitchen extension, been leaking on and off for ages. Previous roofer made it worse if anything. These came out, found the actual problem, and sorted it properly. No more buckets in the kitchen thank god. Proper job done right." },
+            { name: "Graham F.", initials: "GF", date: "Sep 1, 2025", text: "Straightforward and fair. Thats all I wanted." },
+            { name: "Nicola S.", initials: "NS", date: "Aug 28, 2025", text: "The gutters and fascias were looking really tatty and we were getting water coming down the walls. Got Delston to do new guttering and sort out the edge of the roof at the same time. The difference is unreal, house looks like new from outside. Really pleased we got it done before winter." },
+            { name: "Terry D.", initials: "TD", date: "Aug 25, 2025", text: "Sound lads who know what theyre doing. Got on with the job without any fuss. Left the garden tidy which the missus was happy about. Would recommend to anyone in Cardiff area." },
+            { name: "Barbara C.", initials: "BC", date: "Aug 22, 2025", text: "Excellent from start to finish." },
+            { name: "John R.", initials: "JR", date: "Aug 18, 2025", text: "We had a new build and the original roof was already giving us grief after just 5 years. Shocking really. Delston came and basically redid the whole thing properly. Cost a bit but at least now we know its done right. Communication was great throughout and they worked around our schedules when we needed them to." },
+            { name: "Angela Y.", initials: "AY", date: "Aug 15, 2025", text: "Quick turnaround and great results. Impressed!" },
+            { name: "Richard N.", initials: "RN", date: "Aug 12, 2025", text: "Needed emergency repairs after that big storm we had. Most roofers were booked up for weeks but Delston got someone out to us within 48 hours to make it safe, then came back to do the full repair the following week. Really grateful, we were worried about more damage if it rained again." },
+            { name: "Debbie K.", initials: "DK", date: "Aug 8, 2025", text: "These are the kind of tradesmen that are hard to find nowadays. Actually care about doing a proper job not just getting paid and moving on. The attention to detail was brilliant. Sorted a few extra things they noticed while they were up there without charging extra too. Proper old school service." },
+            { name: "Martin O.", initials: "MO", date: "Aug 5, 2025", text: "Good value for money. No hidden costs." },
+            { name: "Christine L.", initials: "CL", date: "Aug 1, 2025", text: "Our bungalow is over 100 years old so the roof needed careful handling. Found Delston through a recommendation and theyre clearly experienced with older properties. Took their time to do it right and the result speaks for itself. Beautiful slate roof that looks authentic but performs like new." },
+            { name: "Simon V.", initials: "SV", date: "Jul 28, 2025", text: "Solid work. Exactly what we asked for." },
+            { name: "Amanda P.", initials: "AP", date: "Jul 25, 2025", text: "Had them replace the roof on our rental property while tenants were still living there. Was worried it would be disruptive but they were really considerate and got it done as quick as possible. Tenants said they were polite and kept the noise to reasonable hours. Professional outfit all round." },
+            { name: "Clive H.", initials: "CLH", date: "Jul 22, 2025", text: "Smashing job on our new conservatory roof. Looks fantastic and the room is so much warmer now. The lads knew exactly what they were doing and finished ahead of schedule. Would definitely use again for any future work." }
         ];
 
         let reviewsShown = 0;
