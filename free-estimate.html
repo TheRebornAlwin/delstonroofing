@@ -1953,8 +1953,22 @@
                 justify-self: center;
             }
 
+            /* Mobile: Show "JANUARY SPECIAL • CARDIFF HOMEOWNERS" badge */
+            .pricing-header__badge .desktop-text {
+                display: none;
+            }
+
+            .pricing-header__badge .mobile-text {
+                display: inline;
+            }
+
             .pricing-header__spacer {
                 display: none;
+            }
+
+            /* Mobile: Line break in title */
+            .pricing-header__title .mobile-break {
+                display: block;
             }
 
             .pricing-header__title {
@@ -1964,6 +1978,86 @@
             .form-trust {
                 flex-wrap: wrap;
                 gap: 1rem 1.5rem;
+            }
+
+            /* Mobile: Hide subtitle on pricing header (Cardiff Homeowners already in badge) */
+            .pricing-header__subtitle {
+                display: none;
+            }
+
+            /* Mobile: Center and fit form header title on one line */
+            .form-header__content {
+                text-align: center;
+            }
+
+            .form-header__title {
+                justify-content: center;
+                font-size: clamp(0.9rem, 4.5vw, 1.25rem);
+                white-space: nowrap;
+            }
+
+            .form-header__title svg {
+                width: 18px;
+                height: 18px;
+                flex-shrink: 0;
+            }
+
+            /* Mobile: Scale subtitle to fit on one line */
+            .form-header__subtitle {
+                font-size: clamp(0.65rem, 3vw, 0.85rem);
+                white-space: nowrap;
+                text-align: center;
+            }
+
+            /* Mobile: Fix green circle to be round, not oval */
+            .viewers-badge::before {
+                flex-shrink: 0;
+                min-width: 10px;
+            }
+
+            /* Mobile: Smaller stats section title to fit in 2 lines */
+            .stats-section__title {
+                font-size: 1.4rem;
+            }
+
+            /* Mobile: Warning banner - icon on left, text on right (like response time box) */
+            .warning-banner {
+                flex-direction: row;
+                text-align: left;
+                align-items: stretch;
+            }
+
+            .warning-banner__icon {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+            }
+
+            .warning-banner__text {
+                flex: 1;
+            }
+
+            /* Mobile: Line break in "Pay What Our Family Pays" */
+            .family-pricing-title .mobile-break {
+                display: block;
+            }
+
+            /* Mobile: Hide most of footer, show only copyright */
+            .footer-content {
+                display: none;
+            }
+
+            .footer-bottom {
+                padding: 1.5rem 1rem;
+            }
+
+            /* Mobile: Show simplified footer text */
+            .footer-bottom__text .desktop-text {
+                display: none;
+            }
+
+            .footer-bottom__text .mobile-text {
+                display: inline;
             }
         }
 
@@ -1986,10 +2080,24 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 1rem;
             }
+        }
 
-            .warning-banner {
-                flex-direction: column;
-                text-align: center;
+        /* Desktop: Hide mobile-specific elements */
+        @media (min-width: 769px) {
+            .pricing-header__badge .mobile-text {
+                display: none;
+            }
+
+            .pricing-header__title .mobile-break {
+                display: none;
+            }
+
+            .family-pricing-title .mobile-break {
+                display: none;
+            }
+
+            .footer-bottom__text .mobile-text {
+                display: none;
             }
         }
     </style>
@@ -1997,9 +2105,9 @@
 <body>
     <!-- Family Pricing Header Banner -->
     <section class="pricing-header">
-        <div class="pricing-header__badge">January Special</div>
+        <div class="pricing-header__badge"><span class="desktop-text">January Special</span><span class="mobile-text">JANUARY SPECIAL &bull; CARDIFF HOMEOWNERS</span></div>
         <div class="pricing-header__center">
-            <h1 class="pricing-header__title">Family Pricing Now Available. Our Best Rate, Period.</h1>
+            <h1 class="pricing-header__title">Family Pricing Now Available.<span class="mobile-break"></span> Our Best Rate, Period.</h1>
             <p class="pricing-header__subtitle">Exclusive savings for <span class="pricing-header__location">Cardiff Homeowners</span></p>
         </div>
         <div class="pricing-header__spacer"></div>
@@ -2368,7 +2476,7 @@
     <section class="family-pricing-section">
         <div class="family-pricing-card">
             <div class="family-pricing-badge">Family Pricing</div>
-            <h2 class="family-pricing-title">Pay What Our Family Pays</h2>
+            <h2 class="family-pricing-title">Pay What Our<span class="mobile-break"></span> Family Pays</h2>
             <p class="family-pricing-text">
                 For a limited time, we're offering our family pricing to Cardiff homeowners.
                 This is our absolute best rate, no negotiation needed.
@@ -2457,7 +2565,7 @@
                     <img class="project-card__image" src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3u4IOmpe1yrObZt5JhFKqvGenDR8zXLdC4HM2" alt="Cardiff roof project" loading="lazy">
                 </div>
                 <div class="project-card">
-                    <img class="project-card__image" src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3u4IOmpe1yrObZt5JhFKqvGenDR8zXLdC4HM2" alt="Cardiff roof project" loading="lazy">
+                    <img class="project-card__image" src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj32hwHkinZb8ncod3FxqJ7Y5RSgrUPAfeXh4Vp" alt="Cardiff roof project" loading="lazy">
                 </div>
             </div>
 
@@ -2681,7 +2789,7 @@
             </div>
             <div class="footer-bottom">
                 <p class="footer-bottom__text">
-                    &copy; 2026 Delston Roofing. Serving Cardiff, Newport & Penarth.
+                    <span class="desktop-text">&copy; 2026 Delston Roofing. Serving Cardiff, Newport & Penarth.</span><span class="mobile-text">&copy; 2026 Delston Roofing. Serving Cardiff.</span>
                 </p>
             </div>
         </div>
