@@ -2185,9 +2185,9 @@
                     <!-- Step 6: Contact Info -->
                     <div class="form-step" data-step="6">
                         <h2 class="form-step__question">Almost done! <span>How can we reach you</span>?</h2>
-                        <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name">
-                        <input type="email" class="form-input" name="email" id="email" placeholder="Email Address">
-                        <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number">
+                        <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name" required>
+                        <input type="email" class="form-input" name="email" id="email" placeholder="Email Address" required>
+                        <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number" required>
                         <div class="form-buttons">
                             <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
                             <button type="button" class="btn-continue" id="submit-btn" onclick="submitForm()">GET MY ESTIMATE &rarr;</button>
@@ -2797,6 +2797,16 @@
         // Form submission function
         function submitForm() {
             const submitBtn = document.getElementById('submit-btn');
+
+            // Check if all required fields are filled
+            const name = document.getElementById('full_name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                return; // Don't submit if fields are empty
+            }
+
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
 
