@@ -2046,6 +2046,11 @@
                 display: block;
             }
 
+            /* Mobile: Line break in "What Cardiff Homeowners Say" */
+            .reviews-section__title .mobile-break {
+                display: block;
+            }
+
             /* Mobile: Hide most of footer, show only copyright */
             .footer-content {
                 display: none;
@@ -2097,6 +2102,10 @@
             }
 
             .family-pricing-title .mobile-break {
+                display: none;
+            }
+
+            .reviews-section__title .mobile-break {
                 display: none;
             }
 
@@ -2586,7 +2595,7 @@
     <!-- Reviews Section -->
     <section class="reviews-section">
         <div class="container">
-            <h2 class="reviews-section__title">What Cardiff Homeowners Say</h2>
+            <h2 class="reviews-section__title">What Cardiff<span class="mobile-break"></span> Homeowners Say</h2>
             <p class="reviews-section__subtitle">Real reviews from real customers</p>
 
             <div class="reviews-header">
