@@ -235,10 +235,29 @@
         .hero__content {
             position: relative;
             z-index: 10;
-            max-width: 850px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero__text {
+            text-align: left;
+        }
+
+        @media (max-width: 900px) {
+            .hero__content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                max-width: 650px;
+            }
+            .hero__text {
+                text-align: center;
+            }
         }
 
         .hero__badge {
@@ -268,9 +287,14 @@
             color: rgba(255,255,255,0.9);
             margin-bottom: 2.5rem;
             max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
             line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+            .hero__subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         .hero__cta {
@@ -298,6 +322,406 @@
             height: 24px;
         }
 
+
+        /* ============================================
+           HERO FORM
+           ============================================ */
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .hero__form-wrapper {
+            width: 100%;
+        }
+
+        .form-container {
+            background: var(--white);
+            border-radius: 1.5rem;
+            padding: 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0c1929 100%);
+            padding: 1.25rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            animation: shine 5s infinite 2.5s;
+        }
+
+        .form-header__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-header__title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .form-header__title svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-400);
+        }
+
+        .form-header__subtitle {
+            color: var(--gray-400);
+            font-size: 0.85rem;
+        }
+
+        .form-content {
+            padding: 2rem 1.5rem;
+        }
+
+        .progress-bar {
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar__track {
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 9999px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+
+        .progress-bar__fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-600) 0%, var(--primary-400) 100%);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-bar__info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+        }
+
+        .progress-bar__step {
+            color: var(--gray-500);
+        }
+
+        .progress-bar__step span {
+            color: var(--primary-500);
+            font-weight: 600;
+        }
+
+        .progress-bar__percent {
+            color: var(--primary-500);
+            font-weight: 600;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-step__question {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-step__question span {
+            color: var(--primary-500);
+            text-decoration: underline;
+            text-decoration-color: var(--primary-300);
+            text-underline-offset: 4px;
+        }
+
+        .option-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--gray-50);
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .option-item:hover {
+            background: var(--primary-50);
+            border-color: var(--primary-200);
+        }
+
+        .option-item.selected {
+            background: var(--primary-100);
+            border-color: var(--primary-500);
+        }
+
+        .option-item input {
+            display: none;
+        }
+
+        .option-item__radio {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--gray-300);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.15s ease;
+        }
+
+        .option-item.selected .option-item__radio {
+            border-color: var(--primary-500);
+            background: var(--primary-500);
+        }
+
+        .option-item.selected .option-item__radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
+        }
+
+        .option-item__text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: var(--gray-50);
+            border: 2px solid transparent;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--gray-800);
+            transition: all 0.15s ease;
+            margin-bottom: 0.75rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-500);
+            background: var(--white);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-400);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .form-buttons {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .form-buttons--single {
+            grid-template-columns: 1fr;
+        }
+
+        .btn-back {
+            padding: 1rem 1.5rem;
+            background: var(--gray-100);
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-back:hover {
+            background: var(--gray-200);
+        }
+
+        .btn-continue {
+            padding: 1rem 1.5rem;
+            background: var(--gray-300);
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-continue.active {
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-500) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-continue.active:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .form-trust {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .form-trust__item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .form-trust__item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--green-500);
+        }
+
+        .success-screen {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .success-callback {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .success-callback .gradient-text {
+            background: linear-gradient(90deg, #60a5fa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .success-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .success-card__title {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .success-card__text {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-phone-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: white;
+            color: #2563eb;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .success-phone-btn:hover {
+            transform: scale(1.02);
+        }
+
+        .success-hours {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
 
         /* ============================================
            INTRO - WHO I AM
@@ -363,29 +787,21 @@
 
         .img-placeholder {
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
             border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 1.5rem;
-            border: 2px dashed var(--gray-300);
+            overflow: hidden;
             transition: all 0.2s ease;
         }
 
         .img-placeholder:hover {
-            border-color: var(--primary-300);
-            background: var(--primary-50);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .img-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 1rem;
+            display: block;
         }
 
         .intro__quote {
@@ -443,16 +859,8 @@
 
         .gallery-img {
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
             border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-            font-size: 0.85rem;
-            text-align: center;
-            padding: 1rem;
-            border: 2px dashed var(--gray-300);
+            overflow: hidden;
             transition: all 0.2s ease;
         }
 
@@ -465,7 +873,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 1rem;
+            display: block;
         }
 
         /* ============================================
@@ -548,16 +956,8 @@
 
         .story__img {
             aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-800) 100%);
             border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-500);
-            font-size: 0.8rem;
-            text-align: center;
-            padding: 1rem;
-            border: 2px dashed var(--gray-600);
+            overflow: hidden;
         }
 
         .story__img:first-child {
@@ -751,14 +1151,8 @@
 
         .benefit-card--featured .featured-img {
             aspect-ratio: 4/3;
-            background: rgba(255,255,255,0.1);
             border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-            border: 2px dashed rgba(255,255,255,0.3);
+            overflow: hidden;
         }
 
         .benefit-card--featured .featured-img img {
@@ -1252,11 +1646,8 @@
             <a href="#about" class="header__link">About Me</a>
             <a href="#work" class="header__link">My Work</a>
             <a href="#process" class="header__link">How It Works</a>
-            <a href="tel:+447876400202" class="header__cta">
-                <svg class="icon-phone" viewBox="0 0 24 24" width="18" height="18">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Call Me
+            <a href="#quote-form" class="header__cta">
+                Get a Free Quote
             </a>
         </nav>
     </header>
@@ -1268,15 +1659,220 @@
         </div>
         <div class="hero__overlay"></div>
         <div class="hero__content">
-            <span class="hero__badge">Cardiff Roofer - Family Business</span>
-            <h1 class="hero__title">I'm David Philp.<br>I'll Do Your Roof.</h1>
-            <p class="hero__subtitle">Three generations of roofers. 500+ Cardiff roofs done right. No sales team, no call centre - just me, my sons, and a trade we've perfected since my old man taught me everything he knew.</p>
-            <a href="tel:+447876400202" class="hero__cta">
-                <svg class="icon-phone" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Give Me a Call
-            </a>
+            <div class="hero__text">
+                <span class="hero__badge">Cardiff Roofer - Family Business</span>
+                <h1 class="hero__title">I'm David Philp.<br>I'll Do Your Roof.</h1>
+                <p class="hero__subtitle">Three generations of roofers. 500+ Cardiff roofs done right. No sales team, no call centre - just me, my sons, and a trade we've perfected since my old man taught me everything he knew.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#quote-form" class="hero__cta">
+                        Get a Free Quote
+                    </a>
+                    <a href="tel:+447876400202" class="hero__cta" style="background: transparent; border: 2px solid rgba(255,255,255,0.4); box-shadow: none;">
+                        <svg class="icon-phone" viewBox="0 0 24 24" width="22" height="22">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Call Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__form-wrapper" id="quote-form">
+                <div class="form-container">
+                    <div class="form-header">
+                        <div class="form-header__content">
+                            <div class="form-header__title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                Get Your Free Quote
+                            </div>
+                            <div class="form-header__subtitle">No obligation - I'll get back to you personally</div>
+                        </div>
+                    </div>
+
+                    <div class="form-content">
+                        <div class="progress-bar">
+                            <div class="progress-bar__track">
+                                <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
+                            </div>
+                            <div class="progress-bar__info">
+                                <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
+                                <span class="progress-bar__percent" id="progress-percent">17%</span>
+                            </div>
+                        </div>
+
+                        <form id="estimate-form" action="https://submit-form.com/zC19yBjOR" method="POST">
+                            <input type="hidden" name="_source" value="personal-landing-page">
+
+                            <!-- Step 1: Home Type -->
+                            <div class="form-step active" data-step="1">
+                                <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
+                                <div class="option-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="home_type" value="Single-Family Home" required>
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Single-Family Home</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="home_type" value="Townhouse or Duplex">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Townhouse or Duplex</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="home_type" value="Manufactured or Mobile">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Manufactured or Mobile</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="home_type" value="Commercial">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Commercial</span>
+                                    </label>
+                                </div>
+                                <div class="form-buttons form-buttons--single">
+                                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Home Size -->
+                            <div class="form-step" data-step="2">
+                                <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
+                                <div class="option-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="home_size" value="1-2 bedrooms" required>
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">1-2 bedrooms</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="home_size" value="3 bedrooms">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">3 bedrooms</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="home_size" value="4 bedrooms">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">4 bedrooms</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="home_size" value="5+ bedrooms">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">5+ bedrooms</span>
+                                    </label>
+                                </div>
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Timeline -->
+                            <div class="form-step" data-step="3">
+                                <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
+                                <div class="option-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="timeline" value="ASAP - Emergency" required>
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">ASAP - Emergency</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="timeline" value="In the next 30 days">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">In the next 30 days</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="timeline" value="More than a month from now">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">More than a month from now</span>
+                                    </label>
+                                </div>
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Payment -->
+                            <div class="form-step" data-step="4">
+                                <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
+                                <div class="option-list">
+                                    <label class="option-item">
+                                        <input type="radio" name="payment" value="Cash or Bank Transfer" required>
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Cash or Bank Transfer</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="payment" value="Credit/Debit Card">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Credit/Debit Card</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="payment" value="Finance / Monthly payments">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Finance / Monthly payments</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="payment" value="Insurance claim">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Insurance claim</span>
+                                    </label>
+                                    <label class="option-item">
+                                        <input type="radio" name="payment" value="Not sure yet">
+                                        <span class="option-item__radio"></span>
+                                        <span class="option-item__text">Not sure yet</span>
+                                    </label>
+                                </div>
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Address -->
+                            <div class="form-step" data-step="5">
+                                <h2 class="form-step__question">What's your <span>property address</span>?</h2>
+                                <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
+                                <div class="form-row">
+                                    <input type="text" class="form-input" name="city" placeholder="City/Town" required>
+                                    <input type="text" class="form-input" name="county" placeholder="County">
+                                </div>
+                                <input type="text" class="form-input" name="postcode" placeholder="Postcode" required>
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
+                                </div>
+                            </div>
+
+                            <!-- Step 6: Contact Info -->
+                            <div class="form-step" data-step="6">
+                                <h2 class="form-step__question">Almost done! <span>How can I reach you</span>?</h2>
+                                <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name" required>
+                                <input type="email" class="form-input" name="email" id="email" placeholder="Email Address" required>
+                                <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number" required>
+                                <div class="form-buttons">
+                                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
+                                    <button type="button" class="btn-continue" id="submit-btn" onclick="submitForm()">GET MY QUOTE &rarr;</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="form-trust">
+                    <span class="form-trust__item">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Family-Owned
+                    </span>
+                    <span class="form-trust__item">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        10-Year Guarantee
+                    </span>
+                    <span class="form-trust__item">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        Zero Obligation
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1286,7 +1882,7 @@
             <div class="intro__header">
                 <div class="intro__wave">👋</div>
                 <h2 class="intro__title">Alright, I'm David Philp</h2>
-                <p class="intro__role">Owner of Delston Roofing & Third-Generation Roofer</p>
+                <p class="intro__role">Owner of Delston Roofing & Third-Generation Roofing Family</p>
             </div>
 
             <p class="intro__text">
@@ -1566,14 +2162,14 @@
             <h2 class="final-cta__title">Let's Have a Chat</h2>
             <p class="final-cta__text">No pressure, no sales pitch. Just tell me what's going on with your roof and I'll let you know how I can help. If I'm not the right fit, I'll tell you straight.</p>
             <div class="final-cta__buttons">
-                <a href="tel:+447876400202" class="final-cta__btn final-cta__btn--primary">
+                <a href="#quote-form" class="final-cta__btn final-cta__btn--primary">
+                    Get a Free Quote
+                </a>
+                <a href="tel:+447876400202" class="final-cta__btn final-cta__btn--secondary">
                     <svg class="icon-phone" viewBox="0 0 24 24" width="22" height="22">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    Call Me: 07876 400202
-                </a>
-                <a href="/" class="final-cta__btn final-cta__btn--secondary">
-                    Or Get a Quick Quote Online
+                    Or Call Me: 07876 400202
                 </a>
             </div>
             <div class="final-cta__trust">
@@ -1618,6 +2214,154 @@
                 header.classList.remove('scrolled');
             }
         });
+    </script>
+
+    <!-- Multi-step form logic -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 6;
+
+        function updateProgress() {
+            const percent = Math.round((currentStep / totalSteps) * 100);
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('current-step').textContent = currentStep;
+            document.getElementById('progress-percent').textContent = percent + '%';
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector('[data-step="' + step + '"]').classList.add('active');
+            updateProgress();
+            updateContinueButton();
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function updateContinueButton() {
+            const currentStepEl = document.querySelector('[data-step="' + currentStep + '"]');
+            const continueBtn = currentStepEl.querySelector('.btn-continue');
+            if (!continueBtn) return;
+
+            const radioInputs = currentStepEl.querySelectorAll('input[type="radio"]');
+            if (radioInputs.length > 0) {
+                const isSelected = Array.from(radioInputs).some(input => input.checked);
+                if (isSelected) {
+                    continueBtn.classList.add('active');
+                } else {
+                    continueBtn.classList.remove('active');
+                }
+            }
+
+            const textInputs = currentStepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+            if (textInputs.length > 0 && radioInputs.length === 0) {
+                const requiredInputs = currentStepEl.querySelectorAll('input[required]');
+                const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+                if (allFilled) {
+                    continueBtn.classList.add('active');
+                } else {
+                    continueBtn.classList.remove('active');
+                }
+            }
+        }
+
+        let isAdvancing = false;
+        document.querySelectorAll('.option-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (isAdvancing) return;
+
+                const input = this.querySelector('input');
+                const name = input.name;
+
+                document.querySelectorAll('input[name="' + name + '"]').forEach(sibling => {
+                    sibling.closest('.option-item').classList.remove('selected');
+                });
+
+                this.classList.add('selected');
+                input.checked = true;
+
+                updateContinueButton();
+
+                isAdvancing = true;
+                setTimeout(() => {
+                    if (currentStep < totalSteps) {
+                        nextStep();
+                    }
+                    isAdvancing = false;
+                }, 300);
+            });
+        });
+
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('input', updateContinueButton);
+        });
+
+        function submitForm() {
+            const submitBtn = document.getElementById('submit-btn');
+
+            const name = document.getElementById('full_name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                return;
+            }
+
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+
+            const form = document.getElementById('estimate-form');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            fetch(form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).catch(() => {});
+
+            setTimeout(() => {
+                document.querySelector('.form-container').innerHTML = `
+                    <div class="success-screen">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                        </div>
+                        <h2 class="success-title">You're In!</h2>
+                        <p class="success-callback">David will give you a call in roughly <span class="gradient-text">15 minutes</span></p>
+                        <div class="success-card">
+                            <h3 class="success-card__title">Skip the Wait - Call Now</h3>
+                            <p class="success-card__text">Speak directly to David who can answer all your questions.</p>
+                            <a href="tel:+447876400202" class="success-phone-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                07876 400202
+                            </a>
+                            <p class="success-hours">Mon-Sat 8AM-6PM</p>
+                        </div>
+                    </div>
+                `;
+            }, 500);
+        }
+
+        updateProgress();
     </script>
 
     <!-- Reviews -->
