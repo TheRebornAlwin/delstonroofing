@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I'm David from Delston Roofing. Three generations of my family have been roofing in Cardiff. Give me a call and let's have a chat about your roof.">
+    <meta name="description" content="I'm David Philp from Delston Roofing. Three generations of my family have been roofing in Cardiff. Give me a call and let's have a chat about your roof.">
     <meta name="robots" content="index, follow">
 
-    <title>I'm David | Delston Roofing Cardiff - Let's Have a Chat</title>
+    <title>I'm David Philp | Delston Roofing Cardiff - Let's Have a Chat</title>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -77,6 +77,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--white);
@@ -86,10 +90,107 @@
         }
 
         /* ============================================
-           HERO - BIG IMPACT
+           HEADER - TRANSPARENT, FIXED
+           ============================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 2rem;
+        }
+
+        .header__logo {
+            height: 50px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .header__logo {
+            height: 45px;
+        }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header__link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            opacity: 0.9;
+        }
+
+        .header__link:hover {
+            opacity: 1;
+        }
+
+        .header.scrolled .header__link {
+            color: var(--gray-700);
+        }
+
+        .header.scrolled .header__link:hover {
+            color: var(--primary-600);
+        }
+
+        .header__cta {
+            background: var(--white);
+            color: var(--gray-900);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .header__cta:hover {
+            transform: scale(1.05);
+        }
+
+        .header.scrolled .header__cta {
+            background: var(--primary-500);
+            color: var(--white);
+        }
+
+        .header__cta svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .header__nav {
+                display: none;
+            }
+            .header {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* ============================================
+           HERO - FULL VIEWPORT
            ============================================ */
         .hero {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -102,11 +203,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+            background: linear-gradient(135deg, var(--gray-300) 0%, var(--gray-400) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gray-400);
+            color: var(--gray-500);
             font-size: 1.2rem;
         }
 
@@ -124,15 +225,15 @@
             bottom: 0;
             background: linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 0.4) 0%,
-                rgba(0, 0, 0, 0.6) 100%
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.7) 100%
             );
         }
 
         .hero__content {
             position: relative;
             z-index: 10;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 2rem;
             text-align: center;
@@ -143,31 +244,31 @@
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             color: var(--white);
-            padding: 0.5rem 1.25rem;
+            padding: 0.6rem 1.5rem;
             border-radius: 9999px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero__title {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(2.75rem, 9vw, 5rem);
             font-weight: 900;
             color: var(--white);
-            line-height: 1.1;
+            line-height: 1.05;
             margin-bottom: 1.5rem;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
         }
 
         .hero__subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
             color: rgba(255,255,255,0.9);
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .hero__cta {
@@ -259,20 +360,16 @@
             color: var(--gray-900);
         }
 
-        /* Image grid for David section */
         .intro__gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
             margin-bottom: 3rem;
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 500px) {
             .intro__gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .intro__gallery .img-placeholder:nth-child(3) {
-                grid-column: span 2;
+                grid-template-columns: 1fr;
             }
         }
 
@@ -284,9 +381,9 @@
             align-items: center;
             justify-content: center;
             color: var(--gray-400);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             text-align: center;
-            padding: 1rem;
+            padding: 1.5rem;
             border: 2px dashed var(--gray-300);
             transition: all 0.2s ease;
         }
@@ -326,7 +423,64 @@
         }
 
         /* ============================================
-           FAMILY STORY - VISUAL
+           GALLERY STRIP
+           ============================================ */
+        .gallery-strip {
+            padding: 4rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .gallery-strip__container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .gallery-strip__header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-strip__title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        .gallery-strip__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .gallery-img {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1rem;
+            border: 2px dashed var(--gray-300);
+            transition: all 0.2s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        /* ============================================
+           FAMILY STORY
            ============================================ */
         .story {
             padding: 6rem 2rem;
@@ -387,7 +541,7 @@
         .story__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
         }
 
@@ -462,7 +616,7 @@
         }
 
         /* ============================================
-           WHAT YOU GET - THE GOOD STUFF
+           BENEFITS
            ============================================ */
         .benefits {
             padding: 6rem 2rem;
@@ -470,7 +624,7 @@
         }
 
         .benefits__container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -497,7 +651,7 @@
             gap: 1.5rem;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .benefits__grid {
                 grid-template-columns: 1fr;
             }
@@ -564,7 +718,7 @@
             line-height: 1.7;
         }
 
-        /* Featured benefit - bigger */
+        /* Featured benefit */
         .benefit-card--featured {
             grid-column: span 2;
             background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
@@ -574,7 +728,7 @@
             align-items: center;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .benefit-card--featured {
                 grid-column: span 1;
                 grid-template-columns: 1fr;
@@ -583,6 +737,11 @@
 
         .benefit-card--featured::before {
             display: none;
+        }
+
+        .benefit-card--featured:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
         }
 
         .benefit-card--featured .benefit-card__icon {
@@ -620,85 +779,11 @@
         }
 
         /* ============================================
-           GALLERY STRIP
-           ============================================ */
-        .gallery-strip {
-            padding: 4rem 2rem;
-            background: var(--gray-50);
-        }
-
-        .gallery-strip__container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-strip__header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .gallery-strip__title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gray-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .gallery-strip__subtitle {
-            color: var(--gray-500);
-        }
-
-        .gallery-strip__grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1rem;
-        }
-
-        @media (max-width: 900px) {
-            .gallery-strip__grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .gallery-strip__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .gallery-img {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-            font-size: 0.75rem;
-            text-align: center;
-            padding: 0.5rem;
-            border: 2px dashed var(--gray-300);
-            transition: all 0.2s ease;
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .gallery-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0.75rem;
-        }
-
-        /* ============================================
-           PROCESS - HOW IT WORKS
+           PROCESS
            ============================================ */
         .process {
             padding: 6rem 2rem;
-            background: var(--white);
+            background: var(--gray-50);
         }
 
         .process__container {
@@ -800,7 +885,7 @@
            ============================================ */
         .testimonials {
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+            background: var(--white);
         }
 
         .testimonials__container {
@@ -837,10 +922,9 @@
         }
 
         .testimonial {
-            background: var(--white);
+            background: var(--gray-50);
             border-radius: 1.5rem;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             border: 1px solid var(--gray-100);
         }
 
@@ -854,7 +938,6 @@
         .testimonial__stars svg {
             width: 20px;
             height: 20px;
-            fill: currentColor;
         }
 
         .testimonial__text {
@@ -1013,9 +1096,15 @@
            ============================================ */
         .footer {
             background: var(--gray-900);
-            padding: 2rem;
+            padding: 3rem 2rem 2rem;
             text-align: center;
             border-top: 1px solid var(--gray-800);
+        }
+
+        .footer__logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 1.5rem;
         }
 
         .footer__text {
@@ -1032,51 +1121,149 @@
         .footer__link:hover {
             color: var(--white);
         }
+
+        /* ============================================
+           CUSTOM SVG ICONS
+           ============================================ */
+        .icon-phone {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-user-check {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-message {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-eye {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-home {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-shield {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-check {
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-star {
+            fill: currentColor;
+        }
+
+        .icon-arrow-down {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .icon-clock {
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="/">
+            <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3UIWUFkWKLcwVCtM5zSxjgvh81JbOkNZY0aiI" alt="Delston Roofing" class="header__logo">
+        </a>
+        <nav class="header__nav">
+            <a href="#about" class="header__link">About Me</a>
+            <a href="#work" class="header__link">My Work</a>
+            <a href="#process" class="header__link">How It Works</a>
+            <a href="tel:+447876400202" class="header__cta">
+                <svg class="icon-phone" viewBox="0 0 24 24" width="18" height="18">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call Me
+            </a>
+        </nav>
+    </header>
+
     <!-- Hero -->
     <section class="hero">
         <div class="hero__bg">
-            [Hero image - beautiful Cardiff roof we've done]
-            <!-- <img src="your-image.jpg" alt="Roof work in Cardiff"> -->
+            [Hero image - beautiful Cardiff roof we've completed]
+            <!-- <img src="your-hero-image.jpg" alt="Cardiff roof by Delston Roofing"> -->
         </div>
         <div class="hero__overlay"></div>
         <div class="hero__content">
             <span class="hero__badge">Cardiff Roofer - Family Business</span>
-            <h1 class="hero__title">I'm David.<br>I'll Do Your Roof.</h1>
-            <p class="hero__subtitle">No sales team. No call centre. Just me, my two sons, and 30+ years of roofing running through our veins. When you call, I pick up. When we're on your roof, I'm there.</p>
+            <h1 class="hero__title">I'm David Philp.<br>I'll Do Your Roof.</h1>
+            <p class="hero__subtitle">Three generations of roofers. 500+ Cardiff roofs done right. No sales team, no call centre - just me, my sons, and a trade we've perfected since my old man taught me everything he knew.</p>
             <a href="tel:+447876400202" class="hero__cta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <svg class="icon-phone" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
                 Give Me a Call
             </a>
         </div>
         <div class="hero__scroll">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="icon-arrow-down" viewBox="0 0 24 24" width="32" height="32">
                 <path d="M12 5v14M19 12l-7 7-7-7"/>
             </svg>
         </div>
     </section>
 
-    <!-- Intro - Meet David -->
-    <section class="intro">
+    <!-- Intro -->
+    <section class="intro" id="about">
         <div class="intro__container">
             <div class="intro__header">
                 <div class="intro__wave">👋</div>
-                <h2 class="intro__title">Alright, I'm David</h2>
+                <h2 class="intro__title">Alright, I'm David Philp</h2>
                 <p class="intro__role">Owner of Delston Roofing & Third-Generation Roofer</p>
             </div>
 
             <p class="intro__text">
-                I've been up on roofs since I was a teenager, learning the trade from my old man - who learned it from <strong>his</strong> old man. Now I run the business with my two boys. We're not a big company with salespeople and fancy offices. <strong>It's just us.</strong> When you ring that number, you're talking to me. When we show up at your house, I'm there with my sons, making sure everything's done right.
+                My dad taught me this trade when I was a teenager. Every trick, every technique, the right way to do things. Now I run the business with my two sons, passing down everything my old man taught me. <strong>Three generations of roofers.</strong> When you ring that number, you're talking to me. When we show up at your house, I'm there making sure everything's done to the standard that'd make my dad proud.
             </p>
 
             <div class="intro__gallery">
                 <div class="img-placeholder">[Roof image 1]</div>
                 <div class="img-placeholder">[Roof image 2]</div>
                 <div class="img-placeholder">[Roof image 3]</div>
+                <div class="img-placeholder">[Roof image 4]</div>
             </div>
 
             <div class="intro__quote">
@@ -1086,11 +1273,10 @@
     </section>
 
     <!-- Gallery Strip -->
-    <section class="gallery-strip">
+    <section class="gallery-strip" id="work">
         <div class="gallery-strip__container">
             <div class="gallery-strip__header">
                 <h2 class="gallery-strip__title">Some Roofs I've Done Around Cardiff</h2>
-                <p class="gallery-strip__subtitle">Real work, real neighbours. No stock photos.</p>
             </div>
             <div class="gallery-strip__grid">
                 <div class="gallery-img">[Roof 1]</div>
@@ -1114,22 +1300,22 @@
 
             <div class="story__grid">
                 <div class="story__images">
-                    <div class="story__img">[Wide roof shot - before/after or finished job]</div>
+                    <div class="story__img">[Wide roof shot - finished job]</div>
                     <div class="story__img">[Detail shot]</div>
-                    <div class="story__img">[Team at work]</div>
+                    <div class="story__img">[Work in progress]</div>
                 </div>
                 <div class="story__content">
                     <p>
-                        My grandad started this. Taught my dad everything. My dad taught me. Now I'm teaching my boys. <strong>That's three generations of roofers</strong> who've walked across Cardiff rooftops.
+                        My old man was a roofer. Spent decades on Cardiff rooftops, and when I was old enough, he brought me up there with him. Taught me properly. Not just the quick way - the <strong>right way</strong>.
                     </p>
                     <p>
-                        I'm not interested in growing into some massive company where I never see the customers. I want to shake your hand, look at your roof myself, and make sure the job's done to the standard my old man would be proud of.
+                        Now I'm doing the same with my two sons. They're up there with me, learning the trade the way I learned it. <strong>That's three generations</strong> of roofers who know every slate, every tile, every leak.
                     </p>
                     <p>
-                        When we finish, I give you my number. <strong>Any questions down the line? Just call me.</strong> I'm not disappearing. I live here. My reputation is everything.
+                        When we finish your roof, I give you my number. Any questions down the line? <strong>Just call me.</strong> I live here. My name's on the van. I'm not going anywhere.
                     </p>
                     <div class="story__highlight">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="icon-check" viewBox="0 0 24 24" width="24" height="24">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
@@ -1153,22 +1339,28 @@
                 <div class="benefit-card benefit-card--featured">
                     <div>
                         <div class="benefit-card__icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="8.5" cy="7" r="4"/>
-                                <polyline points="17 11 19 13 23 9"/>
+                            <!-- Custom roof with person icon -->
+                            <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 14l12-10 12 10"/>
+                                <path d="M6 12v14h20V12"/>
+                                <circle cx="16" cy="18" r="3"/>
+                                <path d="M16 21v4"/>
+                                <path d="M13 25h6"/>
                             </svg>
                         </div>
                         <h3 class="benefit-card__title">I'm On Every Single Job</h3>
                         <p class="benefit-card__text">Your roof isn't getting passed off to some random subcontractor. I'm there with my sons, on-site, making sure every tile is right. I've seen too many cowboys mess things up. Not happening on my watch.</p>
                     </div>
-                    <div class="featured-img">[Image - David/team at work on a roof]</div>
+                    <div class="featured-img">[Image - at work on a roof]</div>
                 </div>
 
                 <div class="benefit-card">
                     <div class="benefit-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        <!-- Custom phone ringing icon -->
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M27 20.92v4a2.67 2.67 0 0 1-2.9 2.67 26.39 26.39 0 0 1-11.51-4.1 26 26 0 0 1-8-8A26.39 26.39 0 0 1 .49 3.9 2.67 2.67 0 0 1 3.15 1H7.15a2.67 2.67 0 0 1 2.67 2.29 17.12 17.12 0 0 0 .93 3.75 2.67 2.67 0 0 1-.6 2.81L8.27 11.73a21.33 21.33 0 0 0 8 8l1.88-1.88a2.67 2.67 0 0 1 2.81-.6 17.12 17.12 0 0 0 3.75.93A2.67 2.67 0 0 1 27 20.92z" transform="translate(2.5 2)"/>
+                            <path d="M23 2c1.5 0 2.5.5 3 1.5" opacity="0.5"/>
+                            <path d="M26 5c1 0 2 .5 2.5 1.5" opacity="0.3"/>
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">You Call, I Answer</h3>
@@ -1177,9 +1369,11 @@
 
                 <div class="benefit-card">
                     <div class="benefit-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
+                        <!-- Custom calendar/clock staying icon -->
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="16" cy="16" r="12"/>
+                            <path d="M16 8v8l5 3"/>
+                            <path d="M26 26l4 4" stroke-width="2"/>
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">Still Here After the Job</h3>
@@ -1188,9 +1382,11 @@
 
                 <div class="benefit-card">
                     <div class="benefit-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
+                        <!-- Custom magnifying glass with checkmark -->
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="14" cy="14" r="10"/>
+                            <path d="M28 28l-6-6"/>
+                            <path d="M10 14l3 3 5-6"/>
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">Obsessed With the Details</h3>
@@ -1199,9 +1395,11 @@
 
                 <div class="benefit-card">
                     <div class="benefit-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        <!-- Custom house with heart icon -->
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 12l12-9 12 9"/>
+                            <path d="M6 10v16h20V10"/>
+                            <path d="M16 15c-1-2-4-2-4 1 0 2 4 5 4 5s4-3 4-5c0-3-3-3-4-1z"/>
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">We Respect Your Home</h3>
@@ -1210,8 +1408,10 @@
 
                 <div class="benefit-card">
                     <div class="benefit-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <!-- Custom shield with checkmark -->
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 3L4 8v7c0 7.5 5 13.5 12 16 7-2.5 12-8.5 12-16V8L16 3z"/>
+                            <path d="M10 16l4 4 8-8"/>
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">10-Year Guarantee</h3>
@@ -1239,7 +1439,7 @@
     </section>
 
     <!-- Process -->
-    <section class="process">
+    <section class="process" id="process">
         <div class="process__container">
             <div class="process__header">
                 <h2 class="process__title">Here's How It Works</h2>
@@ -1305,11 +1505,11 @@
             <div class="testimonials__grid">
                 <div class="testimonial">
                     <div class="testimonial__stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <p class="testimonial__text">"David and his sons are proper tradesmen. Old school workmanship with modern materials. Already recommended them to my brother and he's booking them for his place too."</p>
                     <div class="testimonial__author">
@@ -1323,11 +1523,11 @@
 
                 <div class="testimonial">
                     <div class="testimonial__stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <p class="testimonial__text">"I was proper nervous about the whole thing. But they put me at ease straight away and gave me options that actually fit my budget. No pressure sales or anything like that."</p>
                     <div class="testimonial__author">
@@ -1341,11 +1541,11 @@
 
                 <div class="testimonial">
                     <div class="testimonial__stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <p class="testimonial__text">"Family business that actually cares about the work they do. Rare thing these days. Had a complicated job on our extension roof and they handled it no problem. Would use again 100%."</p>
                     <div class="testimonial__author">
@@ -1359,11 +1559,11 @@
 
                 <div class="testimonial">
                     <div class="testimonial__stars">
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <p class="testimonial__text">"I'm a single mum and was worried about getting ripped off. They were completely straight with me about what needed doing and the price matched the quote exactly. No nasty surprises."</p>
                     <div class="testimonial__author">
@@ -1385,8 +1585,8 @@
             <p class="final-cta__text">No pressure, no sales pitch. Just tell me what's going on with your roof and I'll let you know how I can help. If I'm not the right fit, I'll tell you straight.</p>
             <div class="final-cta__buttons">
                 <a href="tel:+447876400202" class="final-cta__btn final-cta__btn--primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    <svg class="icon-phone" viewBox="0 0 24 24" width="22" height="22">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
                     Call Me: 07876 400202
                 </a>
@@ -1396,19 +1596,19 @@
             </div>
             <div class="final-cta__trust">
                 <span class="final-cta__trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="icon-check" viewBox="0 0 24 24" width="20" height="20">
                         <polyline points="20 6 9 17 4 12"/>
                     </svg>
                     NFRC Registered
                 </span>
                 <span class="final-cta__trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="icon-check" viewBox="0 0 24 24" width="20" height="20">
                         <polyline points="20 6 9 17 4 12"/>
                     </svg>
                     10-Year Guarantee
                 </span>
                 <span class="final-cta__trust-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="icon-check" viewBox="0 0 24 24" width="20" height="20">
                         <polyline points="20 6 9 17 4 12"/>
                     </svg>
                     Family-Owned
@@ -1419,10 +1619,23 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3UIWUFkWKLcwVCtM5zSxjgvh81JbOkNZY0aiI" alt="Delston Roofing" class="footer__logo">
         <p class="footer__text">
             &copy; 2026 Delston Roofing. Cardiff.
             <a href="tel:+447876400202" class="footer__link">07876 400202</a>
         </p>
     </footer>
+
+    <!-- Header scroll effect -->
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
