@@ -27,6 +27,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('set', 'autoConfig', false, '824120400678401');
     fbq('init', '824120400678401');
     fbq('track', 'PageView');
     </script>
@@ -2930,6 +2931,8 @@
 
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
+
+            fbq('track', 'Lead');
 
             const form = document.getElementById('estimate-form');
             const formData = new FormData(form);
