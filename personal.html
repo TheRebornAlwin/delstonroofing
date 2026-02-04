@@ -106,9 +106,9 @@
         }
 
         .header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
             padding: 0.75rem 2rem;
         }
 
@@ -142,16 +142,16 @@
         }
 
         .header.scrolled .header__link {
-            color: var(--gray-700);
+            color: var(--white);
         }
 
         .header.scrolled .header__link:hover {
-            color: var(--primary-600);
+            color: var(--primary-400);
         }
 
         .header__cta {
-            background: var(--white);
-            color: var(--gray-900);
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            color: var(--white);
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
             font-weight: 700;
@@ -161,14 +161,16 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
         }
 
         .header__cta:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
         }
 
         .header.scrolled .header__cta {
-            background: var(--primary-500);
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
             color: var(--white);
         }
 
@@ -275,20 +277,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--white);
-            color: var(--gray-900);
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            color: var(--white);
             padding: 1.25rem 2.5rem;
             border-radius: 9999px;
             font-size: 1.15rem;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
         }
 
         .hero__cta:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.5);
         }
 
         .hero__cta svg {
@@ -296,20 +298,6 @@
             height: 24px;
         }
 
-        .hero__scroll {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--white);
-            opacity: 0.7;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
-        }
 
         /* ============================================
            INTRO - WHO I AM
@@ -401,13 +389,13 @@
         }
 
         .intro__quote {
-            background: linear-gradient(135deg, var(--warm) 0%, #fef9c3 100%);
-            border-left: 5px solid var(--warm-dark);
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+            border-left: 5px solid var(--primary-500);
             padding: 2rem 2.5rem;
             border-radius: 0 1.5rem 1.5rem 0;
             font-size: 1.35rem;
             font-style: italic;
-            color: var(--warm-dark);
+            color: var(--gray-700);
             text-align: center;
             position: relative;
         }
@@ -418,8 +406,9 @@
             top: -10px;
             left: 20px;
             font-size: 5rem;
-            opacity: 0.2;
+            opacity: 0.15;
             font-family: Georgia, serif;
+            color: var(--primary-500);
         }
 
         /* ============================================
@@ -441,7 +430,7 @@
         }
 
         .gallery-strip__title {
-            font-size: 1.5rem;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
             font-weight: 800;
             color: var(--gray-900);
         }
@@ -740,8 +729,9 @@
         }
 
         .benefit-card--featured:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
             box-shadow: 0 25px 50px rgba(37, 99, 235, 0.3);
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
         }
 
         .benefit-card--featured .benefit-card__icon {
@@ -975,6 +965,55 @@
             font-size: 0.9rem;
         }
 
+        .testimonial__text.truncated {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .testimonial__text.expanded {
+            display: block;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-500);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .read-more-btn:hover {
+            color: var(--primary-700);
+        }
+
+        .show-more-wrap {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .show-more-btn {
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .show-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
         /* ============================================
            FINAL CTA
            ============================================ */
@@ -1044,13 +1083,14 @@
         }
 
         .final-cta__btn--primary {
-            background: var(--white);
-            color: var(--gray-900);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-500) 100%);
+            color: var(--white);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
         }
 
         .final-cta__btn--primary:hover {
             transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.5);
         }
 
         .final-cta__btn--secondary {
@@ -1206,7 +1246,7 @@
     <!-- Header -->
     <header class="header" id="header">
         <a href="/">
-            <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3UIWUFkWKLcwVCtM5zSxjgvh81JbOkNZY0aiI" alt="Delston Roofing" class="header__logo">
+            <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i" alt="Delston Roofing" class="header__logo">
         </a>
         <nav class="header__nav">
             <a href="#about" class="header__link">About Me</a>
@@ -1237,11 +1277,6 @@
                 </svg>
                 Give Me a Call
             </a>
-        </div>
-        <div class="hero__scroll">
-            <svg class="icon-arrow-down" viewBox="0 0 24 24" width="32" height="32">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
         </div>
     </section>
 
@@ -1368,11 +1403,13 @@
 
                 <div class="benefit-card">
                     <div class="benefit-card__icon">
-                        <!-- Custom calendar/clock staying icon -->
+                        <!-- Handshake / ongoing support icon -->
                         <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="16" cy="16" r="12"/>
-                            <path d="M16 8v8l5 3"/>
-                            <path d="M26 26l4 4" stroke-width="2"/>
+                            <path d="M20 16l-4-4-6 6-4-4"/>
+                            <path d="M6 18l-2 2 6 6 4-4"/>
+                            <path d="M26 14l-6-6-4 4"/>
+                            <path d="M28 12l-6 6-2-2"/>
+                            <circle cx="16" cy="6" r="3"/>
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">Still Here After the Job</h3>
@@ -1416,6 +1453,18 @@
                     <h3 class="benefit-card__title">10-Year Guarantee</h3>
                     <p class="benefit-card__text">I stand behind my work. Full guarantee on materials and labour. If something goes wrong because of us, we'll sort it. Simple as that.</p>
                 </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <!-- Local Cardiff icon - map pin with heart -->
+                        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 3c-5 0-9 4-9 9 0 7 9 17 9 17s9-10 9-17c0-5-4-9-9-9z"/>
+                            <path d="M16 9c-1-1.5-3.5-1.5-3.5 1 0 1.5 3.5 4 3.5 4s3.5-2.5 3.5-4c0-2.5-2.5-2.5-3.5-1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-card__title">Cardiff Born and Bred</h3>
+                    <p class="benefit-card__text">I'm not some company from miles away. I live here, my kids grew up here, and my reputation in this community is everything to me.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1424,15 +1473,15 @@
     <section class="gallery-strip" style="background: var(--white);">
         <div class="gallery-strip__container">
             <div class="gallery-strip__header">
-                <h2 class="gallery-strip__title">More Recent Work</h2>
+                <h2 class="gallery-strip__title">More Recent Work in Cardiff</h2>
             </div>
             <div class="gallery-strip__grid">
                 <div class="gallery-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3e9FQxQAGUiQcIS6FnX1VMu9gx2KZBNzAC83H" alt="Cardiff roof"></div>
                 <div class="gallery-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3QPOYjyfEd0p5iDO6jUMZQVhCzW7faT1bPoYS" alt="Cardiff roof"></div>
-                <div class="gallery-img">[Roof 9]</div>
-                <div class="gallery-img">[Roof 10]</div>
-                <div class="gallery-img">[Roof 11]</div>
-                <div class="gallery-img">[Roof 12]</div>
+                <div class="gallery-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3gmtbgWxECm9TeKHJZ8DVqxWPlpBy5X4YLF7g" alt="Cardiff roof"></div>
+                <div class="gallery-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3eCz4hNAGUiQcIS6FnX1VMu9gx2KZBNzAC83H" alt="Cardiff roof"></div>
+                <div class="gallery-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3ME0sbcRHNE9eFCb3i0SVwsyz4KrO7JfqRa5v" alt="Cardiff roof"></div>
+                <div class="gallery-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3gFd7MZxECm9TeKHJZ8DVqxWPlpBy5X4YLF7g" alt="Cardiff roof"></div>
             </div>
         </div>
     </section>
@@ -1501,78 +1550,12 @@
                 <p class="testimonials__subtitle">Real reviews from real Cardiff homeowners</p>
             </div>
 
-            <div class="testimonials__grid">
-                <div class="testimonial">
-                    <div class="testimonial__stars">
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial__text">"David and his sons are proper tradesmen. Old school workmanship with modern materials. Already recommended them to my brother and he's booking them for his place too."</p>
-                    <div class="testimonial__author">
-                        <span class="testimonial__avatar">RK</span>
-                        <div>
-                            <div class="testimonial__name">Robert K.</div>
-                            <div class="testimonial__location">Cardiff</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="testimonials__grid" id="reviews-grid">
+                <!-- Reviews dynamically inserted by JS -->
+            </div>
 
-                <div class="testimonial">
-                    <div class="testimonial__stars">
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial__text">"I was proper nervous about the whole thing. But they put me at ease straight away and gave me options that actually fit my budget. No pressure sales or anything like that."</p>
-                    <div class="testimonial__author">
-                        <span class="testimonial__avatar">MP</span>
-                        <div>
-                            <div class="testimonial__name">Mike P.</div>
-                            <div class="testimonial__location">Cardiff</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial__stars">
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial__text">"Family business that actually cares about the work they do. Rare thing these days. Had a complicated job on our extension roof and they handled it no problem. Would use again 100%."</p>
-                    <div class="testimonial__author">
-                        <span class="testimonial__avatar">CH</span>
-                        <div>
-                            <div class="testimonial__name">Colin H.</div>
-                            <div class="testimonial__location">Cardiff</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial">
-                    <div class="testimonial__stars">
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                        <svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <p class="testimonial__text">"I'm a single mum and was worried about getting ripped off. They were completely straight with me about what needed doing and the price matched the quote exactly. No nasty surprises."</p>
-                    <div class="testimonial__author">
-                        <span class="testimonial__avatar">WT</span>
-                        <div>
-                            <div class="testimonial__name">Wendy T.</div>
-                            <div class="testimonial__location">Cardiff</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="show-more-wrap">
+                <button class="show-more-btn" id="show-more-btn">Show More Reviews</button>
             </div>
         </div>
     </section>
@@ -1618,7 +1601,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3UIWUFkWKLcwVCtM5zSxjgvh81JbOkNZY0aiI" alt="Delston Roofing" class="footer__logo">
+        <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i" alt="Delston Roofing" class="footer__logo">
         <p class="footer__text">
             &copy; 2026 Delston Roofing. Cardiff.
             <a href="tel:+447876400202" class="footer__link">07876 400202</a>
@@ -1635,6 +1618,97 @@
                 header.classList.remove('scrolled');
             }
         });
+    </script>
+
+    <!-- Reviews -->
+    <script>
+        const allReviews = [
+            { name: "Robert K.", initials: "RK", text: "David and his sons are proper tradesmen. Old school workmanship with modern materials. Already recommended them to my brother and he's booking them for his place too." },
+            { name: "Mike P.", initials: "MP", text: "I was proper nervous about the whole thing if im honest, never had major work done on the house before. But they put me at ease straight away and gave me options that actually fit my budget. No pressure sales or anything like that which was a relief." },
+            { name: "Colin H.", initials: "CH", text: "Family business that actually cares about the work they do. Rare thing these days. Had a complicated job on our extension roof and they handled it no problem. Would use again 100%." },
+            { name: "Wendy T.", initials: "WT", text: "Im a single mum and was worried about getting ripped off to be honest. They were completely straight with me about what needed doing and the price matched the quote exactly. No nasty surprises. The roof looks great and Im not worrying about leaks anymore." },
+            { name: "James M.", initials: "JM", text: "The crew showed up when they said they would and worked non stop till the job was done. I work in construction myself so I know what to look for and honestly I was well impressed with how they went about it. Proper workmanship and dead efficient too." },
+            { name: "Rachel B.", initials: "RB", text: "Right so I was a bit worried about getting the roof done cos you hear all these horror stories dont you. But these lot were absolutely spot on from start to finish. Even painted the vents to match which I wasnt expecting at all. Left everything tidy as well, couldnt fault them really." },
+            { name: "Lisa T.", initials: "LT", text: "Super dependable and honest. High quality from start to finish. The lads were really respectful of our property, cleaned up proper when they were done, and the roof looks brilliant now. My neighbour even commented on it the other day." },
+            { name: "Gemma H.", initials: "GH", text: "Had a leak that had been doing my head in for months. Other companies kept saying they couldnt find it but these lot spotted it straight away and fixed it same day. Been bone dry ever since even with all that rain weve had. Absolute lifesavers honestly." },
+            { name: "Karen W.", initials: "KW", text: "Explained everything clearly. Stress-free process from start to finish. David came round himself to look at the roof and told me exactly what needed doing. No jargon, no upselling. Just straight talk." },
+            { name: "Gary P.", initials: "GP", text: "Really impressed with these guys. My mate recommended them after they did his roof and now I can see why. They dont cut corners and the price was fair. What more can you ask for really." },
+            { name: "Helen M.", initials: "HM", text: "So we needed the whole roof redone which was obviously a big job and I was dreading it. But honestly it was way less stressful than I thought. They kept us updated every step of the way and finished quicker than expected. The new roof looks mint and weve already noticed the house is warmer." },
+            { name: "Chris R.", initials: "CR", text: "We got quotes from like 5 different companies and these were by far the most thorough. Actually explained what needed doing instead of just throwing numbers at us. Made the decision easy in the end." },
+            { name: "Tony M.", initials: "TM", text: "The team worked really well together, you could tell theyve done this loads of times. Finished the roof and tidied up without me having to ask. Proper professionals." },
+            { name: "Neil F.", initials: "NF", text: "Third roofer I tried after two dodgy experiences and finally found a good one. These actually knew what they were talking about and didnt try to upsell me stuff I didnt need. Just honest work at a fair price. Should have gone with them first." },
+            { name: "Sandra R.", initials: "SR", text: "Had some storm damage and was worried insurance would be a nightmare. Delston handled everything with the insurance company for me and made the whole process so much easier. The repair work was done properly too, not just a quick patch job. Really grateful for how they looked after us." },
+            { name: "Darren W.", initials: "DW", text: "Been putting off getting the roof sorted for ages cos I thought it would cost a fortune. Got a quote from Delston and it was way more reasonable than expected. The work itself was quality too, no complaints at all. Wish Id done it sooner tbh." },
+            { name: "Alison C.", initials: "AC", text: "Our roof was in a right state, tiles missing everywhere and leaking in the spare room. Called these in a panic and they came out next day to have a look. Really reassuring the way they explained everything and they sorted it all out within the week. Brilliant service from start to finish." },
+            { name: "Mark S.", initials: "MS", text: "Absolutely chuffed with the work they did. The lads were friendly, worked hard, and left no mess. What else can you want really. Already told the neighbours about them." },
+            { name: "Michelle K.", initials: "MK", text: "We live in a Victorian terrace so the roof is quite tricky apparently. Got quotes from a few places and some wouldnt even take it on. These lot were confident, explained what they needed to do, and the finished result is stunning. House looks so much better from the street now too." },
+            { name: "Dawn E.", initials: "DE", text: "My elderly mum needed her roof sorting and I live too far away to supervise it all. These were recommended by her neighbour and they were brilliant. Kept me updated over the phone, treated mum with respect, and did a lovely job. Peace of mind knowing shes got a solid roof over her head now." },
+            { name: "Kevin J.", initials: "KJ", text: "Belting job. Proper tradesmen who take pride in what they do. You can tell by how they work and how they leave the place after. None of that cowboy rubbish. Would happily recommend to anyone needing roof work done." },
+            { name: "Debbie K.", initials: "DK", text: "These are the kind of tradesmen that are hard to find nowadays. Actually care about doing a proper job not just getting paid and moving on. The attention to detail was brilliant. Sorted a few extra things they noticed while they were up there without charging extra too." },
+            { name: "Sue W.", initials: "SW", text: "Had issues with the flat roof on our kitchen extension, been leaking on and off for ages. Previous roofer made it worse if anything. These came out, found the actual problem, and sorted it properly. No more buckets in the kitchen thank god. Proper job done right." },
+            { name: "Derek P.", initials: "DP", text: "Got a few quotes and Delston werent the cheapest but you could tell they knew their stuff. Decided to go with quality over price and really glad we did. The roof theyve put on is solid and should last us for years. Worth every penny." },
+        ];
+
+        let reviewsShown = 0;
+        const reviewsPerPage = 4;
+
+        function generateStars() {
+            return '<svg class="icon-star" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'.repeat(5);
+        }
+
+        function createReviewCard(review) {
+            const isLong = review.text.length > 150;
+            const textClass = isLong ? 'testimonial__text truncated' : 'testimonial__text';
+            const readMoreBtn = isLong ? '<button class="read-more-btn" onclick="toggleReview(this)">More</button>' : '';
+
+            return `
+                <div class="testimonial">
+                    <div class="testimonial__stars">${generateStars()}</div>
+                    <p class="${textClass}">"${review.text}"</p>
+                    ${readMoreBtn}
+                    <div class="testimonial__author">
+                        <span class="testimonial__avatar">${review.initials}</span>
+                        <div>
+                            <div class="testimonial__name">${review.name}</div>
+                            <div class="testimonial__location">Cardiff</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleReview(btn) {
+            const textEl = btn.previousElementSibling;
+            if (textEl.classList.contains('truncated')) {
+                textEl.classList.remove('truncated');
+                textEl.classList.add('expanded');
+                btn.textContent = 'Less';
+            } else {
+                textEl.classList.remove('expanded');
+                textEl.classList.add('truncated');
+                btn.textContent = 'More';
+            }
+        }
+
+        function showMoreReviews() {
+            const grid = document.getElementById('reviews-grid');
+            const end = Math.min(reviewsShown + reviewsPerPage, allReviews.length);
+
+            for (let i = reviewsShown; i < end; i++) {
+                grid.insertAdjacentHTML('beforeend', createReviewCard(allReviews[i]));
+            }
+
+            reviewsShown = end;
+
+            if (reviewsShown >= allReviews.length) {
+                document.getElementById('show-more-btn').style.display = 'none';
+            }
+        }
+
+        // Initialize first batch
+        showMoreReviews();
+
+        document.getElementById('show-more-btn').addEventListener('click', showMoreReviews);
     </script>
 </body>
 </html>
