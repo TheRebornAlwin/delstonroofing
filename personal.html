@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet David from Delston Roofing - three generations of roofing excellence in Cardiff. Family-owned, personal service, owner on every job.">
+    <meta name="description" content="I'm David from Delston Roofing. Three generations of my family have been roofing in Cardiff. Give me a call and let's have a chat about your roof.">
     <meta name="robots" content="index, follow">
 
-    <title>Meet David | Delston Roofing - Three Generations of Excellence</title>
+    <title>I'm David | Delston Roofing Cardiff - Let's Have a Chat</title>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -33,7 +33,6 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=824120400678401&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i">
@@ -67,6 +66,9 @@
             --gray-900: #0f172a;
             --white: #ffffff;
             --green-500: #22c55e;
+            --green-100: #dcfce7;
+            --warm: #fef3c7;
+            --warm-dark: #92400e;
         }
 
         * {
@@ -83,478 +85,608 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
         /* ============================================
-           HERO SECTION
+           HERO - BIG IMPACT
            ============================================ */
         .hero {
-            background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);
-            padding: 4rem 1.5rem;
-            text-align: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero__bg {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 1.2rem;
+        }
+
+        .hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.6) 100%
+            );
         }
 
         .hero__content {
             position: relative;
-            z-index: 1;
-            max-width: 700px;
+            z-index: 10;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
         }
 
         .hero__badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--primary-300);
-            padding: 0.5rem 1rem;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.5rem 1.25rem;
             border-radius: 9999px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero__title {
-            font-size: clamp(2rem, 6vw, 3rem);
-            font-weight: 800;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
             color: var(--white);
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .hero__subtitle {
-            font-size: 1.1rem;
-            color: var(--gray-300);
-            margin-bottom: 2rem;
-            line-height: 1.7;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
         .hero__cta {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: var(--primary-500);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-size: 1rem;
-            font-weight: 600;
+            background: var(--white);
+            color: var(--gray-900);
+            padding: 1.25rem 2.5rem;
+            border-radius: 9999px;
+            font-size: 1.15rem;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
         .hero__cta:hover {
-            background: var(--primary-600);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
         }
 
         .hero__cta svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* ============================================
-           MEET THE OWNER SECTION
-           ============================================ */
-        .meet-owner {
-            padding: 5rem 1.5rem;
-            background: var(--white);
-        }
-
-        .meet-owner__grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .meet-owner__grid {
-                grid-template-columns: 300px 1fr;
-                gap: 4rem;
-            }
-        }
-
-        .meet-owner__image {
-            width: 100%;
-            max-width: 300px;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
-            border-radius: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-400);
-            font-size: 0.9rem;
-            margin: 0 auto;
-            border: 2px dashed var(--gray-300);
-        }
-
-        .meet-owner__content h2 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--gray-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .meet-owner__role {
-            color: var(--primary-500);
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .meet-owner__text {
-            color: var(--gray-600);
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .meet-owner__quote {
-            background: var(--primary-50);
-            border-left: 4px solid var(--primary-500);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 0.75rem 0.75rem 0;
-            font-style: italic;
-            color: var(--gray-700);
-        }
-
-        /* ============================================
-           THREE GENERATIONS SECTION
-           ============================================ */
-        .generations {
-            padding: 5rem 1.5rem;
-            background: var(--gray-50);
-        }
-
-        .generations__header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .generations__badge {
-            display: inline-block;
-            background: var(--primary-500);
-            color: var(--white);
-            padding: 0.4rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .generations__title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 800;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-        }
-
-        .generations__subtitle {
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .generations__timeline {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 640px) {
-            .generations__timeline {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .gen-card {
-            background: var(--white);
-            border-radius: 1rem;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            border: 1px solid var(--gray-200);
-            transition: all 0.2s ease;
-        }
-
-        .gen-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .gen-card__icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: var(--white);
-        }
-
-        .gen-card__icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        .gen-card__title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.5rem;
-        }
-
-        .gen-card__text {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-        }
-
-        /* ============================================
-           WHAT MAKES US DIFFERENT
-           ============================================ */
-        .different {
-            padding: 5rem 1.5rem;
-            background: var(--white);
-        }
-
-        .different__header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .different__title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 800;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-        }
-
-        .different__subtitle {
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .different__grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        @media (min-width: 640px) {
-            .different__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .diff-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--gray-50);
-            border-radius: 1rem;
-            border: 1px solid var(--gray-100);
-            transition: all 0.2s ease;
-        }
-
-        .diff-card:hover {
-            background: var(--white);
-            border-color: var(--primary-200);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-        }
-
-        .diff-card__icon {
-            width: 48px;
-            height: 48px;
-            min-width: 48px;
-            background: var(--primary-100);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-600);
-        }
-
-        .diff-card__icon svg {
             width: 24px;
             height: 24px;
         }
 
-        .diff-card__content h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.25rem;
+        .hero__scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            opacity: 0.7;
+            animation: bounce 2s infinite;
         }
 
-        .diff-card__content p {
-            color: var(--gray-500);
-            font-size: 0.9rem;
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
         }
 
         /* ============================================
-           SIMPLE PROCESS SECTION
+           INTRO - WHO I AM
            ============================================ */
-        .process {
-            padding: 5rem 1.5rem;
-            background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);
+        .intro {
+            padding: 6rem 2rem;
+            background: var(--white);
         }
 
-        .process__header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .process__title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .process__subtitle {
-            color: var(--gray-300);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .process__steps {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+        .intro__container {
             max-width: 900px;
             margin: 0 auto;
         }
 
-        @media (min-width: 640px) {
-            .process__steps {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .step-card__number {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid var(--primary-400);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-300);
-        }
-
-        .step-card__icon {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1rem;
-            color: var(--primary-400);
-        }
-
-        .step-card__icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .step-card__title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-
-        .step-card__text {
-            color: var(--gray-400);
-            font-size: 0.9rem;
-        }
-
-        /* ============================================
-           OUR WORK SECTION
-           ============================================ */
-        .our-work {
-            padding: 5rem 1.5rem;
-            background: var(--white);
-        }
-
-        .our-work__header {
+        .intro__header {
             text-align: center;
             margin-bottom: 3rem;
         }
 
-        .our-work__title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 800;
+        .intro__wave {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .intro__role {
+            color: var(--primary-500);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .intro__text {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .intro__text strong {
+            color: var(--gray-900);
+        }
+
+        /* Image grid for David section */
+        .intro__gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 640px) {
+            .intro__gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .intro__gallery .img-placeholder:nth-child(3) {
+                grid-column: span 2;
+            }
+        }
+
+        .img-placeholder {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1rem;
+            border: 2px dashed var(--gray-300);
+            transition: all 0.2s ease;
+        }
+
+        .img-placeholder:hover {
+            border-color: var(--primary-300);
+            background: var(--primary-50);
+        }
+
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        .intro__quote {
+            background: linear-gradient(135deg, var(--warm) 0%, #fef9c3 100%);
+            border-left: 5px solid var(--warm-dark);
+            padding: 2rem 2.5rem;
+            border-radius: 0 1.5rem 1.5rem 0;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--warm-dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .intro__quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 5rem;
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        /* ============================================
+           FAMILY STORY - VISUAL
+           ============================================ */
+        .story {
+            padding: 6rem 2rem;
+            background: var(--gray-900);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+        }
+
+        .story__container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .story__label {
+            display: inline-block;
+            background: var(--primary-500);
+            color: var(--white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .story__title {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .story__subtitle {
+            color: var(--gray-400);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .story__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .story__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .story__images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .story__img {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-800) 100%);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 1rem;
+            border: 2px dashed var(--gray-600);
+        }
+
+        .story__img:first-child {
+            grid-column: span 2;
+            aspect-ratio: 2/1;
+        }
+
+        .story__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        .story__content {
+            color: var(--gray-300);
+        }
+
+        .story__content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .story__content strong {
+            color: var(--white);
+        }
+
+        .story__highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #86efac;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            font-weight: 600;
+        }
+
+        .story__highlight svg {
+            width: 24px;
+            height: 24px;
+            color: var(--green-500);
+        }
+
+        /* ============================================
+           WHAT YOU GET - THE GOOD STUFF
+           ============================================ */
+        .benefits {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .benefits__container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .benefits__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .benefits__title {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 900;
             color: var(--gray-900);
             margin-bottom: 1rem;
         }
 
-        .our-work__subtitle {
-            color: var(--gray-600);
+        .benefits__subtitle {
+            color: var(--gray-500);
+            font-size: 1.1rem;
         }
 
-        .our-work__grid {
+        .benefits__grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
+            gap: 1.5rem;
         }
 
-        @media (min-width: 640px) {
-            .our-work__grid {
-                grid-template-columns: repeat(4, 1fr);
+        @media (max-width: 768px) {
+            .benefits__grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        .work-image {
+        .benefit-card {
+            background: var(--gray-50);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-500);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .benefit-card__icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary-100);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-600);
+            margin-bottom: 1.25rem;
+        }
+
+        .benefit-card__icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .benefit-card__title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-card__text {
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* Featured benefit - bigger */
+        .benefit-card--featured {
+            grid-column: span 2;
+            background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .benefit-card--featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefit-card--featured::before {
+            display: none;
+        }
+
+        .benefit-card--featured .benefit-card__icon {
+            background: rgba(255,255,255,0.2);
+            color: var(--white);
+        }
+
+        .benefit-card--featured .benefit-card__title {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .benefit-card--featured .benefit-card__text {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.05rem;
+        }
+
+        .benefit-card--featured .featured-img {
+            aspect-ratio: 4/3;
+            background: rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            border: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .benefit-card--featured .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        /* ============================================
+           GALLERY STRIP
+           ============================================ */
+        .gallery-strip {
+            padding: 4rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .gallery-strip__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-strip__header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-strip__title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-strip__subtitle {
+            color: var(--gray-500);
+        }
+
+        .gallery-strip__grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-strip__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gallery-strip__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .gallery-img {
             aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
             border-radius: 0.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--gray-400);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem;
             border: 2px dashed var(--gray-300);
+            transition: all 0.2s ease;
         }
 
-        .work-image img {
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -562,11 +694,118 @@
         }
 
         /* ============================================
-           WHAT PEOPLE SAY
+           PROCESS - HOW IT WORKS
+           ============================================ */
+        .process {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .process__container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process__header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .process__title {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 900;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .process__subtitle {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+        }
+
+        .process__steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            position: relative;
+        }
+
+        @media (max-width: 600px) {
+            .step {
+                grid-template-columns: 60px 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .step__number-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step__number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-500);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .step__line {
+            width: 3px;
+            flex: 1;
+            background: var(--primary-200);
+            margin: 0.5rem 0;
+        }
+
+        .step:last-child .step__line {
+            display: none;
+        }
+
+        .step__content {
+            padding-bottom: 3rem;
+        }
+
+        .step:last-child .step__content {
+            padding-bottom: 0;
+        }
+
+        .step__title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .step__text {
+            color: var(--gray-500);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           TESTIMONIALS
            ============================================ */
         .testimonials {
-            padding: 5rem 1.5rem;
-            background: var(--gray-50);
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+        }
+
+        .testimonials__container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .testimonials__header {
@@ -575,185 +814,197 @@
         }
 
         .testimonials__title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 800;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 900;
             color: var(--gray-900);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials__subtitle {
+            color: var(--gray-500);
         }
 
         .testimonials__grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
         }
 
-        @media (min-width: 640px) {
+        @media (max-width: 700px) {
             .testimonials__grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
         }
 
-        .testimonial-card {
+        .testimonial {
             background: var(--white);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            border: 1px solid var(--gray-200);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--gray-100);
         }
 
-        .testimonial-card__stars {
+        .testimonial__stars {
             display: flex;
-            gap: 2px;
+            gap: 3px;
             margin-bottom: 1rem;
             color: #fbbf24;
         }
 
-        .testimonial-card__stars svg {
-            width: 18px;
-            height: 18px;
+        .testimonial__stars svg {
+            width: 20px;
+            height: 20px;
             fill: currentColor;
         }
 
-        .testimonial-card__text {
+        .testimonial__text {
             color: var(--gray-700);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
-        .testimonial-card__author {
+        .testimonial__author {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
         }
 
-        .testimonial-card__avatar {
-            width: 40px;
-            height: 40px;
+        .testimonial__avatar {
+            width: 48px;
+            height: 48px;
             background: var(--primary-100);
             color: var(--primary-600);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        .testimonial-card__name {
-            font-weight: 600;
+        .testimonial__name {
+            font-weight: 700;
             color: var(--gray-900);
+        }
+
+        .testimonial__location {
+            color: var(--gray-400);
             font-size: 0.9rem;
         }
 
-        .testimonial-card__location {
-            color: var(--gray-500);
-            font-size: 0.85rem;
-        }
-
         /* ============================================
-           CTA SECTION
+           FINAL CTA
            ============================================ */
-        .cta {
-            padding: 5rem 1.5rem;
-            background: var(--white);
+        .final-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-800) 0%, var(--primary-900) 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .cta__card {
-            background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
-            border: 2px solid var(--primary-200);
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
-            max-width: 600px;
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+        }
+
+        .final-cta__container {
+            max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .cta__title {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--gray-900);
+        .final-cta__title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            color: var(--white);
             margin-bottom: 1rem;
         }
 
-        .cta__text {
-            color: var(--gray-600);
-            margin-bottom: 2rem;
+        .final-cta__text {
+            color: var(--gray-300);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
         }
 
-        .cta__buttons {
+        .final-cta__buttons {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             align-items: center;
         }
 
-        @media (min-width: 480px) {
-            .cta__buttons {
+        @media (min-width: 500px) {
+            .final-cta__buttons {
                 flex-direction: row;
                 justify-content: center;
             }
         }
 
-        .cta__btn {
+        .final-cta__btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
-            font-size: 1rem;
-            font-weight: 600;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            border-radius: 9999px;
+            font-size: 1.1rem;
+            font-weight: 700;
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
-        .cta__btn--primary {
-            background: var(--primary-500);
-            color: var(--white);
-            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
-        }
-
-        .cta__btn--primary:hover {
-            background: var(--primary-600);
-            transform: translateY(-2px);
-        }
-
-        .cta__btn--secondary {
+        .final-cta__btn--primary {
             background: var(--white);
-            color: var(--primary-600);
-            border: 2px solid var(--primary-300);
+            color: var(--gray-900);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
 
-        .cta__btn--secondary:hover {
-            background: var(--primary-50);
-            border-color: var(--primary-500);
+        .final-cta__btn--primary:hover {
+            transform: translateY(-3px) scale(1.02);
         }
 
-        .cta__btn svg {
-            width: 20px;
-            height: 20px;
+        .final-cta__btn--secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
-        .cta__trust {
-            margin-top: 2rem;
+        .final-cta__btn--secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .final-cta__btn svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .final-cta__trust {
+            margin-top: 3rem;
             display: flex;
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
         }
 
-        .cta__trust-item {
+        .final-cta__trust-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--gray-600);
+            color: var(--gray-400);
             font-size: 0.9rem;
         }
 
-        .cta__trust-item svg {
-            width: 18px;
-            height: 18px;
+        .final-cta__trust-item svg {
+            width: 20px;
+            height: 20px;
             color: var(--green-500);
         }
 
@@ -762,13 +1013,14 @@
            ============================================ */
         .footer {
             background: var(--gray-900);
-            padding: 2rem 1.5rem;
+            padding: 2rem;
             text-align: center;
+            border-top: 1px solid var(--gray-800);
         }
 
         .footer__text {
             color: var(--gray-500);
-            font-size: 0.875rem;
+            font-size: 0.9rem;
         }
 
         .footer__link {
@@ -783,322 +1035,342 @@
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
+        <div class="hero__bg">
+            [Hero image - beautiful Cardiff roof we've done]
+            <!-- <img src="your-image.jpg" alt="Roof work in Cardiff"> -->
+        </div>
+        <div class="hero__overlay"></div>
         <div class="hero__content">
-            <div class="hero__badge">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                </svg>
-                Cardiff, Newport & Penarth
-            </div>
-            <h1 class="hero__title">Your Roof, Our Family's Reputation</h1>
-            <p class="hero__subtitle">Not just another roofing company. We're David and his sons - three generations of roofers who actually pick up the phone, show up on time, and treat your home like it's ours.</p>
+            <span class="hero__badge">Cardiff Roofer - Family Business</span>
+            <h1 class="hero__title">I'm David.<br>I'll Do Your Roof.</h1>
+            <p class="hero__subtitle">No sales team. No call centre. Just me, my two sons, and 30+ years of roofing running through our veins. When you call, I pick up. When we're on your roof, I'm there.</p>
             <a href="tel:+447876400202" class="hero__cta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
-                Have a Chat with David
+                Give Me a Call
             </a>
         </div>
+        <div class="hero__scroll">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
     </section>
 
-    <!-- Meet the Owner Section -->
-    <section class="meet-owner">
-        <div class="container">
-            <div class="meet-owner__grid">
-                <div class="meet-owner__image">
-                    [Photo of David]
+    <!-- Intro - Meet David -->
+    <section class="intro">
+        <div class="intro__container">
+            <div class="intro__header">
+                <div class="intro__wave">👋</div>
+                <h2 class="intro__title">Alright, I'm David</h2>
+                <p class="intro__role">Owner of Delston Roofing & Third-Generation Roofer</p>
+            </div>
+
+            <p class="intro__text">
+                I've been up on roofs since I was a teenager, learning the trade from my old man - who learned it from <strong>his</strong> old man. Now I run the business with my two boys. We're not a big company with salespeople and fancy offices. <strong>It's just us.</strong> When you ring that number, you're talking to me. When we show up at your house, I'm there with my sons, making sure everything's done right.
+            </p>
+
+            <div class="intro__gallery">
+                <div class="img-placeholder">[Roof image 1]</div>
+                <div class="img-placeholder">[Roof image 2]</div>
+                <div class="img-placeholder">[Roof image 3]</div>
+            </div>
+
+            <div class="intro__quote">
+                I'd never put a roof on your house that I wouldn't put on my mum's. That's the standard, and that's not changing.
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Strip -->
+    <section class="gallery-strip">
+        <div class="gallery-strip__container">
+            <div class="gallery-strip__header">
+                <h2 class="gallery-strip__title">Some Roofs I've Done Around Cardiff</h2>
+                <p class="gallery-strip__subtitle">Real work, real neighbours. No stock photos.</p>
+            </div>
+            <div class="gallery-strip__grid">
+                <div class="gallery-img">[Roof 1]</div>
+                <div class="gallery-img">[Roof 2]</div>
+                <div class="gallery-img">[Roof 3]</div>
+                <div class="gallery-img">[Roof 4]</div>
+                <div class="gallery-img">[Roof 5]</div>
+                <div class="gallery-img">[Roof 6]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Story -->
+    <section class="story">
+        <div class="story__container">
+            <div class="story__header">
+                <span class="story__label">Our Story</span>
+                <h2 class="story__title">Three Generations on Cardiff Roofs</h2>
+                <p class="story__subtitle">This isn't a job I fell into. Roofing is in my blood. It's what my family does.</p>
+            </div>
+
+            <div class="story__grid">
+                <div class="story__images">
+                    <div class="story__img">[Wide roof shot - before/after or finished job]</div>
+                    <div class="story__img">[Detail shot]</div>
+                    <div class="story__img">[Team at work]</div>
                 </div>
-                <div class="meet-owner__content">
-                    <h2>Meet David</h2>
-                    <p class="meet-owner__role">Owner & Lead Roofer</p>
-                    <p class="meet-owner__text">
-                        I learned this trade from my old man, who learned it from his. Now I'm running the business with my two sons. When you call Delston, you're not talking to a sales rep - you're talking to me. And when we're on your roof, I'm right there with my boys making sure everything's done properly.
+                <div class="story__content">
+                    <p>
+                        My grandad started this. Taught my dad everything. My dad taught me. Now I'm teaching my boys. <strong>That's three generations of roofers</strong> who've walked across Cardiff rooftops.
                     </p>
-                    <p class="meet-owner__text">
-                        We don't do high-pressure sales. We don't disappear after the job's done. We're local, we're not going anywhere, and our name is our reputation.
+                    <p>
+                        I'm not interested in growing into some massive company where I never see the customers. I want to shake your hand, look at your roof myself, and make sure the job's done to the standard my old man would be proud of.
                     </p>
-                    <div class="meet-owner__quote">
-                        "I'd never put a roof on your house that I wouldn't put on my mum's."
+                    <p>
+                        When we finish, I give you my number. <strong>Any questions down the line? Just call me.</strong> I'm not disappearing. I live here. My reputation is everything.
+                    </p>
+                    <div class="story__highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        NFRC Registered Contractor
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Three Generations Section -->
-    <section class="generations">
-        <div class="container">
-            <div class="generations__header">
-                <span class="generations__badge">Our Story</span>
-                <h2 class="generations__title">Three Generations of Roofing Excellence</h2>
-                <p class="generations__subtitle">This isn't just a job to us. It's the family trade, passed down and perfected over decades.</p>
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="benefits__container">
+            <div class="benefits__header">
+                <h2 class="benefits__title">What You're Actually Getting</h2>
+                <p class="benefits__subtitle">No waffle. Here's what matters.</p>
             </div>
-            <div class="generations__timeline">
-                <div class="gen-card">
-                    <div class="gen-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                    </div>
-                    <h3 class="gen-card__title">Started by Grandad</h3>
-                    <p class="gen-card__text">The foundation was laid with old-school values and proper craftsmanship</p>
-                </div>
-                <div class="gen-card">
-                    <div class="gen-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3 class="gen-card__title">Taught by Dad</h3>
-                    <p class="gen-card__text">David learned every trick of the trade from his father, the right way</p>
-                </div>
-                <div class="gen-card">
-                    <div class="gen-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                    </div>
-                    <h3 class="gen-card__title">Carried by Sons</h3>
-                    <p class="gen-card__text">Now David and his two sons continue the legacy, stronger than ever</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- What Makes Us Different -->
-    <section class="different">
-        <div class="container">
-            <div class="different__header">
-                <h2 class="different__title">What You Actually Get</h2>
-                <p class="different__subtitle">No fluff, no corporate speak. Just what matters when you're getting your roof done.</p>
-            </div>
-            <div class="different__grid">
-                <div class="diff-card">
-                    <div class="diff-card__icon">
+            <div class="benefits__grid">
+                <!-- Featured card -->
+                <div class="benefit-card benefit-card--featured">
+                    <div>
+                        <div class="benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="8.5" cy="7" r="4"/>
+                                <polyline points="17 11 19 13 23 9"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-card__title">I'm On Every Single Job</h3>
+                        <p class="benefit-card__text">Your roof isn't getting passed off to some random subcontractor. I'm there with my sons, on-site, making sure every tile is right. I've seen too many cowboys mess things up. Not happening on my watch.</p>
+                    </div>
+                    <div class="featured-img">[Image - David/team at work on a roof]</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
                     </div>
-                    <div class="diff-card__content">
-                        <h3>David Answers the Phone</h3>
-                        <p>No call centres. No waiting. You talk directly to the owner.</p>
-                    </div>
+                    <h3 class="benefit-card__title">You Call, I Answer</h3>
+                    <p class="benefit-card__text">No call centres, no waiting for callbacks. You're talking directly to the bloke who's going to be on your roof. Quick responses, straight answers.</p>
                 </div>
-                <div class="diff-card">
-                    <div class="diff-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="8.5" cy="7" r="4"/>
-                            <polyline points="17 11 19 13 23 9"/>
-                        </svg>
-                    </div>
-                    <div class="diff-card__content">
-                        <h3>Owner on Every Job</h3>
-                        <p>David is on-site supervising. Your job won't be passed off to random subcontractors.</p>
-                    </div>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                        </svg>
-                    </div>
-                    <div class="diff-card__content">
-                        <h3>We Stay in Touch</h3>
-                        <p>Questions after the job? Just call. We're here for the long run, not just the sale.</p>
-                    </div>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                            <polyline points="9 22 9 12 15 12 15 22"/>
-                        </svg>
-                    </div>
-                    <div class="diff-card__content">
-                        <h3>We Respect Your Home</h3>
-                        <p>No loud music, no mess left behind. We treat your property like our own.</p>
-                    </div>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-card__icon">
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <polyline points="12 6 12 12 16 14"/>
                         </svg>
                     </div>
-                    <div class="diff-card__content">
-                        <h3>Quick Responses</h3>
-                        <p>We don't leave you hanging. Expect a callback within hours, not days.</p>
-                    </div>
+                    <h3 class="benefit-card__title">Still Here After the Job</h3>
+                    <p class="benefit-card__text">Got a question six months later? Ring me. Noticed something odd? Ring me. I'm not vanishing after I've been paid. That's not how I work.</p>
                 </div>
-                <div class="diff-card">
-                    <div class="diff-card__icon">
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-card__title">Obsessed With the Details</h3>
+                    <p class="benefit-card__text">I notice the small things. The alignment, the finish, how it looks from the street. If something's not right, we fix it before we leave. Every time.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-card__title">We Respect Your Home</h3>
+                    <p class="benefit-card__text">No loud music blasting, no rubbish left lying around. We clean up properly, we're polite to your neighbours, and we treat your place like we'd want ours treated.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-card__icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
-                    <div class="diff-card__content">
-                        <h3>10-Year Guarantee</h3>
-                        <p>We stand behind our work. Full warranty on materials and labour.</p>
-                    </div>
+                    <h3 class="benefit-card__title">10-Year Guarantee</h3>
+                    <p class="benefit-card__text">I stand behind my work. Full guarantee on materials and labour. If something goes wrong because of us, we'll sort it. Simple as that.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Simple Process -->
+    <!-- Gallery Strip 2 -->
+    <section class="gallery-strip" style="background: var(--white);">
+        <div class="gallery-strip__container">
+            <div class="gallery-strip__header">
+                <h2 class="gallery-strip__title">More Recent Work</h2>
+            </div>
+            <div class="gallery-strip__grid">
+                <div class="gallery-img">[Roof 7]</div>
+                <div class="gallery-img">[Roof 8]</div>
+                <div class="gallery-img">[Roof 9]</div>
+                <div class="gallery-img">[Roof 10]</div>
+                <div class="gallery-img">[Roof 11]</div>
+                <div class="gallery-img">[Roof 12]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
     <section class="process">
-        <div class="container">
+        <div class="process__container">
             <div class="process__header">
-                <h2 class="process__title">How It Works</h2>
-                <p class="process__subtitle">Simple, straightforward, no surprises. Here's what happens when you get in touch.</p>
+                <h2 class="process__title">Here's How It Works</h2>
+                <p class="process__subtitle">No mystery, no messing about. Dead simple.</p>
             </div>
+
             <div class="process__steps">
-                <div class="step-card">
-                    <div class="step-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
+                <div class="step">
+                    <div class="step__number-wrap">
+                        <div class="step__number">1</div>
+                        <div class="step__line"></div>
                     </div>
-                    <h3 class="step-card__title">1. Have a Chat</h3>
-                    <p class="step-card__text">Call David directly. Tell him what's going on with your roof.</p>
+                    <div class="step__content">
+                        <h3 class="step__title">Give Me a Ring</h3>
+                        <p class="step__text">Tell me what's going on with your roof. Leak? Missing tiles? Just looks rough? Whatever it is, I want to hear about it. No pressure, just a chat.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="8" x2="12" y2="12"/>
-                            <line x1="12" y1="16" x2="12.01" y2="16"/>
-                        </svg>
+
+                <div class="step">
+                    <div class="step__number-wrap">
+                        <div class="step__number">2</div>
+                        <div class="step__line"></div>
                     </div>
-                    <h3 class="step-card__title">2. Free Inspection</h3>
-                    <p class="step-card__text">We'll come out, have a proper look, and explain exactly what's needed.</p>
+                    <div class="step__content">
+                        <h3 class="step__title">I Come Round and Have a Look</h3>
+                        <p class="step__text">I'll pop over, get up there myself, and see exactly what's needed. I'll explain everything in plain English - what's wrong, what needs doing, and why. No jargon, no scare tactics.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                        </svg>
+
+                <div class="step">
+                    <div class="step__number-wrap">
+                        <div class="step__number">3</div>
+                        <div class="step__line"></div>
                     </div>
-                    <h3 class="step-card__title">3. Honest Quote</h3>
-                    <p class="step-card__text">A clear price with no hidden fees. Take your time to decide.</p>
+                    <div class="step__content">
+                        <h3 class="step__title">Honest Quote, No Surprises</h3>
+                        <p class="step__text">I'll give you a clear price for the work. That's the price. No hidden extras, no "oh we found something else" nonsense. What I quote is what you pay.</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <div class="step-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
+
+                <div class="step">
+                    <div class="step__number-wrap">
+                        <div class="step__number">4</div>
+                        <div class="step__line"></div>
                     </div>
-                    <h3 class="step-card__title">4. Job Done Right</h3>
-                    <p class="step-card__text">We get the work done properly, clean up, and you've got our number if you ever need us.</p>
+                    <div class="step__content">
+                        <h3 class="step__title">Job Done Right, Mess Cleaned Up</h3>
+                        <p class="step__text">We do the work properly, clean up after ourselves, and walk you through everything we've done. Then I give you my number for anything down the road. That's it.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Work Section -->
-    <section class="our-work">
-        <div class="container">
-            <div class="our-work__header">
-                <h2 class="our-work__title">Roofs We've Done in Cardiff</h2>
-                <p class="our-work__subtitle">Real work for real neighbours. No stock photos.</p>
-            </div>
-            <div class="our-work__grid">
-                <div class="work-image">[Roof Image 1]</div>
-                <div class="work-image">[Roof Image 2]</div>
-                <div class="work-image">[Roof Image 3]</div>
-                <div class="work-image">[Roof Image 4]</div>
-                <div class="work-image">[Roof Image 5]</div>
-                <div class="work-image">[Roof Image 6]</div>
-                <div class="work-image">[Roof Image 7]</div>
-                <div class="work-image">[Roof Image 8]</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
+    <!-- Testimonials -->
     <section class="testimonials">
-        <div class="container">
+        <div class="testimonials__container">
             <div class="testimonials__header">
-                <h2 class="testimonials__title">What Our Neighbours Say</h2>
+                <h2 class="testimonials__title">What the Neighbours Say</h2>
+                <p class="testimonials__subtitle">Real reviews from real Cardiff homeowners</p>
             </div>
+
             <div class="testimonials__grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-card__stars">
+                <div class="testimonial">
+                    <div class="testimonial__stars">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-card__text">"David and his sons are proper tradesmen. Old school workmanship with modern materials. Already recommended them to my brother and he's booking them for his place too."</p>
-                    <div class="testimonial-card__author">
-                        <span class="testimonial-card__avatar">RK</span>
+                    <p class="testimonial__text">"David and his sons are proper tradesmen. Old school workmanship with modern materials. Already recommended them to my brother and he's booking them for his place too."</p>
+                    <div class="testimonial__author">
+                        <span class="testimonial__avatar">RK</span>
                         <div>
-                            <div class="testimonial-card__name">Robert K.</div>
-                            <div class="testimonial-card__location">Cardiff</div>
+                            <div class="testimonial__name">Robert K.</div>
+                            <div class="testimonial__location">Cardiff</div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-card__stars">
+
+                <div class="testimonial">
+                    <div class="testimonial__stars">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-card__text">"I was proper nervous about the whole thing. But they put me at ease straight away and gave me options that actually fit my budget. No pressure sales or anything like that."</p>
-                    <div class="testimonial-card__author">
-                        <span class="testimonial-card__avatar">MP</span>
+                    <p class="testimonial__text">"I was proper nervous about the whole thing. But they put me at ease straight away and gave me options that actually fit my budget. No pressure sales or anything like that."</p>
+                    <div class="testimonial__author">
+                        <span class="testimonial__avatar">MP</span>
                         <div>
-                            <div class="testimonial-card__name">Mike P.</div>
-                            <div class="testimonial-card__location">Penarth</div>
+                            <div class="testimonial__name">Mike P.</div>
+                            <div class="testimonial__location">Cardiff</div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-card__stars">
+
+                <div class="testimonial">
+                    <div class="testimonial__stars">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-card__text">"Family business that actually cares about the work they do. Rare thing these days. Had a complicated job on our extension roof and they handled it no problem."</p>
-                    <div class="testimonial-card__author">
-                        <span class="testimonial-card__avatar">CH</span>
+                    <p class="testimonial__text">"Family business that actually cares about the work they do. Rare thing these days. Had a complicated job on our extension roof and they handled it no problem. Would use again 100%."</p>
+                    <div class="testimonial__author">
+                        <span class="testimonial__avatar">CH</span>
                         <div>
-                            <div class="testimonial-card__name">Colin H.</div>
-                            <div class="testimonial-card__location">Newport</div>
+                            <div class="testimonial__name">Colin H.</div>
+                            <div class="testimonial__location">Cardiff</div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-card__stars">
+
+                <div class="testimonial">
+                    <div class="testimonial__stars">
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-card__text">"Im a single mum and was worried about getting ripped off. They were completely straight with me about what needed doing and the price matched the quote exactly. No nasty surprises."</p>
-                    <div class="testimonial-card__author">
-                        <span class="testimonial-card__avatar">WT</span>
+                    <p class="testimonial__text">"I'm a single mum and was worried about getting ripped off. They were completely straight with me about what needed doing and the price matched the quote exactly. No nasty surprises."</p>
+                    <div class="testimonial__author">
+                        <span class="testimonial__avatar">WT</span>
                         <div>
-                            <div class="testimonial-card__name">Wendy T.</div>
-                            <div class="testimonial-card__location">Cardiff</div>
+                            <div class="testimonial__name">Wendy T.</div>
+                            <div class="testimonial__location">Cardiff</div>
                         </div>
                     </div>
                 </div>
@@ -1106,43 +1378,41 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta__card">
-                <h2 class="cta__title">Ready to Talk?</h2>
-                <p class="cta__text">No pressure, no sales pitch. Just have a chat with David about your roof and see if we're a good fit.</p>
-                <div class="cta__buttons">
-                    <a href="tel:+447876400202" class="cta__btn cta__btn--primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        Call David: 07876 400202
-                    </a>
-                    <a href="/" class="cta__btn cta__btn--secondary">
-                        Get a Quick Quote Online
-                    </a>
-                </div>
-                <div class="cta__trust">
-                    <span class="cta__trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        NFRC Registered
-                    </span>
-                    <span class="cta__trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        10-Year Guarantee
-                    </span>
-                    <span class="cta__trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        Family-Owned
-                    </span>
-                </div>
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="final-cta__container">
+            <h2 class="final-cta__title">Let's Have a Chat</h2>
+            <p class="final-cta__text">No pressure, no sales pitch. Just tell me what's going on with your roof and I'll let you know how I can help. If I'm not the right fit, I'll tell you straight.</p>
+            <div class="final-cta__buttons">
+                <a href="tel:+447876400202" class="final-cta__btn final-cta__btn--primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    Call Me: 07876 400202
+                </a>
+                <a href="/" class="final-cta__btn final-cta__btn--secondary">
+                    Or Get a Quick Quote Online
+                </a>
+            </div>
+            <div class="final-cta__trust">
+                <span class="final-cta__trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    NFRC Registered
+                </span>
+                <span class="final-cta__trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    10-Year Guarantee
+                </span>
+                <span class="final-cta__trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    Family-Owned
+                </span>
             </div>
         </div>
     </section>
@@ -1150,7 +1420,7 @@
     <!-- Footer -->
     <footer class="footer">
         <p class="footer__text">
-            &copy; 2026 Delston Roofing. Cardiff, Newport & Penarth.
+            &copy; 2026 Delston Roofing. Cardiff.
             <a href="tel:+447876400202" class="footer__link">07876 400202</a>
         </p>
     </footer>
