@@ -237,7 +237,7 @@
             z-index: 10;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 7rem 2rem 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
@@ -249,14 +249,25 @@
             text-align: left;
         }
 
+        .hero__form-wrapper--mobile {
+            display: none;
+        }
+
         @media (max-width: 900px) {
             .hero__content {
                 grid-template-columns: 1fr;
                 text-align: center;
                 max-width: 650px;
+                padding-top: 8rem;
             }
             .hero__text {
                 text-align: center;
+            }
+            .hero__form-wrapper {
+                display: none;
+            }
+            .hero__form-wrapper--mobile {
+                display: block;
             }
         }
 
@@ -724,6 +735,108 @@
         }
 
         /* ============================================
+           INLINE CTA BANNER
+           ============================================ */
+        .inline-cta {
+            padding: 3.5rem 2rem;
+            background: var(--gray-50);
+            text-align: center;
+        }
+
+        .inline-cta--dark {
+            background: var(--gray-900);
+        }
+
+        .inline-cta__container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .inline-cta__text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1.25rem;
+        }
+
+        .inline-cta--dark .inline-cta__text {
+            color: var(--white);
+        }
+
+        .inline-cta__buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .inline-cta__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .inline-cta__btn--primary {
+            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .inline-cta__btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .inline-cta__btn--secondary {
+            background: transparent;
+            color: var(--gray-700);
+            border: 2px solid var(--gray-300);
+        }
+
+        .inline-cta__btn--secondary:hover {
+            border-color: var(--primary-400);
+            color: var(--primary-600);
+        }
+
+        .inline-cta--dark .inline-cta__btn--secondary {
+            color: var(--white);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .inline-cta--dark .inline-cta__btn--secondary:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .inline-cta__btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Mobile form section */
+        .mobile-form-section {
+            padding: 3rem 1.5rem;
+            background: var(--gray-900);
+        }
+
+        .mobile-form-section__container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 901px) {
+            .mobile-form-section {
+                display: none;
+            }
+        }
+
+        /* ============================================
            INTRO - WHO I AM
            ============================================ */
         .intro {
@@ -738,7 +851,7 @@
 
         .intro__header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .intro__wave {
@@ -1661,7 +1774,7 @@
         <div class="hero__content">
             <div class="hero__text">
                 <span class="hero__badge">Cardiff Roofer - Family Business</span>
-                <h1 class="hero__title">I'm David Philp.<br>I'll Do Your Roof.</h1>
+                <h1 class="hero__title">I'm David.<br>I'll Do Your Roof.</h1>
                 <p class="hero__subtitle">Three generations of roofers. 500+ Cardiff roofs done right. No sales team, no call centre - just me, my sons, and a trade we've perfected since my old man taught me everything he knew.</p>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <a href="#quote-form" class="hero__cta">
@@ -1876,6 +1989,120 @@
         </div>
     </section>
 
+    <!-- Mobile Form (shown only on mobile, right after hero) -->
+    <section class="mobile-form-section">
+        <div class="mobile-form-section__container hero__form-wrapper--mobile" id="quote-form-mobile">
+            <div class="form-container" id="mobile-form-container">
+                <div class="form-header">
+                    <div class="form-header__content">
+                        <div class="form-header__title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            Get Your Free Quote
+                        </div>
+                        <div class="form-header__subtitle">No obligation - I'll get back to you personally</div>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <div class="progress-bar">
+                        <div class="progress-bar__track">
+                            <div class="progress-bar__fill mobile-progress-fill" style="width: 17%"></div>
+                        </div>
+                        <div class="progress-bar__info">
+                            <span class="progress-bar__step">Step <span class="mobile-current-step">1</span> of 6</span>
+                            <span class="progress-bar__percent mobile-progress-percent">17%</span>
+                        </div>
+                    </div>
+
+                    <form id="mobile-estimate-form" action="https://submit-form.com/zC19yBjOR" method="POST">
+                        <input type="hidden" name="_source" value="personal-landing-page-mobile">
+
+                        <div class="form-step active" data-mobile-step="1">
+                            <h2 class="form-step__question">What type of <span>home</span> do you have?</h2>
+                            <div class="option-list">
+                                <label class="option-item"><input type="radio" name="home_type" value="Single-Family Home" required><span class="option-item__radio"></span><span class="option-item__text">Single-Family Home</span></label>
+                                <label class="option-item"><input type="radio" name="home_type" value="Townhouse or Duplex"><span class="option-item__radio"></span><span class="option-item__text">Townhouse or Duplex</span></label>
+                                <label class="option-item"><input type="radio" name="home_type" value="Manufactured or Mobile"><span class="option-item__radio"></span><span class="option-item__text">Manufactured or Mobile</span></label>
+                                <label class="option-item"><input type="radio" name="home_type" value="Commercial"><span class="option-item__radio"></span><span class="option-item__text">Commercial</span></label>
+                            </div>
+                            <div class="form-buttons form-buttons--single"><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
+                        </div>
+
+                        <div class="form-step" data-mobile-step="2">
+                            <h2 class="form-step__question">About how many <span>bedrooms</span> does your home have?</h2>
+                            <div class="option-list">
+                                <label class="option-item"><input type="radio" name="home_size" value="1-2 bedrooms" required><span class="option-item__radio"></span><span class="option-item__text">1-2 bedrooms</span></label>
+                                <label class="option-item"><input type="radio" name="home_size" value="3 bedrooms"><span class="option-item__radio"></span><span class="option-item__text">3 bedrooms</span></label>
+                                <label class="option-item"><input type="radio" name="home_size" value="4 bedrooms"><span class="option-item__radio"></span><span class="option-item__text">4 bedrooms</span></label>
+                                <label class="option-item"><input type="radio" name="home_size" value="5+ bedrooms"><span class="option-item__radio"></span><span class="option-item__text">5+ bedrooms</span></label>
+                            </div>
+                            <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
+                        </div>
+
+                        <div class="form-step" data-mobile-step="3">
+                            <h2 class="form-step__question">When do you need <span>your new roof</span>?</h2>
+                            <div class="option-list">
+                                <label class="option-item"><input type="radio" name="timeline" value="ASAP - Emergency" required><span class="option-item__radio"></span><span class="option-item__text">ASAP - Emergency</span></label>
+                                <label class="option-item"><input type="radio" name="timeline" value="In the next 30 days"><span class="option-item__radio"></span><span class="option-item__text">In the next 30 days</span></label>
+                                <label class="option-item"><input type="radio" name="timeline" value="More than a month from now"><span class="option-item__radio"></span><span class="option-item__text">More than a month from now</span></label>
+                            </div>
+                            <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
+                        </div>
+
+                        <div class="form-step" data-mobile-step="4">
+                            <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
+                            <div class="option-list">
+                                <label class="option-item"><input type="radio" name="payment" value="Cash or Bank Transfer" required><span class="option-item__radio"></span><span class="option-item__text">Cash or Bank Transfer</span></label>
+                                <label class="option-item"><input type="radio" name="payment" value="Credit/Debit Card"><span class="option-item__radio"></span><span class="option-item__text">Credit/Debit Card</span></label>
+                                <label class="option-item"><input type="radio" name="payment" value="Finance / Monthly payments"><span class="option-item__radio"></span><span class="option-item__text">Finance / Monthly payments</span></label>
+                                <label class="option-item"><input type="radio" name="payment" value="Insurance claim"><span class="option-item__radio"></span><span class="option-item__text">Insurance claim</span></label>
+                                <label class="option-item"><input type="radio" name="payment" value="Not sure yet"><span class="option-item__radio"></span><span class="option-item__text">Not sure yet</span></label>
+                            </div>
+                            <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
+                        </div>
+
+                        <div class="form-step" data-mobile-step="5">
+                            <h2 class="form-step__question">What's your <span>property address</span>?</h2>
+                            <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
+                            <div class="form-row">
+                                <input type="text" class="form-input" name="city" placeholder="City/Town" required>
+                                <input type="text" class="form-input" name="county" placeholder="County">
+                            </div>
+                            <input type="text" class="form-input" name="postcode" placeholder="Postcode" required>
+                            <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
+                        </div>
+
+                        <div class="form-step" data-mobile-step="6">
+                            <h2 class="form-step__question">Almost done! <span>How can I reach you</span>?</h2>
+                            <input type="text" class="form-input" name="full_name" id="mobile_full_name" placeholder="Full Name" required>
+                            <input type="email" class="form-input" name="email" id="mobile_email" placeholder="Email Address" required>
+                            <input type="tel" class="form-input" name="phone" id="mobile_phone" placeholder="Phone Number" required>
+                            <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" id="mobile-submit-btn" onclick="mobileSubmitForm()">GET MY QUOTE &rarr;</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="form-trust">
+                <span class="form-trust__item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Family-Owned
+                </span>
+                <span class="form-trust__item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    10-Year Guarantee
+                </span>
+                <span class="form-trust__item">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Zero Obligation
+                </span>
+            </div>
+        </div>
+    </section>
+
     <!-- Intro -->
     <section class="intro" id="about">
         <div class="intro__container">
@@ -1901,6 +2128,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Inline CTA -->
+    <div class="inline-cta">
+        <div class="inline-cta__container">
+            <p class="inline-cta__text">Want to have a chat about your roof? No pressure, just straight answers.</p>
+            <div class="inline-cta__buttons">
+                <a href="#quote-form" class="inline-cta__btn inline-cta__btn--primary">Get a Free Quote</a>
+                <a href="tel:+447876400202" class="inline-cta__btn inline-cta__btn--secondary">
+                    <svg class="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    07876 400202
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Gallery Strip -->
     <section class="gallery-strip" id="work">
@@ -1955,6 +2196,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Inline CTA -->
+    <div class="inline-cta inline-cta--dark" style="background: var(--primary-800);">
+        <div class="inline-cta__container">
+            <p class="inline-cta__text" style="color: var(--white);">Three generations. One standard. Let's talk about your roof.</p>
+            <div class="inline-cta__buttons">
+                <a href="#quote-form" class="inline-cta__btn inline-cta__btn--primary">Get a Free Quote</a>
+                <a href="tel:+447876400202" class="inline-cta__btn inline-cta__btn--secondary" style="color: var(--white); border-color: rgba(255,255,255,0.3);">
+                    <svg class="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call Me
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Benefits -->
     <section class="benefits">
@@ -2137,6 +2392,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Inline CTA -->
+    <div class="inline-cta">
+        <div class="inline-cta__container">
+            <p class="inline-cta__text">Ready to get your roof sorted? Fill in the form and I'll be in touch.</p>
+            <div class="inline-cta__buttons">
+                <a href="#quote-form" class="inline-cta__btn inline-cta__btn--primary">Get a Free Quote</a>
+                <a href="tel:+447876400202" class="inline-cta__btn inline-cta__btn--secondary">
+                    <svg class="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    07876 400202
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Testimonials -->
     <section class="testimonials">
@@ -2362,6 +2631,83 @@
         }
 
         updateProgress();
+
+        // Mobile form logic (separate instance)
+        let mobileStep = 1;
+
+        function mobileUpdateProgress() {
+            const percent = Math.round((mobileStep / 6) * 100);
+            document.querySelector('.mobile-progress-fill').style.width = percent + '%';
+            document.querySelector('.mobile-current-step').textContent = mobileStep;
+            document.querySelector('.mobile-progress-percent').textContent = percent + '%';
+        }
+
+        function mobileShowStep(step) {
+            document.querySelectorAll('[data-mobile-step]').forEach(el => el.classList.remove('active'));
+            document.querySelector('[data-mobile-step="' + step + '"]').classList.add('active');
+            mobileUpdateProgress();
+            mobileUpdateContinueButton();
+        }
+
+        function mobileNextStep() {
+            if (mobileStep < 6) { mobileStep++; mobileShowStep(mobileStep); }
+        }
+
+        function mobilePrevStep() {
+            if (mobileStep > 1) { mobileStep--; mobileShowStep(mobileStep); }
+        }
+
+        function mobileUpdateContinueButton() {
+            const stepEl = document.querySelector('[data-mobile-step="' + mobileStep + '"]');
+            const btn = stepEl.querySelector('.btn-continue');
+            if (!btn) return;
+            const radios = stepEl.querySelectorAll('input[type="radio"]');
+            if (radios.length > 0) {
+                btn.classList.toggle('active', Array.from(radios).some(r => r.checked));
+            }
+            const texts = stepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]');
+            if (texts.length > 0 && radios.length === 0) {
+                const req = stepEl.querySelectorAll('input[required]');
+                btn.classList.toggle('active', Array.from(req).every(r => r.value.trim() !== ''));
+            }
+        }
+
+        // Mobile option click handlers
+        document.querySelectorAll('#mobile-estimate-form .option-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const input = this.querySelector('input');
+                const name = input.name;
+                document.querySelectorAll('#mobile-estimate-form input[name="' + name + '"]').forEach(s => {
+                    s.closest('.option-item').classList.remove('selected');
+                });
+                this.classList.add('selected');
+                input.checked = true;
+                mobileUpdateContinueButton();
+                setTimeout(() => { if (mobileStep < 6) mobileNextStep(); }, 300);
+            });
+        });
+
+        document.querySelectorAll('#mobile-estimate-form .form-input').forEach(input => {
+            input.addEventListener('input', mobileUpdateContinueButton);
+        });
+
+        function mobileSubmitForm() {
+            const btn = document.getElementById('mobile-submit-btn');
+            const name = document.getElementById('mobile_full_name').value.trim();
+            const email = document.getElementById('mobile_email').value.trim();
+            const phone = document.getElementById('mobile_phone').value.trim();
+            if (!name || !email || !phone) return;
+            btn.innerHTML = 'Sending...';
+            btn.disabled = true;
+            const form = document.getElementById('mobile-estimate-form');
+            const data = Object.fromEntries(new FormData(form).entries());
+            fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) }).catch(() => {});
+            setTimeout(() => {
+                document.getElementById('mobile-form-container').innerHTML = '<div class="success-screen"><div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 class="success-title">You\'re In!</h2><p class="success-callback">David will give you a call in roughly <span class="gradient-text">15 minutes</span></p><div class="success-card"><h3 class="success-card__title">Skip the Wait - Call Now</h3><p class="success-card__text">Speak directly to David.</p><a href="tel:+447876400202" class="success-phone-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07876 400202</a><p class="success-hours">Mon-Sat 8AM-6PM</p></div></div>';
+            }, 500);
+        }
+
+        mobileUpdateProgress();
     </script>
 
     <!-- Reviews -->
