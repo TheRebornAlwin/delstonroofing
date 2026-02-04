@@ -2545,7 +2545,7 @@
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
 
-            fbq('track', 'Lead');
+            fbq('trackSingle', '824120400678401', 'Lead');
 
             const form = document.getElementById('estimate-form');
             const formData = new FormData(form);
@@ -2654,7 +2654,7 @@
             if (!name || !email || !phone) return;
             btn.innerHTML = 'Sending...';
             btn.disabled = true;
-            fbq('track', 'Lead');
+            fbq('trackSingle', '824120400678401', 'Lead');
             const form = document.getElementById('mobile-estimate-form');
             const data = Object.fromEntries(new FormData(form).entries());
             fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) }).catch(() => {});
