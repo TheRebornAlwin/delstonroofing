@@ -1807,11 +1807,11 @@
                     <div class="form-content">
                         <div class="progress-bar">
                             <div class="progress-bar__track">
-                                <div class="progress-bar__fill" id="progress-fill" style="width: 17%"></div>
+                                <div class="progress-bar__fill" id="progress-fill" style="width: 20%"></div>
                             </div>
                             <div class="progress-bar__info">
-                                <span class="progress-bar__step">Step <span id="current-step">1</span> of 6</span>
-                                <span class="progress-bar__percent" id="progress-percent">17%</span>
+                                <span class="progress-bar__step">Step <span id="current-step">1</span> of 5</span>
+                                <span class="progress-bar__percent" id="progress-percent">20%</span>
                             </div>
                         </div>
 
@@ -1905,44 +1905,8 @@
                                 </div>
                             </div>
 
-                            <!-- Step 4: Payment -->
+                            <!-- Step 4: Address -->
                             <div class="form-step" data-step="4">
-                                <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
-                                <div class="option-list">
-                                    <label class="option-item">
-                                        <input type="radio" name="payment" value="Cash or Bank Transfer" required>
-                                        <span class="option-item__radio"></span>
-                                        <span class="option-item__text">Cash or Bank Transfer</span>
-                                    </label>
-                                    <label class="option-item">
-                                        <input type="radio" name="payment" value="Credit/Debit Card">
-                                        <span class="option-item__radio"></span>
-                                        <span class="option-item__text">Credit/Debit Card</span>
-                                    </label>
-                                    <label class="option-item">
-                                        <input type="radio" name="payment" value="Finance / Monthly payments">
-                                        <span class="option-item__radio"></span>
-                                        <span class="option-item__text">Finance / Monthly payments</span>
-                                    </label>
-                                    <label class="option-item">
-                                        <input type="radio" name="payment" value="Insurance claim">
-                                        <span class="option-item__radio"></span>
-                                        <span class="option-item__text">Insurance claim</span>
-                                    </label>
-                                    <label class="option-item">
-                                        <input type="radio" name="payment" value="Not sure yet">
-                                        <span class="option-item__radio"></span>
-                                        <span class="option-item__text">Not sure yet</span>
-                                    </label>
-                                </div>
-                                <div class="form-buttons">
-                                    <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
-                                    <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
-                                </div>
-                            </div>
-
-                            <!-- Step 5: Address -->
-                            <div class="form-step" data-step="5">
                                 <h2 class="form-step__question">What's your <span>property address</span>?</h2>
                                 <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
                                 <div class="form-row">
@@ -1956,8 +1920,8 @@
                                 </div>
                             </div>
 
-                            <!-- Step 6: Contact Info -->
-                            <div class="form-step" data-step="6">
+                            <!-- Step 5: Contact Info -->
+                            <div class="form-step" data-step="5">
                                 <h2 class="form-step__question">Almost done! <span>How can I reach you</span>?</h2>
                                 <input type="text" class="form-input" name="full_name" id="full_name" placeholder="Full Name" required>
                                 <input type="email" class="form-input" name="email" id="email" placeholder="Email Address" required>
@@ -2009,10 +1973,10 @@
                 <div class="form-content">
                     <div class="progress-bar">
                         <div class="progress-bar__track">
-                            <div class="progress-bar__fill mobile-progress-fill" style="width: 17%"></div>
+                            <div class="progress-bar__fill mobile-progress-fill" style="width: 20%"></div>
                         </div>
                         <div class="progress-bar__info">
-                            <span class="progress-bar__step">Step <span class="mobile-current-step">1</span> of 6</span>
+                            <span class="progress-bar__step">Step <span class="mobile-current-step">1</span> of 5</span>
                             <span class="progress-bar__percent mobile-progress-percent">17%</span>
                         </div>
                     </div>
@@ -2053,18 +2017,6 @@
                         </div>
 
                         <div class="form-step" data-mobile-step="4">
-                            <h2 class="form-step__question">How are you planning to <span>pay</span>?</h2>
-                            <div class="option-list">
-                                <label class="option-item"><input type="radio" name="payment" value="Cash or Bank Transfer" required><span class="option-item__radio"></span><span class="option-item__text">Cash or Bank Transfer</span></label>
-                                <label class="option-item"><input type="radio" name="payment" value="Credit/Debit Card"><span class="option-item__radio"></span><span class="option-item__text">Credit/Debit Card</span></label>
-                                <label class="option-item"><input type="radio" name="payment" value="Finance / Monthly payments"><span class="option-item__radio"></span><span class="option-item__text">Finance / Monthly payments</span></label>
-                                <label class="option-item"><input type="radio" name="payment" value="Insurance claim"><span class="option-item__radio"></span><span class="option-item__text">Insurance claim</span></label>
-                                <label class="option-item"><input type="radio" name="payment" value="Not sure yet"><span class="option-item__radio"></span><span class="option-item__text">Not sure yet</span></label>
-                            </div>
-                            <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
-                        </div>
-
-                        <div class="form-step" data-mobile-step="5">
                             <h2 class="form-step__question">What's your <span>property address</span>?</h2>
                             <input type="text" class="form-input" name="street_address" placeholder="Street Address" required>
                             <div class="form-row">
@@ -2075,7 +2027,7 @@
                             <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
                         </div>
 
-                        <div class="form-step" data-mobile-step="6">
+                        <div class="form-step" data-mobile-step="5">
                             <h2 class="form-step__question">Almost done! <span>How can I reach you</span>?</h2>
                             <input type="text" class="form-input" name="full_name" id="mobile_full_name" placeholder="Full Name" required>
                             <input type="email" class="form-input" name="email" id="mobile_email" placeholder="Email Address" required>
@@ -2488,7 +2440,7 @@
     <!-- Multi-step form logic -->
     <script>
         let currentStep = 1;
-        const totalSteps = 6;
+        const totalSteps = 5;
 
         function updateProgress() {
             const percent = Math.round((currentStep / totalSteps) * 100);
@@ -2636,7 +2588,7 @@
         let mobileStep = 1;
 
         function mobileUpdateProgress() {
-            const percent = Math.round((mobileStep / 6) * 100);
+            const percent = Math.round((mobileStep / 5) * 100);
             document.querySelector('.mobile-progress-fill').style.width = percent + '%';
             document.querySelector('.mobile-current-step').textContent = mobileStep;
             document.querySelector('.mobile-progress-percent').textContent = percent + '%';
@@ -2650,7 +2602,7 @@
         }
 
         function mobileNextStep() {
-            if (mobileStep < 6) { mobileStep++; mobileShowStep(mobileStep); }
+            if (mobileStep < 5) { mobileStep++; mobileShowStep(mobileStep); }
         }
 
         function mobilePrevStep() {
@@ -2683,7 +2635,7 @@
                 this.classList.add('selected');
                 input.checked = true;
                 mobileUpdateContinueButton();
-                setTimeout(() => { if (mobileStep < 6) mobileNextStep(); }, 300);
+                setTimeout(() => { if (mobileStep < 5) mobileNextStep(); }, 300);
             });
         });
 
