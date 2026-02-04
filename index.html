@@ -183,9 +183,6 @@
             .header__nav {
                 display: none;
             }
-            .header {
-                padding: 1rem 1.5rem;
-            }
         }
 
         /* ============================================
@@ -285,7 +282,7 @@
         }
 
         .hero__title {
-            font-size: clamp(2.75rem, 9vw, 5rem);
+            font-size: clamp(2.5rem, 7vw, 4rem);
             font-weight: 900;
             color: var(--white);
             line-height: 1.05;
@@ -294,7 +291,7 @@
         }
 
         .hero__subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
             color: rgba(255,255,255,0.9);
             margin-bottom: 2.5rem;
             max-width: 650px;
@@ -333,6 +330,23 @@
             height: 24px;
         }
 
+        .hero__buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero__cta--secondary {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.4);
+            box-shadow: none;
+        }
+
+        .hero__cta--secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+            box-shadow: none;
+        }
 
         /* ============================================
            HERO FORM
@@ -888,6 +902,37 @@
             color: var(--gray-900);
         }
 
+        .intro__text-blocks {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .intro__block {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .intro__block-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+
+        .intro__block p {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .intro__block p strong {
+            color: var(--gray-900);
+        }
+
         .intro__gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -1047,8 +1092,9 @@
         .story__subtitle {
             color: var(--gray-400);
             font-size: 1.1rem;
-            max-width: 600px;
+            max-width: none;
             margin: 0 auto;
+            white-space: nowrap;
         }
 
         .story__grid {
@@ -1092,10 +1138,29 @@
             color: var(--gray-300);
         }
 
-        .story__content p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+        .story__point {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .story__point-marker {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-400);
+            background: rgba(59, 130, 246, 0.15);
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.35rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .story__point p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
         }
 
         .story__content strong {
@@ -1750,6 +1815,357 @@
             stroke-linejoin: round;
             fill: none;
         }
+
+        /* ============================================
+           MOBILE OPTIMIZATIONS
+           ============================================ */
+        @media (max-width: 768px) {
+            /* Header */
+            .header {
+                padding: 0.25rem 1rem;
+            }
+            .header__logo {
+                height: 60px;
+            }
+            .header.scrolled .header__logo {
+                height: 50px;
+            }
+            .header.scrolled {
+                padding: 0.15rem 1rem;
+            }
+
+            /* Hero */
+            .hero {
+                min-height: auto;
+            }
+            .hero__content {
+                padding: 7rem 1.25rem 3rem;
+            }
+            .hero__badge {
+                display: none;
+            }
+            .hero__title {
+                font-size: 2.25rem;
+                margin-bottom: 1rem;
+            }
+            .hero__subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+            .hero__cta {
+                padding: 0.85rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            .hero__buttons {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* Mobile form section */
+            .mobile-form-section {
+                padding: 2rem 1rem;
+            }
+
+            /* Section padding reductions */
+            .intro {
+                padding: 3.5rem 1.25rem;
+            }
+            .story {
+                padding: 3.5rem 1.25rem;
+            }
+            .benefits {
+                padding: 3.5rem 1.25rem;
+            }
+            .process {
+                padding: 3.5rem 1.25rem;
+            }
+            .testimonials {
+                padding: 3.5rem 1.25rem;
+            }
+            .final-cta {
+                padding: 3.5rem 1.25rem;
+            }
+            .gallery-strip {
+                padding: 2.5rem 1.25rem;
+            }
+
+            /* Section header margin reductions */
+            .story__header {
+                margin-bottom: 2.5rem;
+            }
+            .benefits__header {
+                margin-bottom: 2.5rem;
+            }
+            .process__header {
+                margin-bottom: 2.5rem;
+            }
+            .testimonials__header {
+                margin-bottom: 2rem;
+            }
+
+            /* Intro */
+            .intro__wave {
+                font-size: 2.25rem;
+            }
+            .intro__text {
+                font-size: 1.05rem;
+                margin: 0 auto 2rem;
+                line-height: 1.7;
+            }
+            .intro__quote {
+                padding: 1.25rem 1.25rem;
+                font-size: 1rem;
+                border-radius: 0 1rem 1rem 0;
+            }
+            .intro__quote::before {
+                font-size: 3.5rem;
+                top: -5px;
+                left: 12px;
+            }
+            .intro__gallery {
+                gap: 0.75rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Gallery strip */
+            .gallery-strip__grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            /* Intro text blocks */
+            .intro__block {
+                text-align: left;
+            }
+            .intro__block p {
+                font-size: 1rem;
+            }
+            .intro__block-icon {
+                font-size: 1.25rem;
+            }
+
+            /* Story */
+            .story__grid {
+                gap: 2rem;
+            }
+            .story__point {
+                justify-content: center;
+            }
+            .story__point p {
+                font-size: 0.95rem;
+                text-align: center;
+            }
+            .story__point-marker {
+                display: none;
+            }
+            .story__highlight {
+                justify-content: center;
+                width: 100%;
+                text-align: center;
+            }
+            .story__subtitle {
+                font-size: 1rem;
+                white-space: normal;
+            }
+
+            /* Benefits */
+            .benefit-card {
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .benefit-card__icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 0.75rem;
+                margin: 0 auto 1rem;
+            }
+            .benefit-card__icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            .benefit-card__title {
+                font-size: 1.1rem;
+            }
+            .benefit-card--featured {
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .benefit-card--featured .benefit-card__title {
+                font-size: 1.25rem;
+            }
+            .benefits__subtitle {
+                font-size: 1rem;
+            }
+
+            /* Process */
+            .step__number {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+            .step__title {
+                font-size: 1.15rem;
+            }
+            .step__text {
+                font-size: 0.95rem;
+            }
+            .step__content {
+                padding-bottom: 2rem;
+            }
+            .process__subtitle {
+                font-size: 1rem;
+            }
+
+            /* Testimonials */
+            .testimonial {
+                padding: 1.5rem;
+            }
+            .testimonial__avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 0.85rem;
+            }
+
+            /* Inline CTA */
+            .inline-cta {
+                padding: 2.5rem 1.25rem;
+            }
+            .inline-cta__text {
+                font-size: 1.1rem;
+            }
+            .inline-cta__btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+                justify-content: center;
+            }
+            .inline-cta__buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            /* Final CTA */
+            .final-cta__title {
+                font-size: 1.75rem;
+            }
+            .final-cta__text {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            .final-cta__btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            .final-cta__buttons {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            .final-cta__trust {
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+            .final-cta__trust-item {
+                font-size: 0.8rem;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 2rem 1.25rem 1.5rem;
+            }
+            .footer__logo {
+                height: 70px;
+                margin-bottom: 1rem;
+            }
+            .footer__text {
+                font-size: 0.8rem;
+            }
+
+            /* Form adjustments */
+            .form-header__title {
+                font-size: 1.1rem;
+            }
+            .form-header__subtitle {
+                font-size: 0.8rem;
+            }
+            .form-content {
+                padding: 1.5rem 1.25rem;
+            }
+            .form-step__question {
+                font-size: 1rem;
+            }
+            .option-item {
+                padding: 0.875rem 1rem;
+            }
+            .option-item__text {
+                font-size: 0.9rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .form-trust {
+                gap: 1rem;
+            }
+            .form-trust__item {
+                font-size: 0.75rem;
+            }
+
+            /* Success screen */
+            .success-title {
+                font-size: 1.5rem;
+            }
+            .success-callback {
+                font-size: 1rem;
+            }
+            .success-card {
+                padding: 1.5rem;
+            }
+            .success-phone-btn {
+                font-size: 1.1rem;
+                padding: 0.875rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero__title {
+                font-size: 1.85rem;
+            }
+            .hero__content {
+                padding: 6.5rem 1rem 2.5rem;
+            }
+            .hero__buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero__cta {
+                width: 100%;
+            }
+            .header__logo {
+                height: 50px;
+            }
+            .header.scrolled .header__logo {
+                height: 42px;
+            }
+            .intro__title {
+                font-size: 1.75rem;
+            }
+            .story__title {
+                font-size: 1.75rem;
+            }
+            .benefits__title {
+                font-size: 1.75rem;
+            }
+            .process__title {
+                font-size: 1.75rem;
+            }
+            .testimonials__title {
+                font-size: 1.75rem;
+            }
+            .final-cta__title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1779,11 +2195,11 @@
                 <span class="hero__badge">Cardiff Roofer - Family Business</span>
                 <h1 class="hero__title">I'm David.<br>I'll Do Your Roof.</h1>
                 <p class="hero__subtitle">Three generations of roofers. 500+ Cardiff roofs done right. No sales team, no call centre - just me, my sons, and a trade we've perfected since my old man taught me everything he knew.</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div class="hero__buttons">
                     <a href="#quote-form" class="hero__cta">
                         Get a Free Quote
                     </a>
-                    <a href="tel:+447876400202" class="hero__cta" style="background: transparent; border: 2px solid rgba(255,255,255,0.4); box-shadow: none;">
+                    <a href="tel:+447876400202" class="hero__cta hero__cta--secondary">
                         <svg class="icon-phone" viewBox="0 0 24 24" width="22" height="22">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                         </svg>
@@ -1803,7 +2219,6 @@
                                 </svg>
                                 Get Your Free Quote
                             </div>
-                            <div class="form-header__subtitle">No obligation - I'll get back to you personally</div>
                         </div>
                     </div>
 
@@ -2067,9 +2482,20 @@
                 <p class="intro__role">Owner of Delston Roofing & Third-Generation Roofing Family</p>
             </div>
 
-            <p class="intro__text">
-                My dad taught me this trade when I was a teenager. Every trick, every technique, the right way to do things. Now I run the business with my two sons, passing down everything my old man taught me. <strong>Three generations of roofers.</strong> When you ring that number, you're talking to me. When we show up at your house, I'm there making sure everything's done to the standard that'd make my dad proud.
-            </p>
+            <div class="intro__text-blocks">
+                <div class="intro__block">
+                    <span class="intro__block-icon">🏠</span>
+                    <p>My dad taught me this trade when I was a teenager. Every trick, every technique, the right way to do things.</p>
+                </div>
+                <div class="intro__block">
+                    <span class="intro__block-icon">👨‍👦‍👦</span>
+                    <p>Now I run the business with my two sons, passing down everything my old man taught me. <strong>Three generations of roofers.</strong></p>
+                </div>
+                <div class="intro__block">
+                    <span class="intro__block-icon">📞</span>
+                    <p>When you ring that number, you're talking to me. When we show up at your house, I'm there making sure everything's done to the standard that'd make my dad proud.</p>
+                </div>
+            </div>
 
             <div class="intro__gallery">
                 <div class="img-placeholder"><img src="https://s1jwqvjjy3.ufs.sh/f/fwLH13IlJbKZwi451Dfs2RsXSELxkVGyd9l7UMb8QtZuJNTc" alt="Cardiff roof project"></div>
@@ -2087,12 +2513,11 @@
     <!-- Inline CTA -->
     <div class="inline-cta">
         <div class="inline-cta__container">
-            <p class="inline-cta__text">Want to have a chat about your roof? No pressure, just straight answers.</p>
+            <p class="inline-cta__text">Want to have a chat about your roof? Just give me a ring.</p>
             <div class="inline-cta__buttons">
-                <a href="#quote-form" class="inline-cta__btn inline-cta__btn--primary">Get a Free Quote</a>
-                <a href="tel:+447876400202" class="inline-cta__btn inline-cta__btn--secondary">
+                <a href="tel:+447876400202" class="inline-cta__btn inline-cta__btn--primary">
                     <svg class="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    07876 400202
+                    Call Me
                 </a>
             </div>
         </div>
@@ -2102,7 +2527,7 @@
     <section class="gallery-strip" id="work">
         <div class="gallery-strip__container">
             <div class="gallery-strip__header">
-                <h2 class="gallery-strip__title">Some Roofs I've Done Around Cardiff</h2>
+                <h2 class="gallery-strip__title">Recent Roofs I've Done Around Cardiff</h2>
             </div>
             <div class="gallery-strip__grid">
                 <div class="gallery-img"><img src="https://s1jwqvjjy3.ufs.sh/f/fwLH13IlJbKZphY8p6ZDPmc7gtSAnZsV8Jwor9jWGyCBlLz0" alt="Cardiff roof"></div>
@@ -2131,15 +2556,18 @@
                     <div class="story__img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3Med2WLRHNE9eFCb3i0SVwsyz4KrO7JfqRa5v" alt="Work in progress"></div>
                 </div>
                 <div class="story__content">
-                    <p>
-                        My old man was a roofer. Spent decades on Cardiff rooftops, and when I was old enough, he brought me up there with him. Taught me properly. Not just the quick way - the <strong>right way</strong>.
-                    </p>
-                    <p>
-                        Now I'm doing the same with my two sons. They're up there with me, learning the trade the way I learned it. <strong>That's three generations</strong> of roofers who know every slate, every tile, every leak.
-                    </p>
-                    <p>
-                        When we finish your roof, I give you my number. Any questions down the line? <strong>Just call me.</strong> I live here. My name's on the van. I'm not going anywhere.
-                    </p>
+                    <div class="story__point">
+                        <span class="story__point-marker">01</span>
+                        <p>My old man spent decades on Cardiff rooftops. When I was old enough, he brought me up with him and taught me the <strong>right way</strong>.</p>
+                    </div>
+                    <div class="story__point">
+                        <span class="story__point-marker">02</span>
+                        <p>Now my two sons are up there with me, learning the trade the same way. <strong>Three generations</strong> - every slate, every tile, every leak.</p>
+                    </div>
+                    <div class="story__point">
+                        <span class="story__point-marker">03</span>
+                        <p>When we finish your roof, you get my number. Questions down the line? <strong>Just call me.</strong> I'm not going anywhere.</p>
+                    </div>
                     <div class="story__highlight">
                         <svg class="icon-check" viewBox="0 0 24 24" width="24" height="24">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -2153,7 +2581,7 @@
     </section>
 
     <!-- Inline CTA -->
-    <div class="inline-cta inline-cta--dark" style="background: var(--primary-800);">
+    <div class="inline-cta inline-cta--dark" style="background: var(--gray-900);">
         <div class="inline-cta__container">
             <p class="inline-cta__text" style="color: var(--white);">Three generations. One standard. Let's talk about your roof.</p>
             <div class="inline-cta__buttons">
@@ -2189,7 +2617,7 @@
                             </svg>
                         </div>
                         <h3 class="benefit-card__title">I'm On Every Single Job</h3>
-                        <p class="benefit-card__text">Your roof isn't getting passed off to some random subcontractor. I'm there with my sons, on-site, making sure every tile is right. I've seen too many cowboys mess things up. Not happening on my watch.</p>
+                        <p class="benefit-card__text">Your roof isn't getting passed off to a random subcontractor. I'm there with my sons, on-site, making sure every tile is right.</p>
                     </div>
                     <div class="featured-img"><img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj38k1I7CXGFkvSLNZYsI19nqJUib3zmQAB2w7o" alt="Roofing work in Cardiff"></div>
                 </div>
@@ -2204,7 +2632,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">You Call, I Answer</h3>
-                    <p class="benefit-card__text">No call centres, no waiting for callbacks. You're talking directly to the bloke who's going to be on your roof. Quick responses, straight answers.</p>
+                    <p class="benefit-card__text">You're talking directly to the bloke who's going to be on your roof. Quick responses, straight answers.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -2219,7 +2647,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">Still Here After the Job</h3>
-                    <p class="benefit-card__text">Got a question six months later? Ring me. Noticed something odd? Ring me. I'm not vanishing after I've been paid. That's not how I work.</p>
+                    <p class="benefit-card__text">Question six months later? Ring me. I'm not vanishing after I've been paid.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -2232,7 +2660,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">Obsessed With the Details</h3>
-                    <p class="benefit-card__text">I notice the small things. The alignment, the finish, how it looks from the street. If something's not right, we fix it before we leave. Every time.</p>
+                    <p class="benefit-card__text">The alignment, the finish, how it looks from the street. If something's not right, we fix it before we leave.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -2245,7 +2673,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">We Respect Your Home</h3>
-                    <p class="benefit-card__text">No loud music blasting, no rubbish left lying around. We clean up properly, we're polite to your neighbours, and we treat your place like we'd want ours treated.</p>
+                    <p class="benefit-card__text">We clean up properly, we're polite to your neighbours, and we treat your place like it's our own.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -2257,7 +2685,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">10-Year Guarantee</h3>
-                    <p class="benefit-card__text">I stand behind my work. Full guarantee on materials and labour. If something goes wrong because of us, we'll sort it. Simple as that.</p>
+                    <p class="benefit-card__text">Full guarantee on materials and labour. Something goes wrong? We'll sort it.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -2269,7 +2697,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-card__title">Cardiff Born and Bred</h3>
-                    <p class="benefit-card__text">I'm not some company from miles away. I live here, my kids grew up here, and my reputation in this community is everything to me.</p>
+                    <p class="benefit-card__text">I live here, my kids grew up here, and my reputation in this community is everything to me.</p>
                 </div>
             </div>
         </div>
@@ -2319,7 +2747,7 @@
                     </div>
                     <div class="step__content">
                         <h3 class="step__title">I Come Round and Have a Look</h3>
-                        <p class="step__text">I'll pop over, get up there myself, and see exactly what's needed. I'll explain everything in plain English - what's wrong, what needs doing, and why. No jargon, no scare tactics.</p>
+                        <p class="step__text">I'll pop over, get up there myself, and see exactly what's needed. I'll explain everything - what's wrong, what needs doing, and why.</p>
                     </div>
                 </div>
 
@@ -2393,7 +2821,6 @@
                     <svg class="icon-phone" viewBox="0 0 24 24" width="22" height="22">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    Or Call Me: 07876 400202
                 </a>
             </div>
             <div class="final-cta__trust">
@@ -2424,9 +2851,14 @@
         <img src="https://fl4w7xfc0j.ufs.sh/f/Xc4rabS0xYj3rJmr7KOQ1lwJT7MgqUPj3GbAfoRYxy4vBm0i" alt="Delston Roofing" class="footer__logo">
         <p class="footer__text">
             &copy; 2026 Delston Roofing. Cardiff.
-            <a href="tel:+447876400202" class="footer__link">07876 400202</a>
         </p>
     </footer>
+
+    <!-- Scroll to top on reload -->
+    <script>
+        window.history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    </script>
 
     <!-- Header scroll effect -->
     <script>
@@ -2571,7 +3003,7 @@
                             </svg>
                         </div>
                         <h2 class="success-title">You're In!</h2>
-                        <p class="success-callback">David will give you a call in roughly <span class="gradient-text">15 minutes</span></p>
+                        <p class="success-callback">David will give you a call in under <span class="gradient-text">24 hours</span></p>
                         <div class="success-card">
                             <h3 class="success-card__title">Skip the Wait - Call Now</h3>
                             <p class="success-card__text">Speak directly to David who can answer all your questions.</p>
@@ -2664,7 +3096,7 @@
             const data = Object.fromEntries(new FormData(form).entries());
             fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) }).catch(() => {});
             setTimeout(() => {
-                document.getElementById('mobile-form-container').innerHTML = '<div class="success-screen"><div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 class="success-title">You\'re In!</h2><p class="success-callback">David will give you a call in roughly <span class="gradient-text">15 minutes</span></p><div class="success-card"><h3 class="success-card__title">Skip the Wait - Call Now</h3><p class="success-card__text">Speak directly to David.</p><a href="tel:+447876400202" class="success-phone-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07876 400202</a><p class="success-hours">Mon-Sat 8AM-6PM</p></div></div>';
+                document.getElementById('mobile-form-container').innerHTML = '<div class="success-screen"><div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 class="success-title">You\'re In!</h2><p class="success-callback">David will give you a call in under <span class="gradient-text">24 hours</span></p><div class="success-card"><h3 class="success-card__title">Skip the Wait - Call Now</h3><p class="success-card__text">Speak directly to David.</p><a href="tel:+447876400202" class="success-phone-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>07876 400202</a><p class="success-hours">Mon-Sat 8AM-6PM</p></div></div>';
             }, 500);
         }
 
