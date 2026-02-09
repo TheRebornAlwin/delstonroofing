@@ -2290,7 +2290,7 @@
                             <!-- Step 2: Phone -->
                             <div class="form-step" data-step="2">
                                 <h2 class="form-step__question">What's your <span>phone number</span>?</h2>
-                                <input type="tel" class="form-input" name="phone" id="phone" placeholder="Phone Number" required>
+                                <input type="tel" class="form-input" name="phone" id="phone" placeholder="07XXX XXXXXX" maxlength="13" required>
                                 <div class="form-buttons">
                                     <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
                                     <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
@@ -2380,7 +2380,7 @@
 
                         <div class="form-step" data-mobile-step="2">
                             <h2 class="form-step__question">What's your <span>phone number</span>?</h2>
-                            <input type="tel" class="form-input" name="phone" id="mobile_phone" placeholder="Phone Number" required>
+                            <input type="tel" class="form-input" name="phone" id="mobile_phone" placeholder="07XXX XXXXXX" maxlength="13" required>
                             <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
                         </div>
 
@@ -2967,6 +2967,28 @@
         }
 
         updateProgress();
+
+        // UK phone number auto-formatting (XXXXX XXXXXX)
+        function formatUKPhone(input) {
+            input.addEventListener('input', function(e) {
+                let digits = this.value.replace(/\D/g, '');
+                if (digits.length > 11) digits = digits.substring(0, 11);
+                if (digits.length > 5) {
+                    this.value = digits.substring(0, 5) + ' ' + digits.substring(5);
+                } else {
+                    this.value = digits;
+                }
+                updateContinueButton();
+                mobileUpdateContinueButton();
+            });
+            input.addEventListener('keydown', function(e) {
+                if (!/[0-9]/.test(e.key) && !['Backspace','Delete','Tab','ArrowLeft','ArrowRight','Home','End'].includes(e.key) && !e.ctrlKey && !e.metaKey) {
+                    e.preventDefault();
+                }
+            });
+        }
+        formatUKPhone(document.getElementById('phone'));
+        formatUKPhone(document.getElementById('mobile_phone'));
 
         // Mobile form logic (separate instance)
         let mobileStep = 1;
