@@ -594,6 +594,19 @@
             color: var(--gray-400);
         }
 
+        .form-error {
+            color: #ef4444;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: -0.5rem;
+            margin-bottom: 0.75rem;
+            display: none;
+        }
+
+        .form-error.visible {
+            display: block;
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -2291,6 +2304,7 @@
                             <div class="form-step" data-step="2">
                                 <h2 class="form-step__question">What's your <span>phone number</span>?</h2>
                                 <input type="tel" class="form-input" name="phone" id="phone" placeholder="07XXX XXXXXX" maxlength="13" required>
+                                <div class="form-error" id="phone-error">Please enter a valid 11-digit UK phone number</div>
                                 <div class="form-buttons">
                                     <button type="button" class="btn-back" onclick="prevStep()">&larr; BACK</button>
                                     <button type="button" class="btn-continue" onclick="nextStep()">CONTINUE &rarr;</button>
@@ -2381,6 +2395,7 @@
                         <div class="form-step" data-mobile-step="2">
                             <h2 class="form-step__question">What's your <span>phone number</span>?</h2>
                             <input type="tel" class="form-input" name="phone" id="mobile_phone" placeholder="07XXX XXXXXX" maxlength="13" required>
+                            <div class="form-error" id="mobile-phone-error">Please enter a valid 11-digit UK phone number</div>
                             <div class="form-buttons"><button type="button" class="btn-back" onclick="mobilePrevStep()">&larr; BACK</button><button type="button" class="btn-continue" onclick="mobileNextStep()">CONTINUE &rarr;</button></div>
                         </div>
 
@@ -2874,7 +2889,19 @@
             const textInputs = currentStepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
             if (textInputs.length > 0 && radioInputs.length === 0) {
                 const requiredInputs = currentStepEl.querySelectorAll('input[required], textarea[required]');
-                const allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+                let allFilled = Array.from(requiredInputs).every(input => input.value.trim() !== '');
+                // Phone validation: must be exactly 11 digits
+                const phoneInput = currentStepEl.querySelector('input[type="tel"]');
+                if (phoneInput) {
+                    const digits = phoneInput.value.replace(/\D/g, '');
+                    allFilled = digits.length === 11;
+                    const errorEl = currentStepEl.querySelector('.form-error');
+                    if (errorEl && digits.length > 0 && digits.length < 11) {
+                        errorEl.classList.add('visible');
+                    } else if (errorEl) {
+                        errorEl.classList.remove('visible');
+                    }
+                }
                 if (allFilled) {
                     continueBtn.classList.add('active');
                 } else {
@@ -2912,6 +2939,22 @@
 
         document.querySelectorAll('#estimate-form .form-input, #estimate-form .form-textarea').forEach(input => {
             input.addEventListener('input', updateContinueButton);
+        });
+
+        // Enter key to advance desktop form
+        document.getElementById('estimate-form').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var stepEl = document.querySelector('[data-step="' + currentStep + '"]');
+                var btn = stepEl.querySelector('.btn-continue');
+                if (btn && btn.classList.contains('active')) {
+                    if (currentStep === totalSteps) {
+                        submitForm();
+                    } else {
+                        nextStep();
+                    }
+                }
+            }
         });
 
         function submitForm() {
@@ -3029,7 +3072,19 @@
             const texts = stepEl.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
             if (texts.length > 0 && radios.length === 0) {
                 const req = stepEl.querySelectorAll('input[required], textarea[required]');
-                btn.classList.toggle('active', Array.from(req).every(r => r.value.trim() !== ''));
+                let allFilled = Array.from(req).every(r => r.value.trim() !== '');
+                const phoneInput = stepEl.querySelector('input[type="tel"]');
+                if (phoneInput) {
+                    const digits = phoneInput.value.replace(/\D/g, '');
+                    allFilled = digits.length === 11;
+                    const errorEl = stepEl.querySelector('.form-error');
+                    if (errorEl && digits.length > 0 && digits.length < 11) {
+                        errorEl.classList.add('visible');
+                    } else if (errorEl) {
+                        errorEl.classList.remove('visible');
+                    }
+                }
+                btn.classList.toggle('active', allFilled);
             }
         }
 
@@ -3050,6 +3105,22 @@
 
         document.querySelectorAll('#mobile-estimate-form .form-input, #mobile-estimate-form .form-textarea').forEach(input => {
             input.addEventListener('input', mobileUpdateContinueButton);
+        });
+
+        // Enter key to advance mobile form
+        document.getElementById('mobile-estimate-form').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                var stepEl = document.querySelector('[data-mobile-step="' + mobileStep + '"]');
+                var btn = stepEl.querySelector('.btn-continue');
+                if (btn && btn.classList.contains('active')) {
+                    if (mobileStep === 4) {
+                        mobileSubmitForm();
+                    } else {
+                        mobileNextStep();
+                    }
+                }
+            }
         });
 
         function mobileSubmitForm() {
